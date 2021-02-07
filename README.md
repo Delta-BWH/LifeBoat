@@ -3,6 +3,7 @@
 # LifeBoat
 
 LifeBoat is an android application that helps you learn a new skill daily, with short tutorials that teach you skills you should know, so you can be prepared for whatever life throws at you- from a flat tyre to a medical emergency.
+
 Find a video explanation [here](https://youtu.be/NZqF1szgCcc) and check out the [documentation](https://github.com/Delta-BWH/LifeBoat/blob/master/Documentation.pdf) for more info!
 
 ## Inspiration
