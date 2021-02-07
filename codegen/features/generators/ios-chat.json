@@ -1,0 +1,18 @@
+{
+	"category": "iOS",
+	"name": "Real time chat",
+	"tooltip": "Generates the sample chat project.",
+	"icon": "/codegen/features/xsls/backendless-codegen-xsls/icons/ios_chat.png",
+	"xsl": "/codegen/features/xsls/backendless-codegen-xsls/ios/chat.xsl",
+	"options": [
+		{
+			"name": "language",
+			"type": "CHOICE",
+			"label": "Language",
+			"options": [
+				"Objective-C",
+				"Swift"
+			]
+		}
+	]
+}

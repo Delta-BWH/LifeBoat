@@ -1,0 +1,34 @@
+{
+  "category": "Android",
+  "name": "Registration and Login",
+  "tooltip": "Generates reusable code which uses Backendless user registration and login API. When the social login options are enabled, the generated code includes functionality for login with social network identity.",
+  "options": [
+    {
+      "name": "backendlessLogin",
+      "type": "BOOL",
+      "label": "Backendless user registration/login/password recovery",
+      "defaultValue": true
+    },
+    {
+      "name": "facebookLogin",
+      "type": "BOOL",
+      "label": "Facebook login",
+      "defaultValue": true
+    },
+    {
+      "name": "twitterLogin",
+      "type": "BOOL",
+      "label": "Twitter login",
+      "defaultValue": true
+    },
+    {
+      "name": "googleLogin",
+      "type": "BOOL",
+      "label": "Google login",
+      "defaultValue": true
+    }
+  ],
+  "instructions": "Import the generated project into an IDE of your choice. It is important to import it as a Gradle project.",
+  "icon": "/codegen/features/xsls/backendless-codegen-xsls/icons/android_users.png",
+  "xsl": "/codegen/features/xsls/backendless-codegen-xsls/android/login.xsl"
+}

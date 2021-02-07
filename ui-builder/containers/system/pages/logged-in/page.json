@@ -1,0 +1,24 @@
+{
+  "label": "Landing Page",
+  "style": {
+    "padding": "0 0 0 0",
+    "overflow": "auto"
+  },
+  "usedComponentTypes": [
+    "panel",
+    "text",
+    "icon"
+  ],
+  "components": {
+    "page": {
+      "type": "page",
+      "handlers": {
+        "onEnter": {
+          "dependencies": []
+        }
+      }
+    }
+  },
+  "dataBinding": {},
+  "attrs": {}
+}

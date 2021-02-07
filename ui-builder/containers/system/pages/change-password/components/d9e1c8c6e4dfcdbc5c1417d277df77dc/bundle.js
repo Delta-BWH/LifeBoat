@@ -1,0 +1,6 @@
+define([], () => ({
+  /* content */
+
+  
+/* content */
+}));

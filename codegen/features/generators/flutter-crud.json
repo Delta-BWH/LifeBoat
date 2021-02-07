@@ -1,0 +1,7 @@
+{
+	"category": "Flutter",
+	"name": "Basic create/retrieve/update/delete demo",
+	"instructions": "Run \"flutter packages get\" in project directory and build with Android Studio/XCode/VSCode",
+	"icon": "/codegen/features/xsls/backendless-codegen-xsls/icons/flutter_crud.png",
+	"xsl": "/codegen/features/xsls/backendless-codegen-xsls/flutter/crud.xsl"
+}

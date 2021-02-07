@@ -1,0 +1,788 @@
+#%RAML 1.0
+securedBy:
+  - userTokenHeader
+traits:
+  overwrite:
+    queryParameters:
+      overwrite:
+        description: Overwrite File
+        required: false
+        type: boolean
+  pattern:
+    queryParameters:
+      pattern:
+        description: A pattern which the returned files and directories must match
+        required: false
+        type: string
+  recursive:
+    queryParameters:
+      recursive:
+        description: If present and is true, requests that the listing must be retrieved recursively for all directories
+        required: false
+        type: boolean
+  pageSize:
+    queryParameters:
+      pageSize:
+        minimum: 1
+        description: Page Size
+        required: false
+        type: integer
+  offset:
+    queryParameters:
+      offset:
+        minimum: 0
+        description: Page Offset
+        required: false
+        type: integer
+  action:
+    queryParameters:
+      action:
+        required: false
+        type: string
+        enum:
+          - count
+title: Backendless Files API
+version: '1.0'
+mediaType: application/json
+protocols:
+  - HTTP
+  - HTTPS
+baseUri: 'http://api.backendless.com/B1A068D4-ECE2-CE18-FFE0-8B7974A01500/AAC1B55B-A3F8-464D-B0F1-858548861217'
+securitySchemes:
+  userTokenHeader:
+    type: Pass Through
+    describedBy:
+      headers:
+        user-token:
+          type: string
+types:
+  DirectoryElement:
+    description: Directory Element
+    type: object
+    properties:
+      name:
+        description: name of the file or directory without any path information
+        type: string
+        required: false
+      publicUrl:
+        description: absolute URL of the file or directory
+        type: string
+        required: false
+      url:
+        description: relative URL of the file or directory starting from the root of the file storage
+        type: string
+        required: false
+      createdOn:
+        description: a timestamp indicating when the file or directory were created
+        type: number
+        required: false
+  BackendlessError:
+    description: Backendless Error
+    type: object
+    properties:
+      code:
+        type: number
+      message:
+        type: string
+
+/files:
+  '/{directoryPath}':
+    get:
+      is:
+        - pattern
+        - recursive
+        - pageSize
+        - offset
+        - action
+      responses:
+        '200':
+          description: ok
+          body:
+            application/json:
+              type: array
+              items:
+                type: DirectoryElement
+        '400':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '401':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '403':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '404':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '409':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '500':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+      (oas-summary): Get Directory Listing
+      (oas-tags):
+        - features Directory API
+    delete:
+      responses:
+        '200':
+          description: ok
+        '400':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '401':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '403':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '404':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '409':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '500':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+      (oas-summary): Delete Directory
+      (oas-tags):
+        - features Directory API
+    uriParameters:
+      directoryPath:
+        description: Directory Path
+        type: string
+
+  '/{directoryPath}/{fileName}':
+    post:
+      is:
+        - overwrite
+      responses:
+        '200':
+          description: ok
+          body:
+            application/json:
+              type: object
+              properties:
+                fileURL:
+                  description: File URL
+                  type: string
+                  required: false
+        '400':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '401':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '403':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '404':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '409':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '500':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+      body:
+        multipart/form-data:
+          properties:
+            file:
+              description: The file to upload.
+              type: file
+              required: false
+      (oas-summary): Upload File
+      (oas-tags):
+        - features Directory API
+    get:
+      responses:
+        '200':
+          description: ok
+          body:
+            application/octet-stream:
+              type: file
+        '400':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '401':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '403':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '404':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '409':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '500':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+      (oas-summary): Download File
+      (oas-tags):
+        - features Directory API
+    delete:
+      responses:
+        '200':
+          description: ok
+        '400':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '401':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '403':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '404':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '409':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '500':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+      (oas-summary): Delete File
+      (oas-tags):
+        - features Directory API
+    uriParameters:
+      directoryPath:
+        description: Directory Path
+        type: string
+      fileName:
+        description: File Name
+        type: string
+
+  /copy:
+    put:
+      responses:
+        '200':
+          description: ok
+          body:
+            application/json:
+              description: Absolute path of the copied File/Directory
+              type: string
+        '400':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '401':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '403':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '404':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '409':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '500':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+      body:
+        application/json:
+          type: object
+          properties:
+            sourcePath:
+              description: Path of Source File/Directory
+              type: string
+              required: false
+            targetPath:
+              description: Path of Target File/Directory
+              type: string
+              required: false
+          required: false
+          (oas-body-name): body
+      (oas-summary): Copy File/Directory
+      (oas-tags):
+        - Common API
+
+  /move:
+    put:
+      responses:
+        '200':
+          description: ok
+          body:
+            application/json:
+              description: Absolute path of the moved File/Directory
+              type: string
+        '400':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '401':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '403':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '404':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '409':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '500':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+      body:
+        application/json:
+          type: object
+          properties:
+            sourcePath:
+              description: Path of Source File/Directory
+              type: string
+              required: false
+            targetPath:
+              description: Path of Target File/Directory
+              type: string
+              required: false
+          required: false
+          (oas-body-name): body
+      (oas-summary): Move File/Directory
+      (oas-tags):
+        - Common API
+
+  /rename:
+    put:
+      responses:
+        '200':
+          description: ok
+          body:
+            application/json:
+              description: Absolute path of the renamed File/Directory
+              type: string
+        '400':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '401':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '403':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '404':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '409':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '500':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+      body:
+        application/json:
+          type: object
+          properties:
+            oldPathName:
+              description: Path of Old File/Directory
+              type: string
+              required: false
+            newName:
+              description: Path of New File/Directory
+              type: string
+              required: false
+          required: false
+          (oas-body-name): body
+      (oas-summary): Rename File/Directory
+      (oas-tags):
+        - Common API
+
+/users:
+  /login:
+    post:
+      responses:
+        '200':
+          body:
+            application/json:
+              type: object
+              properties:
+                ownerId:
+                  type: string
+                  required: false
+                created:
+                  type: datetime
+                  required: false
+                objectId:
+                  type: string
+                  required: false
+                email:
+                  type: string
+                  required: false
+                updated:
+                  type: datetime
+                  required: false
+                name:
+                  type: string
+                  required: false
+                userStatus:
+                  type: string
+                  required: false
+                socialAccount:
+                  type: string
+                  required: false
+                lastLogin:
+                  type: datetime
+                  required: false
+                user-token:
+                  type: string
+                  required: false
+        '400':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '401':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '403':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '404':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '409':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '500':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+      body:
+        application/json:
+          type: object
+          properties:
+            login:
+              type: string
+              required: false
+            password:
+              type: string
+              required: false
+          required: false
+          (oas-body-name): body
+      (oas-summary): User Login
+      (oas-tags):
+        - UserService
+
+  /register/guest:
+    post:
+      (oas-summary): User Login as Guest
+      (oas-tags):
+        - UserService
+      responses:
+        '200':
+          description: Logged in user
+          body:
+            application/json:
+              type: object
+              properties:
+                user-token:
+                  type: 
+                objectId:
+                  type: 
+                userStatus:
+                  type: 
+        '400':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '401':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '403':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '404':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '409':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '500':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+      body:
+        application/json:
+          type: object
+
+  /logout:
+    post:
+      responses:
+        '200': {}
+        '400':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '401':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '403':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '404':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '409':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '500':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+      (oas-summary): User Logout
+      (oas-tags):
+        - UserService
+  /register:
+    post:
+      responses:
+        '200':
+          body:
+            application/json:
+              type: object
+              properties:
+                ownerId:
+                  type: string
+                  required: false
+                created:
+                  type: datetime
+                  required: false
+                objectId:
+                  type: string
+                  required: false
+                email:
+                  type: string
+                  required: false
+                updated:
+                  type: datetime
+                  required: false
+                name:
+                  type: string
+                  required: false
+                userStatus:
+                  type: string
+                  required: false
+                socialAccount:
+                  type: string
+                  required: false
+                lastLogin:
+                  type: datetime
+                  required: false
+        '400':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '401':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '403':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '404':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '409':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '500':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+      body:
+        application/json:
+          type: object
+          properties:
+            password:
+              type: string
+            email:
+              type: string
+            name:
+              type: string
+              required: false
+          required: false
+          (oas-body-name): body
+      (oas-summary): Register a new User
+      (oas-tags):
+        - UserService
+
+  '/restorepassword/{userIdentity}':
+    get:
+      (oas-summary): Restore User Password
+      (oas-tags):
+        - UserService
+      responses:
+        '200':
+          description: ''
+        '400':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '401':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '403':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '404':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '409':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+        '500':
+          description: ''
+          body:
+            application/json:
+              type: BackendlessError
+    uriParameters:
+      userIdentity:
+        description: User Identity
+        type: string

@@ -1,0 +1,37 @@
+{
+  "label": "Login Page",
+  "usedComponentTypes": [
+    "panel",
+    "form",
+    "text",
+    "block",
+    "input",
+    "checkbox",
+    "button"
+  ],
+  "components": {
+    "85dae34486144e2efa2d934bfdddb172": {
+      "id": "loginForm",
+      "type": "form",
+      "handlers": {
+        "onSubmit": {
+          "dependencies": []
+        }
+      }
+    },
+    "page": {
+      "type": "page",
+      "handlers": {
+        "onEnter": {
+          "dependencies": []
+        }
+      }
+    }
+  },
+  "dataBinding": {},
+  "style": {
+    "overflow": "auto",
+    "padding": "20px 0 20px 0"
+  },
+  "attrs": {}
+}

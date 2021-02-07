@@ -1,0 +1,48 @@
+{
+  "label": "Awesome Features Page",
+  "usedComponentTypes": [
+    "block",
+    "button",
+    "text",
+    "image"
+  ],
+  "components": {
+    "page": {
+      "type": "page",
+      "handlers": {}
+    },
+    "71384675b8c6b388cc4ed0898d963fb8": {
+      "id": "BannerButton-2",
+      "type": "button",
+      "handlers": {
+        "onClick": {
+          "dependencies": []
+        }
+      }
+    },
+    "13d7bdcf55951fa41dc209ae42964c8b": {
+      "id": "Button7-2",
+      "type": "button",
+      "handlers": {
+        "onClick": {
+          "dependencies": []
+        }
+      }
+    },
+    "7ccc0f3a533c5529b94a14dedc0b17d2": {
+      "id": "Button1",
+      "type": "button",
+      "handlers": {
+        "onClick": {
+          "dependencies": []
+        }
+      }
+    }
+  },
+  "style": {
+    "padding": "20px 20px 20px 20px",
+    "background-color": "#e5e5e5"
+  },
+  "dataBinding": {},
+  "attrs": {}
+}

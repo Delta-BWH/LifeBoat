@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "nOAlc4uwmesa6/haeYAMKCSuTHNuoBR7n7mWbhSwWFMga7Hi/uhqPCsD0fWXmjvpM9hoVj7KN8+73DkHnF+rDA==",
+  "success": true,
+  "projectFilePath": "F:\\CheckFileTemplate\\Codegen\\CRUD\\Completed\\TestAppForTemplate-CRUD\\XamarinMobile\\XamarinMobile\\CRUD.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\fedor\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\fedor\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\fedor\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\fedor\\.nuget\\packages\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
+    "C:\\Users\\fedor\\.nuget\\packages\\xamarin.forms\\4.8.0.1143-pre1\\xamarin.forms.4.8.0.1143-pre1.nupkg.sha512"
+  ],
+  "logs": []
+}

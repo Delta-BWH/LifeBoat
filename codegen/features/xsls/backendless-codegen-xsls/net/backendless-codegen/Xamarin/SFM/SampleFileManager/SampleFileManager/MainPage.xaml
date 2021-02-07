@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SampleFileManager.MainPage">
+  <ContentPage.Content>
+    <ScrollView>
+      <StackLayout x:Name="mainLayout" Padding="12,40,12,12">
+        <!-- Place new controls here -->
+        <Label Text="Backendless Files" 
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="Green"/>
+        <Label Text="This example demonstrates file (image) upload and sharing" 
+                   TextColor="Gray"/>
+        <StackLayout x:Name="layoutForImage"/>
+        <Button Text="Take a photo"
+                    Clicked="TakePhotoAndUploadIt"/>
+        <Button Text="Browse upload"
+                    Clicked="BrowseUploaded"/>
+        <ScrollView>
+          <StackLayout x:Name="allPhotos"/>
+        </ScrollView>
+      </StackLayout>
+    </ScrollView>
+  </ContentPage.Content>
+</ContentPage>

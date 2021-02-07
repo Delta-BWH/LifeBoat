@@ -1,0 +1,35 @@
+{
+  "label": "Landing Page",
+  "style": {
+    "background-color": "#e5e5e5",
+    "overflow": "visible"
+  },
+  "usedComponentTypes": [
+    "panel",
+    "block",
+    "text",
+    "layout-container",
+    "layout-row",
+    "layout-cell",
+    "image",
+    "button",
+    "video"
+  ],
+  "components": {
+    "page": {
+      "type": "page",
+      "handlers": {}
+    },
+    "4f183e093473fbe80b5a0787ddc41216": {
+      "id": "Button29",
+      "type": "button",
+      "handlers": {
+        "onClick": {
+          "dependencies": []
+        }
+      }
+    }
+  },
+  "dataBinding": {},
+  "attrs": {}
+}

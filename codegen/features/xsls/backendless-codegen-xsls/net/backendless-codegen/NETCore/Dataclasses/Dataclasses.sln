@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dataclasses", "Dataclasses\Dataclasses.csproj", "{72BE31C5-5DB1-4968-8C49-4855F41040DF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{72BE31C5-5DB1-4968-8C49-4855F41040DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72BE31C5-5DB1-4968-8C49-4855F41040DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72BE31C5-5DB1-4968-8C49-4855F41040DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72BE31C5-5DB1-4968-8C49-4855F41040DF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6172E9E0-0952-49AE-AF96-160BC360B946}
+	EndGlobalSection
+EndGlobal

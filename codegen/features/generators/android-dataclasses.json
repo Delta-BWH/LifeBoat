@@ -1,0 +1,7 @@
+{
+  "category": "Android",
+  "name": "Java classes for defined data tables",
+  "instructions": "Import the generated project into an IDE of your choice. It is important to import it as a Gradle project.",
+  "icon": "/codegen/features/xsls/backendless-codegen-xsls/icons/android_class.png",
+  "xsl": "/codegen/features/xsls/backendless-codegen-xsls/android/dataclasses.xsl"
+}

@@ -1,0 +1,54 @@
+{
+  "label": "Landing Page",
+  "style": {
+    "padding": "0 0 0 0",
+    "overflow": "auto"
+  },
+  "usedComponentTypes": [
+    "panel",
+    "text",
+    "block",
+    "form",
+    "input",
+    "button"
+  ],
+  "components": {
+    "page": {
+      "type": "page",
+      "handlers": {
+        "onEnter": {
+          "dependencies": []
+        }
+      }
+    },
+    "58ecb77e91b7d9dd5c99075111c91c64": {
+      "id": "Form",
+      "type": "form",
+      "handlers": {
+        "onSubmit": {
+          "dependencies": []
+        }
+      }
+    },
+    "9c0e75137e04bad6e50940e30ee54426": {
+      "id": "password",
+      "type": "input",
+      "handlers": {
+        "onChange": {
+          "dependencies": []
+        }
+      }
+    },
+    "1e3bdf67c1f295ed344408cd7f1dba1d": {
+      "id": "confirm_password",
+      "type": "input",
+      "handlers": {
+        "onChange": {
+          "dependencies": []
+        }
+      }
+    }
+  },
+  "dataBinding": {},
+  "attrs": {}
+}

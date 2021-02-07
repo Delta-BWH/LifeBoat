@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinMobile.OperationRetrieve">
+  <ContentPage.Content>
+    <StackLayout>
+      <Label Text="Select an operation to get objects"
+             HorizontalOptions="CenterAndExpand" />
+      <Button Text="Basic Find"
+              Clicked="BasicFind"/>
+      <Button Text="Find First"
+              Clicked="FindFirst"/>
+      <Button Text="Find Last"
+              Clicked="FindLast"/>
+      <Button Text="Find with Sort"
+              Clicked="FindSort"/>
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

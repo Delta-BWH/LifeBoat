@@ -1,0 +1,7 @@
+{
+  "category": "JavaScript",
+  "name": "Sample file manager",
+  "tooltip": "Generates reusable code which uses Backendless user registration and login API. When the social login options are enabled, the generated code includes functionality for login with social network identity.",
+  "icon": "/codegen/features/xsls/backendless-codegen-xsls/icons/js_file.png",
+  "xsl": "/codegen/features/xsls/backendless-codegen-xsls/js/files.xsl"
+}

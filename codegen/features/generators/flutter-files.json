@@ -1,0 +1,7 @@
+{
+	"category": "Flutter",
+	"name": "Sample file manager",
+	"instructions": "Run \"flutter packages get\" in project directory and build with Android Studio/XCode/VSCode",
+	"icon": "/codegen/features/xsls/backendless-codegen-xsls/icons/flutter_file.png",
+	"xsl": "/codegen/features/xsls/backendless-codegen-xsls/flutter/files.xsl"
+}

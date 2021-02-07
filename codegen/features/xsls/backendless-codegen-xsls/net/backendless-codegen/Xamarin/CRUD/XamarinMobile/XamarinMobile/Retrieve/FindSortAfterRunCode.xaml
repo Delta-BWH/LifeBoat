@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinMobile.FindSortAfterRunCode">
+  <ContentPage.Content>
+    <StackLayout x:Name="mainStackLayout">
+      <Label Text="Sorted Find"
+             FontSize="24"
+             HorizontalOptions="CenterAndExpand"/>
+      <Label x:Name="field"/>
+      <ScrollView>
+        <StackLayout x:Name="codeLog"/>
+      </ScrollView>
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

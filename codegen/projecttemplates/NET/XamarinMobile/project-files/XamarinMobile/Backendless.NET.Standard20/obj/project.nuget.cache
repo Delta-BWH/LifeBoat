@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "twRq2MgFHdCH1PaZHZm1v43LcztX8CkPHtIvJ9nzX62S80JQMgx+N4DmTEd+UzdAJPHL+7d4yEvdPgLTfO5p5Q==",
+  "success": true,
+  "projectFilePath": "F:\\CheckFileTemplate\\Timed\\TestAppForTemplate\\XamarinMobile\\Backendless.NET.Standard20\\Backendless.NET.Standard20.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\fedor\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\fedor\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\fedor\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\fedor\\.nuget\\packages\\system.collections.immutable\\1.5.0\\system.collections.immutable.1.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

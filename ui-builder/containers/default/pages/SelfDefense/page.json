@@ -1,0 +1,43 @@
+{
+  "label": "Landing Page",
+  "style": {
+    "background-color": "#e5e5e5",
+    "overflow": "visible"
+  },
+  "usedComponentTypes": [
+    "panel",
+    "block",
+    "text",
+    "layout-container",
+    "layout-row",
+    "layout-cell",
+    "video",
+    "button"
+  ],
+  "components": {
+    "page": {
+      "type": "page",
+      "handlers": {}
+    },
+    "482dce2f0b5c47e17f37efe98afcd68e": {
+      "id": "Button1",
+      "type": "button",
+      "handlers": {
+        "onClick": {
+          "dependencies": []
+        }
+      }
+    },
+    "92ac437b9f66bda67e341cc85cd40974": {
+      "id": "Button2",
+      "type": "button",
+      "handlers": {
+        "onClick": {
+          "dependencies": []
+        }
+      }
+    }
+  },
+  "dataBinding": {},
+  "attrs": {}
+}

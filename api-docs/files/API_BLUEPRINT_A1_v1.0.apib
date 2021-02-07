@@ -1,0 +1,499 @@
+FORMAT: 1A
+HOST: http://api.backendless.com/B1A068D4-ECE2-CE18-FFE0-8B7974A01500/AAC1B55B-A3F8-464D-B0F1-858548861217
+
+# Backendless Files API
+## Authentication
+This API uses Custom Header for its authentication.
+
+The parameters that are needed to be sent for this type of authentication are as follows:
++ `user-token`
+
+## Files API [/]
+
+
+### Upload File [POST /files/{directoryPath}{fileName}{?overwrite}]
+
++ Parameters
+    + directoryPath (string, optional)
+
+        Directory Path
+
+    + fileName (string, required)
+
+        File Name
+
+    + overwrite (boolean, optional)
+
+        Overwrite File
+
++ Attributes
+    + file (string, optional)
+
+        The file to upload.
+
+
++ Request (application/x-www-form-urlencoded)
+
+
++ Response 200 (application/json)
+
+    + Attributes (object)
+
+       + `fileURL` (string) - File URL
+
++ Response 400 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 401 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 403 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 404 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 409 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 500 (application/json)
+    + Attributes (BackendlessError)
+
+
+
+### Download File [GET /files/{directoryPath}{fileName}]
+
++ Parameters
+    + directoryPath (string, optional)
+
+        Directory Path
+
+    + fileName (string, required)
+
+        File Name
+
++ Response 200 (binary)
+
+        ok
+
++ Response 400 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 401 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 403 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 404 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 409 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 500 (application/json)
+    + Attributes (BackendlessError)
+
+
+### Delete File [DELETE /files/{directoryPath}{fileName}]
+
++ Parameters
+    + directoryPath (string, optional)
+
+        Directory Path
+
+    + fileName (string, required)
+
+        File Name
+
+
++ Response 200
+
++ Response 400 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 401 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 403 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 404 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 409 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 500 (application/json)
+    + Attributes (BackendlessError)
+
+
+
+### Get Directory Listing [GET /files/{directoryPath}{?action,pattern,recursive,pageSize,offset}]
+
++ Parameters
+    + directoryPath (string, optional)
+
+        Directory Path
+
+    + action (string, optional) -
+
+        + Default: count
+    + pattern (string, optional)
+
+        A pattern which the returned files and directories must match
+
+    + recursive (boolean, optional)
+
+        If present and is true, requests that the listing must be retrieved recursively for all directories
+
+    + pageSize (number, optional)
+
+        Page Size
+
+    + offset (number, optional)
+
+        Page Offset
+
+
++ Response 200 (application/json)
+
+        ok
+
+    + Attributes (array[DirectoryElement])
+
++ Response 400 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 401 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 403 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 404 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 409 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 500 (application/json)
+    + Attributes (BackendlessError)
+
+
+
+### Delete Directory [DELETE /files/{directoryPath}]
+
++ Parameters
+    + directoryPath (string, required)
+
+        Directory Path
+
++ Response 200
+
++ Response 400 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 401 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 403 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 404 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 409 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 500 (application/json)
+    + Attributes (BackendlessError)
+
+### Rename File/Directory [PUT /files/rename]
+
++ Request (application/json)
+    + Attributes (object)
+        + `oldPathName` (string, optional) - Path of Old File/Directory
+        + `newName` (string, optional) - Path of New File/Directory
+
+
++ Response 200
+
+        ok
+
+    + Attributes (string)
+
++ Response 400 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 401 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 403 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 404 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 409 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 500 (application/json)
+    + Attributes (BackendlessError)
+
+
+
+### Copy File/Directory [PUT /files/copy]
+
++ Request (application/json)
+    + Attributes (object)
+        + `sourcePath` (string, optional) - Path of Source File/Directory
+        + `targetPath` (string, optional) - Path of Target File/Directory
+
++ Response 200
+
+        ok
+
+    + Attributes (string)
+
++ Response 400 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 401 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 403 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 404 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 409 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 500 (application/json)
+    + Attributes (BackendlessError)
+
+
+
+### Move File/Directory [PUT /files/move]
+
++ Request (application/json)
+    + Attributes (object)
+
+       + `fileURL` (string) - File URL
+
++ Response 200
+
+        ok
+
+    + Attributes (string)
+
++ Response 400 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 401 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 403 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 404 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 409 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 500 (application/json)
+    + Attributes (BackendlessError)
+
+
+
+## UserService API [/users]
+
+### Register a new User [POST /users/register]
++ Request (application/json)
+    + Headers
+
+            user-token: null
+
+    + Attributes (object)
+        + `name` (string, optional)
+        + `password` (string)
+        + `blUserLocale` (string)
+        + `email` (string)
+
+
++ Response 200 (application/json)
+        Registered User
+    + Attributes (object)
+       + `name` (string)
+       + `ownerId` (string)
+       + `updated` (number)
+       + `created` (number)
+       + `objectId` (string)
+       + `blUserLocale` (string)
+       + `email` (string)
+       + `userStatus` (string)
+       + `socialAccount` (string)
+       + `lastLogin` (number)
+
++ Response 400 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 401 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 403 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 404 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 409 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 500 (application/json)
+    + Attributes (BackendlessError)
+
+### Restore User Password [GET /users/restorepassword/{userIdentity}]
++ Parameters
+    + userIdentity (string, required)
+        User Identity
+
++ Response 200
+
++ Response 400 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 401 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 403 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 404 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 409 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 500 (application/json)
+    + Attributes (BackendlessError)
+
+### User Login [POST /users/login]
++ Request (application/json)
+
+    + Attributes (object)
+       + `login` (string)
+       + `password` (string)
+
++ Response 200 (application/json)
+        Registered User
+
+    + Attributes (object)
+       + `name` (string)
+       + `ownerId` (string)
+       + `updated` (number)
+       + `created` (number)
+       + `objectId` (string)
+       + `blUserLocale` (string)
+       + `email` (string)
+       + `userStatus` (string)
+       + `socialAccount` (string)
+       + `lastLogin` (number)
+       + `user-token` (string)
+
++ Response 400 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 401 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 403 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 404 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 409 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 500 (application/json)
+    + Attributes (BackendlessError)
+
+### User Login as Guest [POST /users/register/guest]
++ Request (application/json)
+
+    + Attributes (object)
+
++ Response 200 (application/json)
+        Registered User
+
+    + Attributes (object)
+       + `user-token` (string)
+       + `objectId` (string)
+       + `userStatus` (string)
+
++ Response 400 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 401 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 403 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 404 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 409 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 500 (application/json)
+    + Attributes (BackendlessError)
+
+### User Logout [POST /users/logout]
++ Request (application/json)
+    + Headers
+
+            user-token: null
+
++ Response 200
+
++ Response 400 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 401 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 403 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 404 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 409 (application/json)
+    + Attributes (BackendlessError)
+
++ Response 500 (application/json)
+    + Attributes (BackendlessError)
+
+
+# Data Structures
+
+## DirectoryElement (object)
+Directory Element
+
+### Properties
++ `name` (string, optional) - name of the file or directory without any path information
++ `publicUrl` (string, optional) - absolute URL of the file or directory
++ `url` (string, optional) - relative URL of the file or directory starting from the root of the file storage
++ `createdOn` (number, optional) - a timestamp indicating when the file or directory were created
+
+## BackendlessError (object)
+Backendless Error
+
+### Properties
++ `code` (number)
++ `message` (string)

@@ -1,0 +1,18 @@
+{
+	"category": "iOS",
+	"name": "Basic create/retrieve/update/delete data demo",
+	"tooltip": "Generates the create/retrieve/update/delete data sample project.",
+	"icon": "/codegen/features/xsls/backendless-codegen-xsls/icons/ios_crud.png",
+	"xsl": "/codegen/features/xsls/backendless-codegen-xsls/ios/crud.xsl",
+	"options": [
+		{
+			"name": "language",
+			"type": "CHOICE",
+			"label": "Language",
+			"options": [
+				"Objective-C",
+				"Swift"
+			]
+		}
+	]
+}

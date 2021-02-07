@@ -1,0 +1,34 @@
+{
+  "dataBinding": {},
+  "components": {
+    "e28ffb1e7cec81146d74d5bffedf63be": {
+      "id": "Button1",
+      "type": "button",
+      "handlers": {
+        "onClick": {
+          "dependencies": []
+        }
+      }
+    },
+    "f68f677f7d098d5abd2eca296b683a8c": {
+      "id": "Button2",
+      "type": "button",
+      "handlers": {
+        "onClick": {
+          "dependencies": []
+        }
+      }
+    }
+  },
+  "usedComponentTypes": [
+    "block",
+    "text",
+    "layout-container",
+    "layout-row",
+    "layout-cell",
+    "image",
+    "button"
+  ],
+  "style": {},
+  "attrs": {}
+}

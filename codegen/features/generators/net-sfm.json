@@ -1,0 +1,17 @@
+{
+	"category": ".NET",
+	"name": "Xamarin Forms - Sample File Manager",
+	"tooltip": "Generates the sample file manager project.",
+	"icon": "/codegen/features/xsls/backendless-codegen-xsls/icons/net_sfm.png",
+	"xsl": "/codegen/features/xsls/backendless-codegen-xsls/net/sfm.xsl",
+	"options": [
+		{
+			"name": "language",
+			"type": "CHOICE",
+			"label": "Framework",
+			"options": [
+				"Xamarin Forms"
+			]
+		}
+	]
+}

@@ -1,0 +1,7 @@
+{
+  "category": "Flutter",
+  "name": "Dart classes for defined data tables",
+  "instructions": "Add files from the Data folder to the necessary Flutter project to use generated classes.",
+  "icon": "/codegen/features/xsls/backendless-codegen-xsls/icons/flutter_class.png",
+  "xsl": "/codegen/features/xsls/backendless-codegen-xsls/flutter/dataclasses.xsl"
+}

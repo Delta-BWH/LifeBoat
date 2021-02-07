@@ -1,0 +1,17 @@
+{
+	"category": ".NET",
+	"name": ".NET Core - Dataclasses",
+	"tooltip": "Generates the Dataclasses project.",
+	"icon": "/codegen/features/xsls/backendless-codegen-xsls/icons/net_class.png",
+	"xsl": "/codegen/features/xsls/backendless-codegen-xsls/net/dataclasses.xsl",
+	"options": [
+		{
+			"name": "language",
+			"type": "CHOICE",
+			"label": "Framework",
+			"options": [
+				".NET Core"
+			]
+		}
+	]
+}

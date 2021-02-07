@@ -1,0 +1,3667 @@
+[
+  {
+    "system": true,
+    "category": "General",
+    "name": "Block",
+    "dynamicListBehaviour": true,
+    "stylable": [
+      "z-index",
+      "overflow",
+      "cursor",
+      "background-color",
+      "background-image",
+      "background-repeat",
+      "background-position",
+      "background-attachment",
+      "background-size",
+      "background",
+      "flex-direction",
+      "justify-content",
+      "align-items",
+      "align-self",
+      "flex-grow",
+      "flex-shrink",
+      "flex-basis",
+      "flex-container",
+      "flex-wrap",
+      "width",
+      "height",
+      "min-width",
+      "min-height",
+      "max-width",
+      "max-height",
+      "margin",
+      "margin-top",
+      "margin-bottom",
+      "margin-left",
+      "margin-right",
+      "padding",
+      "padding-top",
+      "padding-bottom",
+      "padding-left",
+      "padding-right",
+      "opacity",
+      "border-radius",
+      "border-top-left-radius",
+      "border-top-right-radius",
+      "border-bottom-left-radius",
+      "border-bottom-right-radius",
+      "border",
+      "border-width",
+      "border-style",
+      "border-color",
+      "box-shadow",
+      "box-shadow-h",
+      "box-shadow-v",
+      "box-shadow-blur",
+      "box-shadow-spread",
+      "box-shadow-color",
+      "box-shadow-type"
+    ],
+    "traits": [
+      {
+        "name": "data-data-container",
+        "label": "Data Container",
+        "type": "checkbox",
+        "valueTrue": "true",
+        "valueFalse": "false"
+      },
+      {
+        "name": "data-anchor",
+        "label": "Anchor",
+        "placeholder": "",
+        "type": "text"
+      },
+      {
+        "name": "data-tooltip-text",
+        "label": "Tooltip text",
+        "placeholder": "",
+        "type": "text"
+      },
+      {
+        "type": "property-select",
+        "name": "data-tooltip-placement",
+        "label": "Tooltip placement",
+        "options": [
+          {
+            "value": "top",
+            "name": "Top"
+          },
+          {
+            "value": "right",
+            "name": "Right"
+          },
+          {
+            "value": "bottom",
+            "name": "Bottom"
+          },
+          {
+            "value": "left",
+            "name": "Left"
+          }
+        ]
+      }
+    ],
+    "handlers": [
+      "onBeforeMount",
+      "onMounted",
+      "onBeforeUnmount",
+      "onMouseOver",
+      "onMouseOut",
+      "onClick",
+      "onScroll",
+      "onVisibilityChange",
+      "onClassListAssignment",
+      {
+        "output": true,
+        "name": "onContainerDataAssignment",
+        "dataBinding": true,
+        "useParentDataBinding": true,
+        "description": "Using this handler you can add logic which determines the data model object which should be used by the block. An object returned by the handler becomes the data model",
+        "label": "Data Model Logic"
+      },
+      {
+        "name": "onDisplayAssignment",
+        "label": "Visibility Logic",
+        "description": "This is a handler for the logic to determine if the block should be visible. If the handler returns true, the component will be visible.",
+        "output": true,
+        "dataBinding": true
+      }
+    ],
+    "id": "block",
+    "html": "<div style=\"display:flex; flex-shrink:0; flex-direction:column; padding:10px; min-height:100px; min-width:100px;\"></div>\n",
+    "hasModule": true,
+    "iconSvg": "<svg viewBox=\"0 0 64 64\">\n    <path d=\"m55 32c0-.366-.2-.703-.521-.878l-10.479-5.716v-9.406c0-.366-.2-.703-.521-.878l-11-6c-.299-.163-.659-.163-.958 0l-11 6c-.321.175-.521.512-.521.878v9.406l-10.479 5.716c-.321.175-.521.512-.521.878v10c0 .366.2.703.521.878l11 6c.149.081.314.122.479.122s.33-.041.479-.122l10.521-5.739 10.521 5.739c.149.081.314.122.479.122s.33-.041.479-.122l11-6c.321-.175.521-.512.521-.878zm-12 4.861-8.912-4.861 8.912-4.861 8.912 4.861zm-21 1.733 9-4.909v7.722l-9 4.91zm0-20.909 9 4.909v7.722l-9-4.909zm11 4.909 9-4.909v7.722l-9 4.909zm-1-11.455 8.912 4.861-8.912 4.861-8.912-4.861zm-11 16 8.912 4.861-8.912 4.861-8.912-4.861zm-10 6.546 9 4.909v7.722l-9-4.91zm22 0 9 4.909v7.722l-9-4.91zm11 12.631v-7.722l9-4.909v7.722z\"/>\n    <path d=\"m32 60.882-1.337-.669-.895 1.789 1.785.893c.14.07.294.105.447.105s.307-.035.447-.105l1.789-.895-.895-1.789z\"/>\n    <path d=\"m45.154 53.5h3.693v2h-3.693z\" transform=\"matrix(.894 -.447 .447 .894 -19.411 26.773)\"/>\n    <path d=\"m55.062 48.546h3.693v2h-3.693z\" transform=\"matrix(.894 -.447 .447 .894 -16.15 30.681)\"/>\n    <path d=\"m35.246 58.454h3.693v2h-3.693z\" transform=\"matrix(.894 -.447 .447 .894 -22.673 22.865)\"/>\n    <path d=\"m40.2 55.977h3.693v2h-3.693z\" transform=\"matrix(.894 -.447 .447 .894 -21.042 24.819)\"/>\n    <path d=\"m50.108 51.023h3.693v2h-3.693z\" transform=\"matrix(.894 -.447 .447 .894 -17.78 28.727)\"/>\n    <path d=\"m61 46.382-1.236.618.895 1.789 1.789-.895c.338-.169.552-.515.552-.894v-2h-2z\"/>\n    <path d=\"m61 27h2v4h-2z\"/>\n    <path d=\"m61 21h2v4h-2z\"/>\n    <path d=\"m61 33h2v4h-2z\"/>\n    <path d=\"m61 39h2v4h-2z\"/>\n    <path d=\"m62.447 16.105-1.785-.893-.895 1.789 1.233.617v1.382h2v-2c0-.379-.214-.725-.553-.895z\"/>\n    <path d=\"m36.073 2.688h2v3.697h-2z\" transform=\"matrix(.447 -.894 .894 .447 16.436 35.667)\"/>\n    <path d=\"m45.992 7.647h2v3.697h-2z\" transform=\"matrix(.447 -.894 .894 .447 17.477 47.275)\"/>\n    <path d=\"m41.033 5.168h2v3.696h-2z\" transform=\"matrix(.447 -.895 .895 .447 16.962 41.475)\"/>\n    <path d=\"m55.911 12.607h2v3.697h-2z\" transform=\"matrix(.447 -.894 .894 .447 18.53 58.894)\"/>\n    <path d=\"m50.951 10.128h2v3.696h-2z\" transform=\"matrix(.447 -.895 .895 .447 18.009 53.089)\"/>\n    <path d=\"m32 3.118 1.337.669.895-1.789-1.785-.893c-.281-.141-.613-.141-.895 0l-1.788.895.895 1.789z\"/>\n    <path d=\"m10.2 10.977h3.693v2h-3.693z\" transform=\"matrix(.894 -.447 .447 .894 -4.085 6.652)\"/>\n    <path d=\"m15.154 8.5h3.693v2h-3.693z\" transform=\"matrix(.894 -.447 .447 .894 -2.454 8.606)\"/>\n    <path d=\"m5.245 13.454h3.693v2h-3.693z\" transform=\"matrix(.894 -.447 .447 .894 -5.716 4.698)\"/>\n    <path d=\"m20.108 6.023h3.693v2h-3.693z\" transform=\"matrix(.894 -.447 .447 .894 -.823 10.56)\"/>\n    <path d=\"m25.062 3.546h3.693v2h-3.693z\" transform=\"matrix(.894 -.447 .447 .894 .808 12.514)\"/>\n    <path d=\"m1.553 16.105c-.339.17-.553.516-.553.895v2h2v-1.382l1.236-.618-.895-1.789z\"/>\n    <path d=\"m1 39h2v4h-2z\"/>\n    <path d=\"m1 27h2v4h-2z\"/>\n    <path d=\"m1 21h2v4h-2z\"/>\n    <path d=\"m1 33h2v4h-2z\"/>\n    <path d=\"m3 45h-2v2c0 .379.214.725.553.895l1.785.893.895-1.789-1.233-.617z\"/>\n    <path d=\"m20.967 55.136h2v3.696h-2z\" transform=\"matrix(.447 -.894 .894 .447 -38.824 51.145)\"/>\n    <path d=\"m6.089 47.696h2v3.698h-2z\" transform=\"matrix(.447 -.894 .894 .447 -40.395 33.726)\"/>\n    <path d=\"m25.927 57.615h2v3.698h-2z\" transform=\"matrix(.447 -.894 .894 .447 -38.301 56.94)\"/>\n    <path d=\"m16.007 52.656h2v3.696h-2z\" transform=\"matrix(.447 -.894 .894 .447 -39.348 45.335)\"/>\n    <path d=\"m11.049 50.175h2v3.697h-2z\" transform=\"matrix(.447 -.894 .894 .447 -39.871 39.535)\"/>\n</svg>\n"
+  },
+  {
+    "system": true,
+    "category": "Form",
+    "name": "Button",
+    "droppable": false,
+    "preventClickEvent": true,
+    "traits": [
+      {
+        "type": "property-select",
+        "label": "Behavior",
+        "name": "type",
+        "options": [
+          {
+            "value": "",
+            "name": "Default"
+          },
+          {
+            "value": "submit",
+            "name": "Submit"
+          },
+          {
+            "value": "reset",
+            "name": "Reset"
+          }
+        ]
+      },
+      {
+        "type": "property-select",
+        "label": "Variant",
+        "name": "data-variant",
+        "options": [
+          {
+            "value": "contained",
+            "name": "Сontained"
+          },
+          {
+            "value": "outlined",
+            "name": "Outlined"
+          },
+          {
+            "value": "text",
+            "name": "Text"
+          }
+        ]
+      },
+      {
+        "type": "property-select",
+        "label": "Size",
+        "name": "data-size",
+        "options": [
+          {
+            "value": "small",
+            "name": "Small"
+          },
+          {
+            "value": "medium",
+            "name": "Medium"
+          },
+          {
+            "value": "large",
+            "name": "Large"
+          }
+        ]
+      },
+      {
+        "name": "data-label",
+        "label": "Label",
+        "type": "text"
+      },
+      {
+        "name": "data-disable-elevation",
+        "label": "Disable Elevation",
+        "type": "checkbox",
+        "valueTrue": "true",
+        "valueFalse": "false"
+      },
+      {
+        "name": "data-disable-ripple",
+        "label": "Disable Ripple",
+        "type": "checkbox",
+        "valueTrue": "true",
+        "valueFalse": "false"
+      },
+      {
+        "name": "data-disabled",
+        "label": "Disabled",
+        "type": "checkbox",
+        "valueTrue": "true",
+        "valueFalse": "false"
+      },
+      {
+        "name": "data-tooltip-text",
+        "label": "Tooltip text",
+        "placeholder": "",
+        "type": "text"
+      },
+      {
+        "type": "property-select",
+        "name": "data-tooltip-placement",
+        "label": "Tooltip placement",
+        "options": [
+          {
+            "value": "top",
+            "name": "Top"
+          },
+          {
+            "value": "right",
+            "name": "Right"
+          },
+          {
+            "value": "bottom",
+            "name": "Bottom"
+          },
+          {
+            "value": "left",
+            "name": "Left"
+          }
+        ]
+      }
+    ],
+    "handlers": [
+      "onClick",
+      "onVisibilityChange",
+      "onClassListAssignment",
+      {
+        "name": "onDisplayAssignment",
+        "label": "Visibility Logic",
+        "description": "This is a handler for the logic to determine if the button should be visible. If the handler returns true, the button will be displayed.",
+        "output": true,
+        "dataBinding": true
+      },
+      {
+        "name": "onLabelAssignment",
+        "label": "Label Logic",
+        "description": "This is a handler for the logic to determine the value of the button's label. The value returned by the event handler will be used as the button label.",
+        "output": true,
+        "dataBinding": true
+      },
+      {
+        "name": "onDisabledStateAssignment",
+        "label": "Disabled State Logic",
+        "description": "This is a handler for the logic to determine if the button should be disabled. If the handler returns true, the button will be disabled.",
+        "output": true,
+        "dataBinding": true
+      }
+    ],
+    "stylable": [
+      "background-color",
+      "color",
+      "align-self",
+      "width",
+      "height",
+      "min-width",
+      "min-height",
+      "max-width",
+      "max-height",
+      "padding",
+      "padding-top",
+      "padding-bottom",
+      "padding-left",
+      "padding-right",
+      "margin",
+      "margin-top",
+      "margin-bottom",
+      "margin-left",
+      "margin-right",
+      "font-size",
+      "border",
+      "border-width",
+      "border-color",
+      "border-style"
+    ],
+    "id": "button",
+    "html": "<button data-label=\"Button\" data-variant=\"contained\" data-size=\"medium\" style=\"margin:20px 10px;\"></button>\n",
+    "hasModule": true,
+    "iconSvg": "<svg viewBox=\"0 0 24 24\">\n    <path d=\"M22,9 C22,8.4 21.5,8 20.75,8 L3.25,8 C2.5,8 2,8.4 2,9 L2,15 C2,15.6 2.5,16 3.25,16 L20.75,16 C21.5,16 22,15.6 22,15 L22,9 Z M21,15 L3,15 L3,9 L21,9 L21,15 Z\"/>\n    <rect x=\"4\" y=\"11.5\" width=\"16\" height=\"1\"/>\n</svg>\n"
+  },
+  {
+    "system": true,
+    "category": "Backendless",
+    "name": "Chart",
+    "droppable": false,
+    "traits": [
+      {
+        "type": "settings-button",
+        "label": "Chart",
+        "text": "Change",
+        "command": "OPEN_CHART_EDITOR"
+      }
+    ],
+    "stylable": [
+      "background-color",
+      "align-self",
+      "width",
+      "height",
+      "min-width",
+      "min-height",
+      "max-width",
+      "max-height",
+      "margin",
+      "margin-top",
+      "margin-bottom",
+      "margin-left",
+      "margin-right",
+      "padding",
+      "padding-top",
+      "padding-bottom",
+      "padding-left",
+      "padding-right",
+      "border-radius",
+      "border-top-left-radius",
+      "border-top-right-radius",
+      "border-bottom-left-radius",
+      "border-bottom-right-radius",
+      "border",
+      "border-width",
+      "border-style",
+      "border-color",
+      "box-shadow",
+      "box-shadow-h",
+      "box-shadow-v",
+      "box-shadow-blur",
+      "box-shadow-spread",
+      "box-shadow-color",
+      "box-shadow-type"
+    ],
+    "handlers": [
+      "onVisibilityChange",
+      "onClassListAssignment",
+      {
+        "output": true,
+        "name": "onDisplayAssignment",
+        "dataBinding": true,
+        "description": "This is a handler for the logic to determine if the chart should be visible. If the handler returns true, the chart will be displayed.",
+        "label": "Visibility Logic"
+      },
+      {
+        "output": true,
+        "name": "onChartNameAssignment",
+        "dataBinding": true,
+        "description": "This is a handler for the logic to determine the name of the chart. Value returned by the  handler will be used as the name of the chart.",
+        "label": "Chart Name Logic"
+      }
+    ],
+    "id": "chart",
+    "html": "<div style=\"height:400px;padding:5px;margin:20px 10px;\"/>\n",
+    "hasModule": true,
+    "iconSvg": "<svg viewBox=\"0 0 512 512\">\n    <path d=\"m76 240c12.101562 0 23.054688-4.855469 31.148438-12.652344l44.402343 22.199219c-.222656 1.808594-.550781 3.585937-.550781 5.453125 0 24.8125 20.1875 45 45 45s45-20.1875 45-45c0-6.925781-1.703125-13.410156-4.511719-19.277344l60.234375-60.234375c5.867188 2.808594 12.351563 4.511719 19.277344 4.511719 24.8125 0 45-20.1875 45-45 0-4.671875-.917969-9.089844-2.246094-13.328125l52.335938-39.242187c7.140625 4.769531 15.699218 7.570312 24.910156 7.570312 24.8125 0 45-20.1875 45-45s-20.1875-45-45-45-45 20.1875-45 45c0 4.671875.917969 9.089844 2.246094 13.328125l-52.335938 39.242187c-7.140625-4.769531-15.699218-7.570312-24.910156-7.570312-24.8125 0-45 20.1875-45 45 0 6.925781 1.703125 13.410156 4.511719 19.277344l-60.234375 60.234375c-5.867188-2.808594-12.351563-4.511719-19.277344-4.511719-12.101562 0-23.054688 4.855469-31.148438 12.652344l-44.402343-22.199219c.222656-1.808594.550781-3.585937.550781-5.453125 0-24.8125-20.1875-45-45-45s-45 20.1875-45 45 20.1875 45 45 45zm0 0\"/>\n    <path d=\"m497 482h-16v-317c0-8.289062-6.710938-15-15-15h-60c-8.289062 0-15 6.710938-15 15v317h-30v-227c0-8.289062-6.710938-15-15-15h-60c-8.289062 0-15 6.710938-15 15v227h-30v-107c0-8.289062-6.710938-15-15-15h-60c-8.289062 0-15 6.710938-15 15v107h-30v-167c0-8.289062-6.710938-15-15-15h-60c-8.289062 0-15 6.710938-15 15v167h-16c-8.289062 0-15 6.710938-15 15s6.710938 15 15 15h482c8.289062 0 15-6.710938 15-15s-6.710938-15-15-15zm0 0\"/>\n</svg>\n"
+  },
+  {
+    "system": true,
+    "category": "Form",
+    "name": "Checkbox",
+    "droppable": false,
+    "traits": [
+      {
+        "name": "data-label",
+        "label": "Label",
+        "type": "text"
+      },
+      {
+        "valueTrue": "true",
+        "valueFalse": "false",
+        "name": "data-checked",
+        "label": "Checked",
+        "type": "checkbox"
+      },
+      {
+        "valueTrue": "true",
+        "valueFalse": "false",
+        "name": "data-disabled",
+        "label": "Disabled",
+        "type": "checkbox"
+      }
+    ],
+    "stylable": [
+      "color",
+      "align-self",
+      "margin",
+      "margin-top",
+      "margin-bottom",
+      "margin-left",
+      "margin-right"
+    ],
+    "handlers": [
+      "onChange",
+      "onVisibilityChange",
+      "onClassListAssignment",
+      {
+        "output": true,
+        "name": "onDisplayAssignment",
+        "dataBinding": true,
+        "description": "This is a handler for the logic to determine if the checkbox should be visible. When the handler returns true, the checkbox becomes visible.",
+        "label": "Visibility Logic"
+      },
+      {
+        "output": true,
+        "name": "onLabelAssignment",
+        "dataBinding": true,
+        "description": "This is a handler for the logic to determine checkbox's label. The returned value is assigned to the label.",
+        "label": "Label Logic"
+      },
+      {
+        "output": true,
+        "name": "onCheckedStateAssignment",
+        "dataBinding": true,
+        "description": "This is a handler for the logic to determine if the checkbox should be selected. If the handler returns 0, the checkbox is not checked, any other value will select the checkbox.",
+        "label": "Checked State Logic"
+      },
+      {
+        "output": true,
+        "name": "onDisabledStateAssignment",
+        "dataBinding": true,
+        "description": "This is a handler for the logic to identify if the checkbox should be disabled. If the event returns true, the checkbox will be disabled.",
+        "label": "Disabled State Logic"
+      }
+    ],
+    "id": "checkbox",
+    "html": "<div data-label=\"Checkbox\"></div>\n",
+    "hasModule": true,
+    "iconSvg": "<svg viewBox=\"-80 -80 578.536 578.536\">\n    <path d=\"M414.41,24.123C398.333,8.042,378.963,0,356.315,0H82.228C59.58,0,40.21,8.042,24.126,24.123 C8.045,40.207,0.003,59.576,0.003,82.225v274.084c0,22.647,8.042,42.018,24.123,58.102c16.084,16.084,35.454,24.126,58.102,24.126 h274.084c22.648,0,42.018-8.042,58.095-24.126c16.084-16.084,24.126-35.454,24.126-58.102V82.225 C438.532,59.576,430.49,40.204,414.41,24.123z M370.88,159.024l-175.307,175.3c-3.615,3.614-7.898,5.428-12.85,5.428 c-4.95,0-9.233-1.807-12.85-5.421L67.663,232.118c-3.616-3.62-5.424-7.898-5.424-12.848c0-4.949,1.809-9.233,5.424-12.847 l29.124-29.124c3.617-3.616,7.895-5.424,12.847-5.424c4.952,0,9.235,1.809,12.851,5.424l60.242,60.24l133.334-133.333 c3.606-3.617,7.898-5.424,12.847-5.424c4.945,0,9.227,1.807,12.847,5.424l29.126,29.125c3.61,3.615,5.421,7.898,5.421,12.847 S374.49,155.411,370.88,159.024z\"/>\n</svg>\n"
+  },
+  {
+    "system": true,
+    "category": "Backendless",
+    "name": "Data Table",
+    "droppable": false,
+    "traits": [
+      {
+        "name": "data-table-name",
+        "label": "Table",
+        "type": "tables-select"
+      },
+      {
+        "name": "data-where-clause",
+        "label": "Where Clause",
+        "type": "text"
+      },
+      {
+        "name": "data-title",
+        "label": "Title",
+        "type": "text"
+      },
+      {
+        "name": "data-searching",
+        "label": "Enable Searching",
+        "type": "checkbox",
+        "value": "true",
+        "valueTrue": "true",
+        "valueFalse": "false"
+      },
+      {
+        "name": "data-sorting",
+        "label": "Enable Sorting",
+        "type": "checkbox",
+        "value": "true",
+        "valueTrue": "true",
+        "valueFalse": "false"
+      },
+      {
+        "name": "data-paging",
+        "label": "Enable Paging",
+        "type": "checkbox",
+        "value": "true",
+        "valueTrue": "true",
+        "valueFalse": "false"
+      },
+      {
+        "valueTrue": "true",
+        "valueFalse": "false",
+        "name": "data-real-time",
+        "label": "Enable Real Time",
+        "type": "checkbox",
+        "value": "true"
+      },
+      {
+        "name": "data-allow-add",
+        "label": "Allow Add",
+        "type": "checkbox",
+        "valueTrue": "true",
+        "valueFalse": "false"
+      },
+      {
+        "name": "data-allow-edit",
+        "label": "Allow Edit",
+        "type": "checkbox",
+        "valueTrue": "true",
+        "valueFalse": "false"
+      },
+      {
+        "name": "data-allow-delete",
+        "label": "Allow Delete",
+        "type": "checkbox",
+        "valueTrue": "true",
+        "valueFalse": "false"
+      },
+      {
+        "label": "Columns",
+        "text": "Configure",
+        "type": "settings-button",
+        "command": "OPEN_DATA_TABLE_COLUMNS_EDITOR"
+      },
+      {
+        "name": "data-spinner-view",
+        "options": [
+          {
+            "name": "Overlay",
+            "value": "overlay"
+          },
+          {
+            "name": "Linear",
+            "value": "linear"
+          }
+        ],
+        "value": "linear",
+        "label": "Spinner View",
+        "type": "property-select"
+      }
+    ],
+    "stylable": [
+      "background-color",
+      "align-self",
+      "width",
+      "height",
+      "min-width",
+      "min-height",
+      "max-width",
+      "max-height",
+      "margin",
+      "margin-top",
+      "margin-bottom",
+      "margin-left",
+      "margin-right",
+      "padding",
+      "padding-top",
+      "padding-bottom",
+      "padding-left",
+      "padding-right",
+      "border-radius",
+      "border-top-left-radius",
+      "border-top-right-radius",
+      "border-bottom-left-radius",
+      "border-bottom-right-radius",
+      "border",
+      "border-width",
+      "border-style",
+      "border-color",
+      "box-shadow",
+      "box-shadow-h",
+      "box-shadow-v",
+      "box-shadow-blur",
+      "box-shadow-spread",
+      "box-shadow-color",
+      "box-shadow-type"
+    ],
+    "handlers": [
+      "onBeforeMount",
+      "onMounted",
+      "onBeforeUnmount",
+      "onVisibilityChange",
+      "onClassListAssignment",
+      {
+        "name": "onRecordSelect",
+        "label": "On Record Selected",
+        "description": "This event is triggered when the user selects a record in the table. The selected record is provided as a context block.",
+        "contextBlocks": [
+          {
+            "code": "___arguments.selectedRecord",
+            "id": "selectedRecord",
+            "label": "Selected Record"
+          }
+        ]
+      },
+      {
+        "name": "onObjectCreate",
+        "label": "On Record Created",
+        "description": "This event is triggered when a new record (object) is created in the Data Table. The new object is provided as a context block for the event handler",
+        "contextBlocks": [
+          {
+            "code": "___arguments.newObject",
+            "id": "newObject",
+            "label": "Created Object"
+          }
+        ]
+      },
+      {
+        "name": "onObjectUpdate",
+        "label": "On Object Update",
+        "description": "This event is triggered when a record (object) is edited in the Data Table. The event handler receives both old version of the object and the new (modified) version of it.",
+        "contextBlocks": [
+          {
+            "code": "___arguments.oldObject",
+            "id": "oldObject",
+            "label": "Old Object"
+          },
+          {
+            "code": "___arguments.newObject",
+            "id": "newObject",
+            "label": "Updated Object"
+          }
+        ]
+      },
+      {
+        "name": "onObjectDelete",
+        "label": "On Object Delete",
+        "description": "This event is triggered when a record (object) is deleted from the Data Table. The event handler receives the object being deleted in a context block.",
+        "contextBlocks": [
+          {
+            "code": "___arguments.deletedObject",
+            "id": "deletedObject",
+            "label": "Deleted Object"
+          }
+        ]
+      },
+      {
+        "name": "onDisplayAssignment",
+        "label": "Visibility Logic",
+        "description": "This is a handler for the logic to determine if the Data Table should be visible. When the event handler returns true, the Data Table will be visible.",
+        "output": true,
+        "dataBinding": true
+      },
+      {
+        "name": "onTitleAssignment",
+        "label": "Title Logic",
+        "description": "This is a handler for the logic to determine the title for the Data Table.",
+        "output": true,
+        "dataBinding": true
+      },
+      {
+        "name": "onTableNameAssignment",
+        "label": "Table Name Logic",
+        "description": "This is a handler for the logic to determines the name of the table which the Data Table works with.",
+        "output": true,
+        "dataBinding": true
+      },
+      {
+        "name": "onWhereClauseAssignment",
+        "label": "Where Clause Logic",
+        "description": "This is a handler for the logic to determine the where clause used to fetch data from the table",
+        "output": true,
+        "dataBinding": true
+      },
+      {
+        "name": "onSearchingAssignment",
+        "label": "Search Enabled Logic",
+        "description": "Using this handler you can control the visibility of the search bar in the data table. When the handler returns true, the search bar is enabled.",
+        "output": true,
+        "dataBinding": true
+      },
+      {
+        "name": "onSortingAssignment",
+        "label": "Sorting Enabled Logic",
+        "description": "Using this handler you can control whether sorting is enabled in the data table. When the handler returns true, sorting is enabled.",
+        "output": true,
+        "dataBinding": true
+      },
+      {
+        "name": "onPagingAssignment",
+        "label": "Paging Control Logic",
+        "description": "Using this handler you can control whether paging is enabled in the data table. When the handler returns true, paging is enabled.",
+        "output": true,
+        "dataBinding": true
+      },
+      {
+        "name": "onRealTimeAssignment",
+        "label": "Real Time Control Logic",
+        "description": "Using this handler you can control whether real-time data synchronization with the server is enabled in the data table. When the handler returns true, real-time data synchronization is enabled.",
+        "output": true,
+        "dataBinding": true
+      },
+      {
+        "name": "onAllowAddAssignment",
+        "label": "Enable New Item Logic",
+        "description": "Using this handler you can control whether adding new items in the data table is allowed. When the handler returns true, the data table displays an icon which enabled new item creation.",
+        "output": true,
+        "dataBinding": true
+      },
+      {
+        "name": "onAllowEditAssignment",
+        "label": "Enable Editing Logic",
+        "description": "Using this handler you can control whether editing in the data table is allowed. When the handler returns true, data table records can be edited inside of the component.",
+        "output": true,
+        "dataBinding": true
+      },
+      {
+        "name": "onAllowDeleteAssignment",
+        "label": "Enable Deletion Logic",
+        "description": "Using this handler you can control whether deletion in the data table is allowed. When the handler returns true, data table records can be deleted in the component.",
+        "output": true,
+        "dataBinding": true
+      },
+      {
+        "name": "onColumnsAssignment",
+        "label": "Columns Logic",
+        "description": "Using this handler you can control what columns are displayed by the data table.",
+        "output": true,
+        "dataBinding": true
+      }
+    ],
+    "id": "data-table",
+    "html": "<div style=\"min-height:400px;margin:10px\"></div>\n",
+    "hasModule": true,
+    "iconSvg": "<svg viewBox=\"0 0 449.33 449.33\">\n    <path d=\"M213.113,295.747v-3.398c0-3.731,0.615-7.404,1.798-10.911h-14.099v-49.632h12.294v-14.32h-12.294V163.8H308.19v6.106   h14.32V163.8h110.146v6.106h14.32V34.56c0-9.207-7.498-16.698-16.702-16.698H16.699C7.487,17.862,0,25.358,0,34.56v365.86   c0,5.652,2.841,10.638,7.155,13.663v2.633h5.992c1.15,0.252,2.332,0.401,3.553,0.401h196.414v-14.722h-12.295v-45.331h12.742   c-0.269-1.711-0.446-3.43-0.446-5.159v-9.161h-12.295V295.74h12.295V295.747z M322.511,32.171h107.76   c1.308,0,2.386,1.073,2.386,2.389v48.121H322.511V32.171z M322.511,96.992h110.146v52.493H322.511V96.992z M200.812,32.171H308.19   v50.51H200.812V32.171z M200.812,96.992H308.19v52.493H200.812V96.992z M66.01,402.396H15.461   c-0.672-0.416-1.148-1.133-1.148-1.987v-43.344H66.01V402.396z M66.01,342.744H14.313V295.74H66.01V342.744z M66.01,281.432H14.313   v-49.626H66.01V281.432z M66.01,217.486H14.313V163.8H66.01V217.486z M66.01,149.485H14.313V96.992H66.01V149.485z    M186.502,402.396H80.318v-45.331h106.179v45.331H186.502z M186.502,342.744H80.318V295.74h106.179v47.004H186.502z    M186.502,281.432H80.318v-49.626h106.179v49.626H186.502z M186.502,217.486H80.318V163.8h106.179v53.686H186.502z    M186.502,149.485H80.318V96.992h106.179v52.493H186.502z M186.502,82.675H80.318V32.166h106.179v50.509H186.502z M211.339,106.354   h85.921v29.883h-85.921V106.354z M442.783,183.92H241.24c-3.618,0-6.546,2.934-6.546,6.553v59.565c0,3.617,2.922,6.545,6.546,6.545   h201.543c3.619,0,6.547-2.928,6.547-6.545v-59.565C449.33,186.854,446.402,183.92,442.783,183.92z M342.011,235.778h-86.02v-34.413   h86.02V235.778z M442.783,271.785H241.24c-3.618,0-6.546,2.927-6.546,6.543v59.568c0,3.618,2.922,6.556,6.546,6.556h201.543   c3.619,0,6.547-2.933,6.547-6.556v-59.556C449.33,274.718,446.402,271.785,442.783,271.785z M342.011,322.756h-86.02v-34.413h86.02   V322.756z M442.783,358.811H241.24c-3.618,0-6.546,2.928-6.546,6.545v59.568c0,3.616,2.922,6.544,6.546,6.544h201.543   c3.619,0,6.547-2.928,6.547-6.544v-59.568C449.33,361.738,446.402,358.811,442.783,358.811z M342.011,412.35h-86.02v-34.414h86.02   V412.35z\"/>\n</svg>\n"
+  },
+  {
+    "system": true,
+    "category": "Form",
+    "name": "DateTime Picker",
+    "droppable": false,
+    "traits": [
+      {
+        "name": "data-label",
+        "label": "Label",
+        "type": "text"
+      },
+      {
+        "name": "data-input-format",
+        "label": "Input Format",
+        "type": "datetime-format"
+      },
+      {
+        "name": "data-picker-mode",
+        "options": [
+          {
+            "name": "Date & Time",
+            "value": ""
+          },
+          {
+            "name": "Date Only",
+            "value": "date"
+          },
+          {
+            "name": "Time Only",
+            "value": "time"
+          }
+        ],
+        "label": "Picker Mode",
+        "type": "property-select"
+      },
+      {
+        "valueTrue": "true",
+        "valueFalse": "false",
+        "name": "data-outlined",
+        "label": "Outlined",
+        "type": "checkbox"
+      },
+      {
+        "valueTrue": "true",
+        "valueFalse": "false",
+        "name": "data-disabled",
+        "label": "Disabled",
+        "type": "checkbox"
+      },
+      {
+        "valueTrue": "true",
+        "valueFalse": "false",
+        "name": "data-required",
+        "label": "Required",
+        "type": "checkbox"
+      }
+    ],
+    "stylable": [
+      "align-self",
+      "width",
+      "min-width",
+      "max-width",
+      "margin",
+      "margin-top",
+      "margin-bottom",
+      "margin-left",
+      "margin-right"
+    ],
+    "handlers": [
+      "onChange",
+      "onVisibilityChange",
+      "onClassListAssignment",
+      {
+        "output": true,
+        "name": "onDisplayAssignment",
+        "dataBinding": true,
+        "description": "This is a handler for the logic to determine if the component should be visible. If the handler returns true, the component will be displayed.",
+        "label": "Visibility Logic"
+      },
+      {
+        "output": true,
+        "name": "onLabelAssignment",
+        "dataBinding": true,
+        "description": "This is a handler for the logic to determine the value of the component's label.",
+        "label": "Label Logic"
+      },
+      {
+        "output": true,
+        "name": "onValueAssignment",
+        "dataBinding": true,
+        "description": "This is a handler for the logic to determine the date/time value of the component.",
+        "label": "Value Logic"
+      },
+      {
+        "output": true,
+        "name": "onOutlinedStateAssignment",
+        "dataBinding": true,
+        "description": "This is a handler for the logic to determine if the component should be outlined - displayed as an input component with a border around it.",
+        "label": "Outlined State Logic"
+      },
+      {
+        "output": true,
+        "name": "onReadOnlyStateAssignment",
+        "dataBinding": true,
+        "description": "This is a handler for the logic to determine if the component should behave as a read-only component.",
+        "label": "ReadOnly State Logic"
+      },
+      {
+        "output": true,
+        "name": "onDisabledStateAssignment",
+        "dataBinding": true,
+        "description": "This is a handler for the logic to determine if the component should be in the disabled state.",
+        "label": "Disabled State Logic"
+      },
+      {
+        "output": true,
+        "name": "onRequiredStateAssignment",
+        "dataBinding": true,
+        "description": "This is a handler for the logic to determine if the component must require a date/time to be selected.",
+        "label": "Required State Logic"
+      }
+    ],
+    "id": "datetime-picker",
+    "html": "<div data-label=\"Label\" data-input-format=\"dd/MM/yyyy hh:mm\" style=\"margin:0 0 16px 0;\"></div>\n",
+    "hasModule": true,
+    "iconSvg": "<svg viewBox=\"0 0 512 512\">\n    <circle cx=\"386\" cy=\"210\" r=\"20\"/>\n    <path d=\"M432,40h-26V20c0-11.046-8.954-20-20-20c-11.046,0-20,8.954-20,20v20h-91V20c0-11.046-8.954-20-20-20     c-11.046,0-20,8.954-20,20v20h-90V20c0-11.046-8.954-20-20-20s-20,8.954-20,20v20H80C35.888,40,0,75.888,0,120v312     c0,44.112,35.888,80,80,80h153c11.046,0,20-8.954,20-20c0-11.046-8.954-20-20-20H80c-22.056,0-40-17.944-40-40V120     c0-22.056,17.944-40,40-40h25v20c0,11.046,8.954,20,20,20s20-8.954,20-20V80h90v20c0,11.046,8.954,20,20,20s20-8.954,20-20V80h91     v20c0,11.046,8.954,20,20,20c11.046,0,20-8.954,20-20V80h26c22.056,0,40,17.944,40,40v114c0,11.046,8.954,20,20,20     c11.046,0,20-8.954,20-20V120C512,75.888,476.112,40,432,40z\"/>\n    <path d=\"M391,270c-66.72,0-121,54.28-121,121s54.28,121,121,121s121-54.28,121-121S457.72,270,391,270z M391,472     c-44.663,0-81-36.336-81-81s36.337-81,81-81c44.663,0,81,36.336,81,81S435.663,472,391,472z\"/>\n    <path d=\"M420,371h-9v-21c0-11.046-8.954-20-20-20c-11.046,0-20,8.954-20,20v41c0,11.046,8.954,20,20,20h29     c11.046,0,20-8.954,20-20C440,379.954,431.046,371,420,371z\"/>\n    <circle cx=\"299\" cy=\"210\" r=\"20\"/>\n    <circle cx=\"212\" cy=\"297\" r=\"20\"/>\n    <circle cx=\"125\" cy=\"210\" r=\"20\"/>\n    <circle cx=\"125\" cy=\"297\" r=\"20\"/>\n    <circle cx=\"125\" cy=\"384\" r=\"20\"/>\n    <circle cx=\"212\" cy=\"384\" r=\"20\"/>\n    <circle cx=\"212\" cy=\"210\" r=\"20\"/>\n</svg>\n"
+  },
+  {
+    "system": true,
+    "category": "General",
+    "name": "Divider",
+    "droppable": false,
+    "stylable": [
+      "margin",
+      "margin-top",
+      "margin-bottom",
+      "margin-left",
+      "margin-right",
+      "border",
+      "border-width",
+      "border-color",
+      "border-style"
+    ],
+    "traits": [],
+    "handlers": [
+      "onVisibilityChange",
+      "onClassListAssignment",
+      {
+        "name": "onDisplayAssignment",
+        "label": "Visibility Logic",
+        "description": "This is a handler where you can determine divider's visibility. If the handler returns true, the divider will be visible.",
+        "output": true,
+        "dataBinding": true
+      }
+    ],
+    "id": "divider",
+    "html": "<hr style=\"margin:10px 5px\"/>\n",
+    "hasModule": true,
+    "iconSvg": "<svg viewBox=\"0 0 42 42\">\n    <rect y=\"19\" width=\"42\" height=\"4\"/>\n</svg>\n"
+  },
+  {
+    "system": true,
+    "composition": true,
+    "name": "Features Grid",
+    "category": "Layout",
+    "id": "features-grid",
+    "html": "<div data-module-type=\"layout-container\" data-display=\"true\" id=\"Container1\">\n  <div data-module-type=\"layout-row\" data-display=\"true\" id=\"Row1\">\n    <div data-module-type=\"layout-cell\" data-display=\"true\" id=\"Cell1\" data-size-desktop=\"3\" data-size-tablet=\"4\"\n         data-size-phone=\"4\" style=\"display:flex;flex-direction:column;\">\n      <div data-module-type=\"block\" data-display=\"true\" id=\"Block1\"\n           style=\"display:flex;flex-direction:column;border:1px solid #d5d5d5;border-radius:8px;overflow:hidden;flex-grow:1;\">\n        <img data-url=\"http://placehold.it/500x325\" data-module-type=\"image\" data-display=\"true\" id=\"Image1\"\n             style=\"width:100%;\"/>\n        <div data-module-type=\"block\" data-display=\"true\" id=\"Block2\"\n             style=\"display:flex;flex-direction:column;padding:10px;\">\n          <span data-module-type=\"text\" data-display=\"true\" id=\"Text1\"\n                style=\"align-self:center;font-weight:700;font-size:20px;margin:10px 0 0 0;\">Card title</span>\n          <span data-module-type=\"text\" data-display=\"true\" id=\"Text2\"\n                style=\"text-align:center;margin:20px 0 20px 0;font-size:16px;\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</span>\n        </div>\n        <div data-module-type=\"block\" data-display=\"true\" id=\"Block3\"\n             style=\"display:flex;flex-direction:column;padding:15px 10px 15px 10px;\">\n          <button data-label=\"Find Out More!\" data-module-type=\"button\" data-raised=\"true\" data-display=\"true\"\n                  id=\"Button1\" class=\"mdc-button\" style=\"margin:0;align-self:center;\"/>\n        </div>\n      </div>\n    </div>\n    <div data-module-type=\"layout-cell\" data-display=\"true\" id=\"Cell2\" data-size-desktop=\"3\" data-size-tablet=\"4\"\n         data-size-phone=\"4\" style=\"display:flex;flex-direction:column;\">\n      <div data-module-type=\"block\" data-display=\"true\" id=\"Block4\"\n           style=\"display:flex;flex-direction:column;border:1px solid #d5d5d5;border-radius:8px;overflow:hidden;flex-grow:1;\">\n        <img data-url=\"http://placehold.it/500x325\" data-module-type=\"image\" data-display=\"true\" id=\"Image2\"\n             style=\"width:100%;\"/>\n        <div data-module-type=\"block\" data-display=\"true\" id=\"Block5\"\n             style=\"display:flex;flex-direction:column;padding:10px;\">\n          <span data-module-type=\"text\" data-display=\"true\" id=\"Text3\"\n                style=\"align-self:center;font-weight:700;font-size:20px;margin:10px 0 0 0;\">Card title</span>\n          <span data-module-type=\"text\" data-display=\"true\" id=\"Text4\"\n                style=\"text-align:center;margin:20px 0 20px 0;font-size:16px;\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</span>\n        </div>\n        <div data-module-type=\"block\" data-display=\"true\" id=\"Block6\"\n             style=\"display:flex;flex-direction:column;padding:15px 10px 15px 10px;\">\n          <button data-label=\"Find Out More!\" data-module-type=\"button\" data-raised=\"true\" data-display=\"true\"\n                  id=\"Button2\" class=\"mdc-button\" style=\"margin:0;align-self:center;\"/>\n        </div>\n      </div>\n    </div>\n    <div data-module-type=\"layout-cell\" data-display=\"true\" id=\"Cell3\" data-size-desktop=\"3\" data-size-tablet=\"4\"\n         data-size-phone=\"4\" style=\"display:flex;flex-direction:column;\">\n      <div data-module-type=\"block\" data-display=\"true\" id=\"Block7\"\n           style=\"display:flex;flex-direction:column;border:1px solid #d5d5d5;border-radius:8px;overflow:hidden;flex-grow:1;\">\n        <img data-url=\"http://placehold.it/500x325\" data-module-type=\"image\" data-display=\"true\" id=\"Image3\"\n             style=\"width:100%;\"/>\n        <div data-module-type=\"block\" data-display=\"true\" id=\"Block8\"\n             style=\"display:flex;flex-direction:column;padding:10px;\">\n          <span data-module-type=\"text\" data-display=\"true\" id=\"Text5\"\n                style=\"align-self:center;font-weight:700;font-size:20px;margin:10px 0 0 0;\">Card title</span>\n          <span data-module-type=\"text\" data-display=\"true\" id=\"Text6\"\n                style=\"text-align:center;margin:20px 0 20px 0;font-size:16px;\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</span>\n        </div>\n        <div data-module-type=\"block\" data-display=\"true\" id=\"Block9\"\n             style=\"display:flex;flex-direction:column;padding:15px 10px 15px 10px;\">\n          <button data-label=\"Find Out More!\" data-module-type=\"button\" data-raised=\"true\" data-display=\"true\"\n                  id=\"Button3\" class=\"mdc-button\" style=\"margin:0;align-self:center;\"/>\n        </div>\n      </div>\n    </div>\n    <div data-module-type=\"layout-cell\" data-display=\"true\" id=\"Cell4\" data-size-desktop=\"3\" data-size-tablet=\"4\"\n         data-size-phone=\"4\" style=\"display:flex;flex-direction:column;\">\n      <div data-module-type=\"block\" data-display=\"true\" id=\"Block10\"\n           style=\"display:flex;flex-direction:column;border:1px solid #d5d5d5;border-radius:8px;overflow:hidden;flex-grow:1;\">\n        <img data-url=\"http://placehold.it/500x325\" data-module-type=\"image\" data-display=\"true\" id=\"Image4\"\n             style=\"width:100%;\"/>\n        <div data-module-type=\"block\" data-display=\"true\" id=\"Block11\"\n             style=\"display:flex;flex-direction:column;padding:10px;\">\n          <span data-module-type=\"text\" data-display=\"true\" id=\"Text7\"\n                style=\"align-self:center;font-weight:700;font-size:20px;margin:10px 0 0 0;\">Card title</span>\n          <span data-module-type=\"text\" data-display=\"true\" id=\"Text8\"\n                style=\"text-align:center;margin:20px 0 20px 0;font-size:16px;\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</span>\n        </div>\n        <div data-module-type=\"block\" data-display=\"true\" id=\"Block12\"\n             style=\"display:flex;flex-direction:column;padding:15px 10px 15px 10px;\">\n          <button data-label=\"Find Out More!\" data-module-type=\"button\" data-raised=\"true\" data-display=\"true\"\n                  id=\"Button4\" class=\"mdc-button\" style=\"margin:0;align-self:center;\"/>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n",
+    "hasModule": false,
+    "iconSvg": "<svg viewBox=\"0 0 512 512\">\n    <path d=\"m87.786 241v15c0 22.549 18.345 40.894 40.894 40.894 22.548 0 40.893-18.345 40.893-40.894v-15h71.427v-43.024c-31.913-6.9-55.894-35.35-55.894-69.296s23.981-62.397 55.894-69.297v-59.383h-138c-56.794 0-103 46.206-103 103v138z\"/>\n    <path d=\"m271 87.786h-15c-22.549 0-40.894 18.345-40.894 40.894 0 22.548 18.345 40.893 40.894 40.893h15v71.427h44.063c6.9-31.913 35.35-55.894 69.296-55.894s62.397 23.981 69.297 55.894h58.344v-138c0-56.794-46.206-103-103-103h-138z\"/>\n    <path d=\"m241 425.253h15c22.549 0 40.894-18.345 40.894-40.894 0-22.548-18.345-40.893-40.894-40.893h-15v-72.466h-43.024c-6.9 31.913-35.35 55.894-69.296 55.894s-62.397-23.981-69.297-55.894h-59.383v138c0 56.794 46.206 103 103 103h138z\"/>\n    <path d=\"m425.253 271v-15c0-22.549-18.345-40.894-40.894-40.894-22.548 0-40.893 18.345-40.893 40.894v15h-72.466v44.063c31.913 6.9 55.894 35.35 55.894 69.296s-23.981 62.397-55.894 69.297v58.344h138c56.794 0 103-46.206 103-103v-138z\"/>\n</svg>\n"
+  },
+  {
+    "system": true,
+    "category": "Form",
+    "name": "File Uploader Button",
+    "preventClickEvent": true,
+    "droppable": false,
+    "traits": [
+      {
+        "name": "data-accept",
+        "label": "Accept",
+        "placeholder": "image/*,.pdf",
+        "type": "text"
+      },
+      {
+        "valueTrue": "true",
+        "valueFalse": "false",
+        "name": "data-multiple-files",
+        "label": "Multiple Files",
+        "type": "checkbox"
+      },
+      {
+        "name": "data-directory",
+        "label": "Directory",
+        "type": "text"
+      },
+      {
+        "valueTrue": "true",
+        "valueFalse": "false",
+        "name": "data-overwrite",
+        "label": "Overwrite Files",
+        "type": "checkbox"
+      },
+      {
+        "name": "data-button-label",
+        "label": "Button Label",
+        "type": "text"
+      },
+      {
+        "type": "property-select",
+        "label": "Variant",
+        "name": "data-variant",
+        "options": [
+          {
+            "value": "contained",
+            "name": "Сontained"
+          },
+          {
+            "value": "outlined",
+            "name": "Outlined"
+          },
+          {
+            "value": "text",
+            "name": "Text"
+          }
+        ]
+      },
+      {
+        "type": "property-select",
+        "label": "Size",
+        "name": "data-size",
+        "options": [
+          {
+            "value": "small",
+            "name": "Small"
+          },
+          {
+            "value": "medium",
+            "name": "Medium"
+          },
+          {
+            "value": "large",
+            "name": "Large"
+          }
+        ]
+      },
+      {
+        "name": "data-upload-success-msg",
+        "label": "Success Message",
+        "type": "text"
+      },
+      {
+        "name": "data-upload-fail-msg",
+        "label": "Fail Message",
+        "type": "text"
+      },
+      {
+        "name": "data-upload-progress-msg",
+        "label": "Progress Message",
+        "type": "text"
+      },
+      {
+        "name": "data-disable-elevation",
+        "label": "Disable Elevation",
+        "type": "checkbox",
+        "valueTrue": "true",
+        "valueFalse": "false"
+      },
+      {
+        "name": "data-disable-ripple",
+        "label": "Disable Ripple",
+        "type": "checkbox",
+        "valueTrue": "true",
+        "valueFalse": "false"
+      },
+      {
+        "valueTrue": "true",
+        "valueFalse": "false",
+        "name": "data-disabled",
+        "label": "Disabled",
+        "type": "checkbox"
+      }
+    ],
+    "stylable": [
+      "background-color",
+      "color",
+      "align-self",
+      "width",
+      "height",
+      "min-width",
+      "min-height",
+      "max-width",
+      "max-height",
+      "padding",
+      "padding-top",
+      "padding-bottom",
+      "padding-left",
+      "padding-right",
+      "margin",
+      "margin-top",
+      "margin-bottom",
+      "margin-left",
+      "margin-right",
+      "font-size",
+      "border",
+      "border-width",
+      "border-color",
+      "border-style"
+    ],
+    "actions": [
+      {
+        "id": "reset",
+        "label": "Reset",
+        "hasReturn": false,
+        "code": "component.reset()"
+      }
+    ],
+    "handlers": [
+      {
+        "output": true,
+        "contextBlocks": [
+          {
+            "code": "___arguments.files",
+            "id": "files",
+            "label": "Files"
+          }
+        ],
+        "name": "onBeforeUpload",
+        "description": "This event is triggered before selected files are uploaded to the server.",
+        "label": "on Before Upload"
+      },
+      {
+        "contextBlocks": [
+          {
+            "code": "___arguments.uploadedFiles",
+            "id": "uploadedFiles",
+            "label": "Uploaded Files"
+          }
+        ],
+        "name": "onUploadSuccess",
+        "dataBinding": true,
+        "description": "This event is triggered when file(s) upload succeeds.",
+        "label": "on Upload Success"
+      },
+      {
+        "contextBlocks": [
+          {
+            "code": "___arguments.error",
+            "id": "error",
+            "label": "Error"
+          }
+        ],
+        "name": "onUploadFail",
+        "description": "This event is triggered if the upload of the file(s) results in an error.",
+        "label": "on Upload Failed"
+      },
+      "onVisibilityChange",
+      "onClassListAssignment",
+      {
+        "output": true,
+        "name": "onDisplayAssignment",
+        "dataBinding": true,
+        "description": "This is a handler where you can determine file uploader's visibility. If the handler returns true, the file uploader will be visible.",
+        "label": "Visibility Logic"
+      },
+      {
+        "output": true,
+        "name": "onDirectoryAssignment",
+        "dataBinding": true,
+        "description": "This is a handler where you can determine the path of the directory where the file(s) will be uploaded to.",
+        "label": "Target Directory Logic"
+      },
+      {
+        "output": true,
+        "contextBlocks": [
+          {
+            "code": "___arguments.file",
+            "id": "file",
+            "label": "File"
+          }
+        ],
+        "name": "onFileNameAssignment",
+        "description": "This is a handler where you can determine the name of the file which it will be saved with. If the component is configured for multiple file upload, the handler is invoked for each selected file.",
+        "label": "File Name Logic"
+      },
+      {
+        "output": true,
+        "name": "onButtonLabelAssignment",
+        "dataBinding": true,
+        "description": "This is a handler where you can determine the label of the file uploader button.",
+        "label": "Button Label Logic"
+      },
+      {
+        "output": true,
+        "name": "onUploadSuccessMsgAssignment",
+        "dataBinding": true,
+        "description": "This is a handler where you can determine the text of the message presented to the user when file(s) upload is successful.",
+        "label": "Upload Success Message Logic"
+      },
+      {
+        "output": true,
+        "name": "onUploadFailMsgAssignment",
+        "dataBinding": true,
+        "description": "This is a handler where you can determine the text of the message presented to the user when file(s) upload results in an error.",
+        "label": "Upload Fail Message Logic"
+      },
+      {
+        "output": true,
+        "name": "onUploadProgressMsgAssignment",
+        "dataBinding": true,
+        "description": "This is a handler where you can determine the text of the message presented to the user when the upload is in progress.",
+        "label": "Upload Progress Message Logic"
+      },
+      {
+        "output": true,
+        "name": "onDisabledStateAssignment",
+        "dataBinding": true,
+        "description": "This is a handler where you can determine whether the file uploader component should be enabled or disabled. If the handler returns true, the component will be disabled.",
+        "label": "Disabled State Logic"
+      }
+    ],
+    "id": "file-uploader-button",
+    "html": "<button data-button-label=\"Upload File\"\n        data-variant=\"contained\"\n        data-size=\"medium\"\n        data-directory=\"\"\n        data-accept=\"image/*\"\n        data-upload-success-msg=\"Uploaded!\"\n        data-upload-fail-msg=\"Could not upload!\"\n        data-upload-progress-msg=\"Uploading...\"\n        style=\"margin:20px;\"></button>\n",
+    "hasModule": true,
+    "iconSvg": "<svg viewBox=\"0 0 459.904 459.904\">\n    <path d=\"M123.465,168.28h46.543v138.07c0,14.008,11.358,25.352,25.352,25.352h69.2c13.993,0,25.352-11.343,25.352-25.352V168.28h46.527c7.708,0,14.637-4.641,17.601-11.764c2.933-7.094,1.301-15.295-4.145-20.741L243.413,29.28c-7.437-7.422-19.485-7.422-26.938,0L110.011,135.775c-5.447,5.446-7.079,13.633-4.13,20.741C108.843,163.625,115.757,168.28,123.465,168.28z\"/>\n    <path d=\"M437.036,220.029c-12.617,0-22.852,10.237-22.852,22.867v95.615c0,28.643-23.317,51.944-51.961,51.944H97.679c-28.644,0-51.945-23.301-51.945-51.944v-95.615c0-12.63-10.251-22.867-22.867-22.867C10.236,220.029,0,230.266,0,242.897v95.615c0,53.859,43.818,97.679,97.679,97.679h264.544c53.861,0,97.681-43.819,97.681-97.679v-95.615C459.904,230.266,449.667,220.029,437.036,220.029z\"/>\n</svg>\n"
+  },
+  {
+    "system": true,
+    "category": "Form",
+    "name": "Form",
+    "dataContainer": true,
+    "traits": [],
+    "stylable": [
+      "background-color",
+      "background-image",
+      "background-repeat",
+      "background-position",
+      "background-attachment",
+      "background-size",
+      "background",
+      "flex-direction",
+      "justify-content",
+      "align-items",
+      "align-self",
+      "flex-grow",
+      "flex-shrink",
+      "flex-basis",
+      "flex-container",
+      "flex-wrap",
+      "width",
+      "height",
+      "min-width",
+      "min-height",
+      "max-width",
+      "max-height",
+      "margin",
+      "margin-top",
+      "margin-bottom",
+      "margin-left",
+      "margin-right",
+      "padding",
+      "padding-top",
+      "padding-bottom",
+      "padding-left",
+      "padding-right",
+      "border-radius",
+      "border-top-left-radius",
+      "border-top-right-radius",
+      "border-bottom-left-radius",
+      "border-bottom-right-radius",
+      "border",
+      "border-width",
+      "border-style",
+      "border-color",
+      "box-shadow",
+      "box-shadow-h",
+      "box-shadow-v",
+      "box-shadow-blur",
+      "box-shadow-spread",
+      "box-shadow-color",
+      "box-shadow-type"
+    ],
+    "handlers": [
+      "onBeforeMount",
+      "onMounted",
+      "onBeforeUnmount",
+      "onVisibilityChange",
+      "onClassListAssignment",
+      {
+        "output": true,
+        "name": "onContainerDataAssignment",
+        "dataBinding": true,
+        "useParentDataBinding": true,
+        "description": "Using this handler you can set the data model for the form to trigger the data binding for all form's components.",
+        "label": "Form Data Model Logic"
+      },
+      {
+        "name": "onSubmit",
+        "label": "On Submit Event",
+        "description": "This event is triggered when the form is submitted - Submit button is clicked or Enter is pressed in a form input component."
+      },
+      {
+        "name": "onReset",
+        "label": "On Reset Event",
+        "description": "This event is triggered when the form is reset - the Reset button is clicked."
+      },
+      {
+        "name": "onDisplayAssignment",
+        "label": "Visibility Logic",
+        "description": "This handler can be used to determine form's visibility. If the handler returns true, the form is visible.",
+        "output": true,
+        "dataBinding": true
+      }
+    ],
+    "id": "form",
+    "html": "<form style=\"padding:10px;min-width:250px;margin:0 0 20px 0;\">\n  <div data-module-type=\"block\"\n       style=\"display:flex;flex-direction:column;padding:0 10px 0 10px;margin:0 0 20px 0;\">\n    <span data-module-type=\"text\" style=\"align-self:center;font-size:22px;\">Form Title</span></div>\n  <div data-label=\"First Name\" data-module-type=\"input\" data-value=\"\" data-outlined=\"true\"\n       data-binding_onvalueassignment=\"firstName\" class=\"mdc-text-field\"\n       style=\"margin:0 0 16px 0;\"></div>\n  <div data-label=\"Last Name\" data-module-type=\"input\" data-outlined=\"true\"\n       data-binding_onvalueassignment=\"lastName\" class=\"mdc-text-field\"\n       style=\"margin:0 0 16px 0;\"></div>\n  <div data-label=\"Age\" data-module-type=\"input\" data-type=\"number\" data-value=\"\" data-outlined=\"true\"\n       data-binding_onvalueassignment=\"age\" class=\"mdc-text-field\"\n       style=\"margin:0 0 16px 0;\"></div>\n  <div data-module-type=\"block\"\n       style=\"display:flex;padding:10px;flex-direction:row;align-items:center;margin:0 0 20px 0;flex-wrap:wrap;\">\n    <div data-module-type=\"radio-buttons-group\"\n         data-binding_oncheckedvalueassignment=\"gender\" style=\"display:flex;margin:0 10px 0 0;flex-direction:row;\">\n      <div data-module-type=\"radio-button\" data-checked=\"true\" data-value=\"male\" data-label=\"Male\"\n           data-name=\"gender\" class=\"mdc-form-field\" style=\"margin-bottom:0;\"></div>\n      <div data-module-type=\"radio-button\" data-checked=\"false\" data-value=\"female\" data-label=\"Female\"\n           data-name=\"gender\" class=\"mdc-form-field\" style=\"margin:0 0 0 10px;\"></div>\n    </div>\n    <div data-label=\"Checkbox\" data-module-type=\"checkbox\" data-checked=\"true\"\n         data-binding_oncheckedstateassignment=\"checkbox\" class=\"mdc-form-field\"></div>\n    <div data-module-type=\"switch\" data-checked=\"true\"\n         data-binding_oncheckedstateassignment=\"switch\" class=\"mdc-switch\" style=\"margin:0 0 0 20px;\"></div>\n  </div>\n  <div data-module-type=\"block\" style=\"display:flex;padding:0;flex-direction:row;justify-content:center;\">\n    <button data-label=\"Reset\" data-module-type=\"button\" data-raised=\"true\" type=\"reset\" data-outlined=\"false\"\n            data-unelevated=\"false\" data-dense=\"false\" id=\"Reset Button\"\n            class=\"mdc-button\" style=\"margin:20px;\"></button>\n    <button data-label=\"Submit\" data-module-type=\"button\" data-raised=\"true\" type=\"submit\"\n            id=\"Submit Button\" class=\"mdc-button\"\n            style=\"margin:20px\"></button>\n  </div>\n</form>\n",
+    "hasModule": true,
+    "iconSvg": "<svg viewBox=\"0 0 512 512\">\n    <path d=\"m432 273h-352v-119.878906h352zm-312-40h272v-39.878906h-272zm312-156.878906h-352v40h352zm0 273.757812h-192v40h192zm-232 80h-120v-119.878906h120zm-80-40h40v-39.878906h-40zm332 122.121094h-392c-33.085938 0-60-26.914062-60-60v-392c0-33.085938 26.914062-60 60-60h392c33.085938 0 60 26.914062 60 60v392c0 33.085938-26.914062 60-60 60zm-392-472c-11.027344 0-20 8.972656-20 20v392c0 11.027344 8.972656 20 20 20h392c11.027344 0 20-8.972656 20-20v-392c0-11.027344-8.972656-20-20-20zm0 0\"/>\n</svg>\n"
+  },
+  {
+    "id": "google-map",
+    "category": "General",
+    "name": "Google Map",
+    "system": true,
+    "droppable": false,
+    "configurations": [
+      {
+        "id": "googleApiKey",
+        "title": "Google API Key",
+        "description": "Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+        "type": "text"
+      }
+    ],
+    "traits": [
+      {
+        "name": "data-map-type",
+        "options": [
+          {
+            "value": "roadmap",
+            "name": "Roadmap"
+          },
+          {
+            "value": "satellite",
+            "name": "Satellite"
+          },
+          {
+            "value": "hybrid",
+            "name": "Hybrid"
+          },
+          {
+            "value": "terrain",
+            "name": "Terrain"
+          }
+        ],
+        "label": "Map type",
+        "type": "property-select",
+        "value": "roadmap"
+      },
+      {
+        "label": "Map Zoom",
+        "name": "data-map-zoom",
+        "type": "range",
+        "min": "1",
+        "max": "22"
+      },
+      {
+        "type": "checkbox",
+        "label": "Zoom Control",
+        "name": "data-zoom-control",
+        "valueTrue": "true",
+        "valueFalse": "false"
+      },
+      {
+        "type": "checkbox",
+        "label": "Map Type Control",
+        "name": "data-map-type-control",
+        "valueTrue": "true",
+        "valueFalse": "false"
+      },
+      {
+        "type": "checkbox",
+        "label": "Scale Control",
+        "name": "data-scale-control",
+        "valueTrue": "true",
+        "valueFalse": "false"
+      },
+      {
+        "type": "checkbox",
+        "label": "Street View Control",
+        "name": "data-street-view-control",
+        "valueTrue": "true",
+        "valueFalse": "false"
+      },
+      {
+        "type": "checkbox",
+        "label": "Rotate Control",
+        "name": "data-rotate-control",
+        "valueTrue": "true",
+        "valueFalse": "false"
+      },
+      {
+        "type": "checkbox",
+        "label": "Fullscreen Control",
+        "name": "data-fullscreen-control",
+        "valueTrue": "true",
+        "valueFalse": "false"
+      },
+      {
+        "type": "settings-button",
+        "label": "Static Markers",
+        "text": "Change",
+        "command": "OPEN_STATIC_MAP_MARKERS_EDITOR"
+      }
+    ],
+    "stylable": [
+      "width",
+      "height",
+      "min-width",
+      "min-height",
+      "max-width",
+      "max-height",
+      "margin",
+      "margin-top",
+      "margin-bottom",
+      "margin-left",
+      "margin-right",
+      "padding",
+      "padding-top",
+      "padding-bottom",
+      "padding-left",
+      "padding-right"
+    ],
+    "actions": [
+      {
+        "id": "get_map_zoom",
+        "label": "Get Map Zoom of",
+        "hasReturn": true,
+        "code": "return component.zoom",
+        "color": "#5d6169"
+      },
+      {
+        "id": "set_map_zoom",
+        "label": "Set Map Zoom to",
+        "hasReturn": false,
+        "code": "component.zoom = zoom",
+        "color": "#5d6169",
+        "inputs": [
+          {
+            "label": "zoom",
+            "name": "zoom"
+          }
+        ]
+      },
+      {
+        "id": "get_map_center",
+        "label": "Get Map Center of",
+        "hasReturn": true,
+        "code": "return component.center",
+        "color": "#5d6169"
+      },
+      {
+        "id": "set_map_center",
+        "label": "Set Map Center to",
+        "hasReturn": false,
+        "code": "component.center = { lat, lng }",
+        "color": "#5d6169",
+        "inputs": [
+          {
+            "label": "latitude",
+            "name": "lat"
+          },
+          {
+            "label": "longitude",
+            "name": "lng"
+          }
+        ]
+      },
+      {
+        "id": "show_popup",
+        "label": "Show Popup with content for marker of",
+        "hasReturn": false,
+        "code": "component.map.showInfoWindow(marker, { content: popupContent })",
+        "color": "#5d6169",
+        "inputs": [
+          {
+            "label": "marker",
+            "name": "marker"
+          },
+          {
+            "label": "content",
+            "name": "popupContent"
+          }
+        ]
+      },
+      {
+        "id": "get_all_markers",
+        "label": "Get All Markers of",
+        "hasReturn": true,
+        "code": "return component.map.markers",
+        "color": "#5d6169"
+      },
+      {
+        "id": "get_points",
+        "label": "Get Points of",
+        "hasReturn": true,
+        "code": "return component.points",
+        "color": "#5d6169"
+      },
+      {
+        "id": "set_points",
+        "label": "Set Points to",
+        "hasReturn": false,
+        "code": "component.points = points",
+        "color": "#5d6169",
+        "inputs": [
+          {
+            "label": "points",
+            "name": "points"
+          }
+        ]
+      }
+    ],
+    "handlers": [
+      "onBeforeMount",
+      "onMounted",
+      "onBeforeUnmount",
+      "onVisibilityChange",
+      "onClassListAssignment",
+      {
+        "name": "onZoomChange",
+        "label": "On Zoom Event",
+        "description": "This event is triggered when the user zooms in or out",
+        "contextBlocks": [
+          {
+            "code": "___arguments.value",
+            "id": "value",
+            "label": "Changed Zoom"
+          }
+        ]
+      },
+      {
+        "name": "onPanChange",
+        "label": "On Pan Event",
+        "description": "This event is triggered when the user moves the map around (pans)",
+        "contextBlocks": [
+          {
+            "code": "___arguments.value",
+            "id": "value",
+            "label": "Changed Center Position"
+          },
+          {
+            "code": "___arguments.northEast",
+            "id": "northEast",
+            "label": "Changed NorthEast Position"
+          },
+          {
+            "code": "___arguments.southWest",
+            "id": "southWest",
+            "label": "Changed SouthWest Position"
+          }
+        ]
+      },
+      {
+        "name": "onDisplayAssignment",
+        "label": "Visibility Logic",
+        "description": "Using this handler you can determine if the map should be visible. When the handler returns true, the map is visible.",
+        "output": true,
+        "dataBinding": true
+      },
+      {
+        "name": "onMapTypeAssignment",
+        "label": "Map Type Logic",
+        "description": "This is the logic where you can identify the type of the map ('roadmap', 'satelite', 'hybrid', 'terrain').",
+        "output": true,
+        "dataBinding": true
+      },
+      {
+        "name": "onMapZoomAssignment",
+        "label": "Zoom Level Logic",
+        "description": "This is the logic where you can set map's zoom level. Acceptible values are in the range between 1 (World) and 20 (Buildings)",
+        "output": true,
+        "dataBinding": true
+      },
+      {
+        "name": "onMapCenterAssignment",
+        "label": "Map Center Logic",
+        "description": "This is the logic where you can set the map's center coordinates. To set the map's center, return an object with the 'lat' and 'lng' properties containing the latitude and longitude values of the point",
+        "output": true,
+        "dataBinding": true
+      },
+      {
+        "name": "onZoomControlAssignment",
+        "label": "Zoom Control Logic",
+        "description": "This is the handler where you can determine if the zoom controls (+/-) should be visible. Return false to hide zoom control.",
+        "output": true,
+        "dataBinding": true
+      },
+      {
+        "name": "onMapTypeControlAssignment",
+        "label": "Map Type Control Logic",
+        "description": "In this handler you can add logic which determines if the map type control should be visible. If the handler returns true the map type control is displayed.",
+        "output": true,
+        "dataBinding": true
+      },
+      {
+        "name": "onScaleControlAssignment",
+        "label": "Scale Control Logic",
+        "description": "In this handler you can add logic to determine if the scale control should be visible. Return true to display the control.",
+        "output": true,
+        "dataBinding": true
+      },
+      {
+        "name": "onStreetViewControlAssignment",
+        "label": "Street View Control Logic",
+        "description": "In this handler you can add logic to determine if the street view control should be visible. Return true to display the control.",
+        "output": true,
+        "dataBinding": true
+      },
+      {
+        "name": "onRotateControlAssignment",
+        "label": "On Rotate Control Assignment",
+        "description": "In this handler you can add logic to determine if the map rotate control should be visible. This control applies to the street view and lets the user to rotate the street view. Return true to display the control.",
+        "output": true,
+        "dataBinding": true
+      },
+      {
+        "name": "onFullscreenControlAssignment",
+        "label": "Fullscreen Control Logic",
+        "description": "In this handler you can add the logic to determine if the full screen control should be visible. Return true to display the control.",
+        "output": true,
+        "dataBinding": true
+      },
+      {
+        "name": "onPointsAssignment",
+        "label": "Markers Logic",
+        "description": "In this handler you can add the logic to identify points on the map which should have markers. The handler should return a list of objects, where each object has the 'lat' and 'lng' properties with the corresponding latitude and longitude values.",
+        "output": true,
+        "dataBinding": true
+      },
+      {
+        "name": "onMarkerClick",
+        "label": "On Marker Click Event",
+        "description": "This event is triggered when the user click on a marker on the map",
+        "contextBlocks": [
+          {
+            "code": "___arguments.point",
+            "id": "point",
+            "label": "Clicked Marker Data"
+          }
+        ]
+      }
+    ],
+    "html": "<div style=\"min-height:300px;padding:5px;margin:5px;\"></div>\n",
+    "hasModule": true,
+    "iconSvg": "<svg viewBox=\"0 0 512 512\">\n    <path d=\"m256 75c-24.8125 0-45 20.1875-45 45s20.1875 45 45 45 45-20.1875 45-45-20.1875-45-45-45zm0 0\"/>\n    <path d=\"m256 0c-66.167969 0-120 53.832031-120 120 0 22.691406 6.371094 44.796875 18.429688 63.925781l101.570312 162.074219 101.570312-162.074219c12.058594-19.128906 18.429688-41.234375 18.429688-63.925781 0-66.167969-53.832031-120-120-120zm0 195c-41.351562 0-75-33.648438-75-75s33.648438-75 75-75 75 33.648438 75 75-33.648438 75-75 75zm0 0\"/>\n    <path d=\"m182.996094 512h145.957031l-11.535156-91h-123.175781zm0 0\"/>\n    <path d=\"m197.992188 391h50.914062l-42.488281-67.386719zm0 0\"/>\n    <path d=\"m343.828125 391h118.175781l-37.5-90h-92.21875zm0 0\"/>\n    <path d=\"m49.996094 391h117.765625l11.25-90h-91.515625zm0 0\"/>\n    <path d=\"m263.09375 391h50.476562l-8.527343-66.523438zm0 0\"/>\n    <path d=\"m164.011719 421h-126.515625l-37.496094 91h152.765625zm0 0\"/>\n    <path d=\"m474.503906 421h-126.832031l11.539063 91h152.789062zm0 0\"/>\n</svg>\n"
+  },
+  {
+    "system": true,
+    "category": "General",
+    "name": "Icon",
+    "droppable": false,
+    "stylable": [
+      "color",
+      "cursor",
+      "align-self",
+      "margin",
+      "margin-top",
+      "margin-bottom",
+      "margin-left",
+      "margin-right",
+      "font-size"
+    ],
+    "traits": [
+      {
+        "type": "property-select",
+        "label": "Size",
+        "name": "data-size",
+        "options": [
+          {
+            "value": "default",
+            "name": "Default"
+          },
+          {
+            "value": "inherit",
+            "name": "Inherit"
+          },
+          {
+            "value": "small",
+            "name": "Small"
+          },
+          {
+            "value": "large",
+            "name": "Large"
+          }
+        ]
+      },
+      {
+        "type": "settings-button",
+        "name": "data-icon",
+        "label": "Icon",
+        "text": "Change",
+        "command": "OPEN_ICON_EDITOR"
+      },
+      {
+        "name": "data-tooltip-text",
+        "label": "Tooltip text",
+        "placeholder": "",
+        "type": "text"
+      },
+      {
+        "type": "property-select",
+        "name": "data-tooltip-placement",
+        "label": "Tooltip placement",
+        "options": [
+          {
+            "value": "top",
+            "name": "Top"
+          },
+          {
+            "value": "right",
+            "name": "Right"
+          },
+          {
+            "value": "bottom",
+            "name": "Bottom"
+          },
+          {
+            "value": "left",
+            "name": "Left"
+          }
+        ]
+      }
+    ],
+    "handlers": [
+      "onClick",
+      "onMouseOver",
+      "onMouseOut",
+      "onVisibilityChange",
+      "onClassListAssignment",
+      {
+        "name": "onDisplayAssignment",
+        "label": "Visibility Logic",
+        "description": "This is a handler for the logic to determine if the icon should be visible. When the handler returns true, the icon is displayed.",
+        "output": true,
+        "dataBinding": true
+      },
+      {
+        "name": "onIconAssignment",
+        "label": "Icon Logic",
+        "description": "This is a handler for the logic to determine what icon to display. The handler should return a string which is the name of an icon. For the list of available names see the 'CHANGE' popup for the icon component.",
+        "output": true,
+        "dataBinding": true
+      }
+    ],
+    "id": "icon",
+    "html": "<i data-icon=\"thumb_up\" data-size=\"default\"/>\n",
+    "hasModule": true,
+    "iconSvg": "<svg viewBox=\"0 0 511.999 511.999\">\n    <path d=\"M83.578,167.256H16.716C7.524,167.256,0,174.742,0,183.971v300.881c0,9.225,7.491,16.713,16.716,16.713h66.862c9.225,0,16.716-7.489,16.716-16.713V183.971C100.294,174.742,92.769,167.256,83.578,167.256z\"/>\n    <path d=\"M470.266,167.256c-2.692-0.456-128.739,0-128.739,0l17.606-48.032c12.148-33.174,4.283-83.827-29.424-101.835c-10.975-5.864-26.309-8.809-38.672-5.697c-7.09,1.784-13.321,6.478-17.035,12.767c-4.271,7.233-3.83,15.676-5.351,23.696c-3.857,20.342-13.469,39.683-28.354,54.2c-25.952,25.311-106.571,98.331-106.571,98.331v267.45h278.593c37.592,0.022,62.228-41.958,43.687-74.749c22.101-14.155,29.66-43.97,16.716-66.862c22.102-14.155,29.66-43.97,16.716-66.862C527.572,235.24,514.823,174.792,470.266,167.256z\"/>\n</svg>\n"
+  },
+  {
+    "system": true,
+    "category": "General",
+    "name": "IFrame",
+    "droppable": false,
+    "stylable": [
+      "width",
+      "height",
+      "min-width",
+      "min-height",
+      "max-width",
+      "max-height",
+      "margin",
+      "margin-top",
+      "margin-bottom",
+      "margin-left",
+      "margin-right",
+      "border-radius",
+      "border-top-left-radius",
+      "border-top-right-radius",
+      "border-bottom-left-radius",
+      "border-bottom-right-radius",
+      "border",
+      "border-width",
+      "border-style",
+      "border-color",
+      "box-shadow",
+      "box-shadow-h",
+      "box-shadow-v",
+      "box-shadow-blur",
+      "box-shadow-spread",
+      "box-shadow-color",
+      "box-shadow-type"
+    ],
+    "traits": [
+      {
+        "name": "data-source-url",
+        "label": "Source URL",
+        "placeholder": "",
+        "type": "text"
+      }
+    ],
+    "handlers": [
+      "onVisibilityChange",
+      "onClassListAssignment",
+      {
+        "name": "onDisplayAssignment",
+        "label": "Visibility Logic",
+        "description": "This is a handler for the logic to determine if the iframe should be visible. When the handler returns true, the iframe becomes visible.",
+        "output": true,
+        "dataBinding": true
+      },
+      {
+        "name": "onSourceUrlAssignment",
+        "label": "Source URL Logic",
+        "description": "This is a handler for the logic to determine the source URL of the iframe. When the handler returns a URL (as a string), the iframe uses it to render the content from the URL.",
+        "output": true,
+        "dataBinding": true
+      }
+    ],
+    "id": "iframe",
+    "html": "<div style=\"max-height:300px;\"/>\n",
+    "hasModule": true,
+    "iconSvg": "<svg viewBox=\"0 0 459 459\">\n    <path d=\"M408,25.5H51c-28.05,0-51,22.95-51,51v306c0,28.05,22.95,51,51,51h357c28.05,0,51-22.95,51-51v-306    C459,48.45,436.05,25.5,408,25.5z M280.5,382.5H51v-102h229.5V382.5z M280.5,255H51V153h229.5V255z M408,382.5H306V153h102V382.5z    \"/>\n</svg>\n"
+  },
+  {
+    "system": true,
+    "category": "General",
+    "name": "Image",
+    "droppable": false,
+    "traits": [
+      {
+        "name": "data-url",
+        "label": "URL",
+        "placeholder": "",
+        "type": "input-with-button",
+        "command": "OPEN_FILE_URL_EDITOR"
+      }
+    ],
+    "stylable": [
+      "align-self",
+      "width",
+      "height",
+      "min-width",
+      "min-height",
+      "max-width",
+      "max-height",
+      "cursor",
+      "margin",
+      "margin-top",
+      "margin-bottom",
+      "margin-left",
+      "margin-right",
+      "opacity"
+    ],
+    "handlers": [
+      "onClick",
+      "onMouseOver",
+      "onMouseOut",
+      "onVisibilityChange",
+      "onClassListAssignment",
+      {
+        "name": "onLoad",
+        "label": "On Load Event",
+        "description": "This event is triggered before the image is retrieved from the source URL."
+      },
+      {
+        "name": "onError",
+        "label": "On Error Event",
+        "description": "This event is triggered when the image fails to load from the source URL."
+      },
+      {
+        "name": "onDisplayAssignment",
+        "label": "Visibility Logic",
+        "description": "This handler can contain logic to determine if the image should be visible. When the handler returns true, the image becomes visible.",
+        "output": true,
+        "dataBinding": true
+      },
+      {
+        "name": "onSourceUrlAssignment",
+        "label": "Source URL Logic",
+        "description": "This handler can contain logic to determine the source URL for the image.",
+        "output": true,
+        "dataBinding": true
+      }
+    ],
+    "id": "image",
+    "html": "<img data-url=\"\" style=\"width:150px;\"/>\n",
+    "hasModule": true,
+    "iconSvg": "<svg viewBox=\"0 0 550.801 550.8\">\n    <path d=\"M515.828,61.201H34.972C15.659,61.201,0,76.859,0,96.172v358.458C0,473.942,15.659,489.6,34.972,489.6h480.856   c19.314,0,34.973-15.658,34.973-34.971V96.172C550.801,76.859,535.143,61.201,515.828,61.201z M515.828,96.172V350.51l-68.92-62.66   c-10.359-9.416-26.289-9.04-36.186,0.866l-69.752,69.741L203.438,194.179c-10.396-12.415-29.438-12.537-39.99-0.271L34.972,343.219   V96.172H515.828z M367.201,187.972c0-26.561,21.523-48.086,48.084-48.086c26.562,0,48.086,21.525,48.086,48.086   c0,26.561-21.523,48.085-48.086,48.085C388.725,236.058,367.201,214.533,367.201,187.972z\"/>\n</svg>\n"
+  },
+  {
+    "system": true,
+    "category": "Form",
+    "name": "Input",
+    "droppable": false,
+    "traits": [
+      {
+        "type": "property-select",
+        "label": "Variant",
+        "name": "data-variant",
+        "options": [
+          {
+            "value": "standard",
+            "name": "Standard"
+          },
+          {
+            "value": "filled",
+            "name": "Filled"
+          },
+          {
+            "value": "outlined",
+            "name": "Outlined"
+          }
+        ]
+      },
+      {
+        "name": "data-type",
+        "options": [
+          {
+            "name": "Text",
+            "value": ""
+          },
+          {
+            "name": "Password",
+            "value": "password"
+          },
+          {
+            "name": "Email",
+            "value": "email"
+          },
+          {
+            "name": "Number",
+            "value": "number"
+          }
+        ],
+        "label": "Type",
+        "type": "property-select"
+      },
+      {
+        "name": "data-label",
+        "label": "Label",
+        "type": "text"
+      },
+      {
+        "name": "data-value",
+        "label": "Default Value",
+        "type": "text"
+      },
+      {
+        "valueTrue": "true",
+        "valueFalse": "false",
+        "name": "data-readonly",
+        "label": "Read Only",
+        "type": "checkbox"
+      },
+      {
+        "valueTrue": "true",
+        "valueFalse": "false",
+        "name": "data-disabled",
+        "label": "Disabled",
+        "type": "checkbox"
+      },
+      {
+        "valueTrue": "true",
+        "valueFalse": "false",
+        "name": "data-required",
+        "label": "Required",
+        "type": "checkbox"
+      }
+    ],
+    "stylable": [
+      "align-self",
+      "width",
+      "min-width",
+      "max-width",
+      "margin",
+      "margin-top",
+      "margin-bottom",
+      "margin-left",
+      "margin-right"
+    ],
+    "handlers": [
+      "onChange",
+      "onFocus",
+      "onBlur",
+      "onVisibilityChange",
+      "onClassListAssignment",
+      {
+        "name": "onKeyDown",
+        "label": "On Key Down Event",
+        "description": "This event is triggered when the key was pressed.",
+        "contextBlocks": [
+          {
+            "code": "___arguments.keyCode",
+            "id": "keyCode",
+            "label": "Key Code"
+          },
+          {
+            "code": "___arguments.shiftKey",
+            "id": "shiftKey",
+            "label": "Shift is pressed"
+          },
+          {
+            "code": "___arguments.ctrlKey",
+            "id": "ctrlKey",
+            "label": "Ctrl/Cmd is pressed"
+          },
+          {
+            "code": "___arguments.altKey",
+            "id": "altKey",
+            "label": "Alt/Option pressed"
+          }
+        ]
+      },
+      {
+        "output": true,
+        "name": "onDisplayAssignment",
+        "dataBinding": true,
+        "description": "This handler can contain logic to determine if the input component should be visible. When the handler returns true, the input will be displayed.",
+        "label": "Visibility Logic"
+      },
+      {
+        "output": true,
+        "name": "onLabelAssignment",
+        "dataBinding": true,
+        "description": "This handler can contain logic to determine the label for the component.",
+        "label": "Label Logic"
+      },
+      {
+        "output": true,
+        "name": "onValueAssignment",
+        "dataBinding": true,
+        "description": "This handler can contain logic to determine the value of the component. The input's value is what the user enters or using this handler your logic can determine it.",
+        "label": "Value Logic"
+      },
+      {
+        "output": true,
+        "name": "onReadOnlyStateAssignment",
+        "dataBinding": true,
+        "description": "This handler can contain logic to determine if the input component should be read-only. When the handler returns true, the input component becomes read-only.",
+        "label": "Read-Only State Logic"
+      },
+      {
+        "output": true,
+        "name": "onDisabledStateAssignment",
+        "dataBinding": true,
+        "description": "This handler can contain logic to determine if the input component should be disabled. When the handler returns true, the input component becomes disabled.",
+        "label": "Disabled State Logic"
+      },
+      {
+        "output": true,
+        "name": "onRequiredStateAssignment",
+        "dataBinding": true,
+        "description": "Using this handler you can dynamically configure the input component as required. A required component prevents form submission until it has a value.",
+        "label": "Required State Logic"
+      }
+    ],
+    "id": "input",
+    "html": "<div data-label=\"Label\" data-variant=\"standard\" style=\"margin:0 0 16px 0;\"></div>\n",
+    "hasModule": true,
+    "iconSvg": "<svg viewBox=\"0 0 24 24\">\n    <path d=\"M22,9 C22,8.4 21.5,8 20.75,8 L3.25,8 C2.5,8 2,8.4 2,9 L2,15 C2,15.6 2.5,16 3.25,16 L20.75,16 C21.5,16 22,15.6 22,15 L22,9 Z M21,15 L3,15 L3,9 L21,9 L21,15 Z\"/>\n    <polygon points=\"4 10 5 10 5 14 4 14\"/>\n</svg>\n"
+  },
+  {
+    "system": true,
+    "extend": "block",
+    "name": "Jumbotron",
+    "category": "Layout",
+    "id": "jumbotron",
+    "html": "<div data-module-type=\"jumbotron\" data-display=\"true\">\n    <span data-module-type=\"text\" data-display=\"true\" style=\"font-size:3.5rem;\">A Warm Welcome!</span>\n    <div data-module-type=\"paragraph\" data-display=\"true\" style=\"padding:8px;margin:0 0 16px 0;\">\n        <p>\n            <span style=\"font-family: arial, helvetica, sans-serif; font-size: 18pt; white-space: pre-wrap;\">\n                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.\n            </span>\n        </p>\n    </div>\n    <button data-label=\"Call to action!\" data-module-type=\"button\" data-raised=\"true\" data-display=\"true\"\n            class=\"mdc-button\" style=\"margin:0;align-self:flex-start;\"/>\n</div>\n",
+    "hasModule": true,
+    "iconSvg": "<svg viewBox=\"0 0 24 24\">\n    <path d=\"m5.5 5.177-4.947 1.349c-.326.089-.553.386-.553.724v10.5c0 .338.227.635.553.724l4.947 1.349z\"/>\n    <path d=\"m23.316 6.503-16.316-1.44v14.874l16.316-1.44c.387-.034.684-.358.684-.747v-10.5c0-.389-.297-.713-.684-.747zm-12.816 9.747c0 .414-.336.75-.75.75s-.75-.336-.75-.75v-7.5c0-.414.336-.75.75-.75s.75.336.75.75zm4-.5c0 .414-.336.75-.75.75s-.75-.336-.75-.75v-6.5c0-.414.336-.75.75-.75s.75.336.75.75zm4-.5c0 .414-.336.75-.75.75s-.75-.336-.75-.75v-5.5c0-.414.336-.75.75-.75s.75.336.75.75zm3.5-.25c0 .414-.336.75-.75.75s-.75-.336-.75-.75v-4.75c0-.414.336-.75.75-.75s.75.336.75.75z\"/>\n</svg>\n",
+    "dynamicListBehaviour": true,
+    "stylable": [
+      "z-index",
+      "overflow",
+      "cursor",
+      "background-color",
+      "background-image",
+      "background-repeat",
+      "background-position",
+      "background-attachment",
+      "background-size",
+      "background",
+      "flex-direction",
+      "justify-content",
+      "align-items",
+      "align-self",
+      "flex-grow",
+      "flex-shrink",
+      "flex-basis",
+      "flex-container",
+      "flex-wrap",
+      "width",
+      "height",
+      "min-width",
+      "min-height",
+      "max-width",
+      "max-height",
+      "margin",
+      "margin-top",
+      "margin-bottom",
+      "margin-left",
+      "margin-right",
+      "padding",
+      "padding-top",
+      "padding-bottom",
+      "padding-left",
+      "padding-right",
+      "opacity",
+      "border-radius",
+      "border-top-left-radius",
+      "border-top-right-radius",
+      "border-bottom-left-radius",
+      "border-bottom-right-radius",
+      "border",
+      "border-width",
+      "border-style",
+      "border-color",
+      "box-shadow",
+      "box-shadow-h",
+      "box-shadow-v",
+      "box-shadow-blur",
+      "box-shadow-spread",
+      "box-shadow-color",
+      "box-shadow-type"
+    ],
+    "traits": [
+      {
+        "name": "data-data-container",
+        "label": "Data Container",
+        "type": "checkbox",
+        "valueTrue": "true",
+        "valueFalse": "false"
+      },
+      {
+        "name": "data-anchor",
+        "label": "Anchor",
+        "placeholder": "",
+        "type": "text"
+      },
+      {
+        "name": "data-tooltip-text",
+        "label": "Tooltip text",
+        "placeholder": "",
+        "type": "text"
+      },
+      {
+        "type": "property-select",
+        "name": "data-tooltip-placement",
+        "label": "Tooltip placement",
+        "options": [
+          {
+            "value": "top",
+            "name": "Top"
+          },
+          {
+            "value": "right",
+            "name": "Right"
+          },
+          {
+            "value": "bottom",
+            "name": "Bottom"
+          },
+          {
+            "value": "left",
+            "name": "Left"
+          }
+        ]
+      }
+    ],
+    "handlers": [
+      "onBeforeMount",
+      "onMounted",
+      "onBeforeUnmount",
+      "onMouseOver",
+      "onMouseOut",
+      "onClick",
+      "onScroll",
+      "onVisibilityChange",
+      "onClassListAssignment",
+      {
+        "output": true,
+        "name": "onContainerDataAssignment",
+        "dataBinding": true,
+        "useParentDataBinding": true,
+        "description": "Using this handler you can add logic which determines the data model object which should be used by the block. An object returned by the handler becomes the data model",
+        "label": "Data Model Logic"
+      },
+      {
+        "name": "onDisplayAssignment",
+        "label": "Visibility Logic",
+        "description": "This is a handler for the logic to determine if the block should be visible. If the handler returns true, the component will be visible.",
+        "output": true,
+        "dataBinding": true
+      }
+    ]
+  },
+  {
+    "id": "layout-cell",
+    "category": "Layout",
+    "name": "Cell",
+    "system": true,
+    "draggable": "[data-module-type=\"layout-row\"]",
+    "traits": [
+      {
+        "name": "data-size-desktop",
+        "device": "desktop",
+        "label": "Width",
+        "type": "layout-cell-span-select"
+      },
+      {
+        "name": "data-size-tablet",
+        "device": "tablet",
+        "label": "Width",
+        "type": "layout-cell-span-select"
+      },
+      {
+        "name": "data-size-phone",
+        "device": "phone",
+        "label": "Width",
+        "type": "layout-cell-span-select"
+      }
+    ],
+    "handlers": [
+      "onBeforeMount",
+      "onMounted",
+      "onBeforeUnmount",
+      "onVisibilityChange",
+      "onClassListAssignment",
+      {
+        "output": true,
+        "name": "onDisplayAssignment",
+        "dataBinding": true,
+        "description": "Using this handler you can dynamically determine if the component should be visible. When the handler returns true, the component becomes visible.",
+        "label": "Visibility Logic"
+      }
+    ],
+    "stylable": [
+      "overflow",
+      "background-color",
+      "background-image",
+      "background-repeat",
+      "background-position",
+      "background-attachment",
+      "background-size",
+      "background",
+      "flex-direction",
+      "justify-content",
+      "align-items",
+      "flex-grow",
+      "flex-shrink",
+      "flex-basis",
+      "flex-container",
+      "flex-wrap",
+      "height",
+      "min-height",
+      "max-height",
+      "margin",
+      "margin-top",
+      "margin-bottom",
+      "margin-left",
+      "margin-right",
+      "padding",
+      "padding-top",
+      "padding-bottom",
+      "padding-left",
+      "padding-right"
+    ],
+    "html": "<div style=\"display:flex; flex-direction:column; padding:10px; min-height:100px;\"></div>\n",
+    "hasModule": true,
+    "iconSvg": "<svg viewBox=\"0 0 459 459\">\n    <path d=\"M408,51v357H51V51H408 M408,0H51C22.95,0,0,22.95,0,51v357c0,28.05,22.95,51,51,51h357c28.05,0,51-22.95,51-51V51    C459,22.95,436.05,0,408,0L408,0z\"/>\n</svg>\n"
+  },
+  {
+    "id": "layout-container",
+    "category": "Layout",
+    "name": "Container",
+    "system": true,
+    "traits": [],
+    "dynamicListBehaviour": true,
+    "droppable": "[data-module-type=\"layout-row\"]",
+    "handlers": [
+      "onBeforeMount",
+      "onMounted",
+      "onBeforeUnmount",
+      "onVisibilityChange",
+      "onClassListAssignment",
+      {
+        "output": true,
+        "name": "onDisplayAssignment",
+        "dataBinding": true,
+        "description": "Using this handler you can add logic to dynamically determine if the container should be visible. When the handler returns true, the container is displayed.",
+        "label": "Visibility Logic"
+      }
+    ],
+    "stylable": [
+      "background-color",
+      "background-image",
+      "background-repeat",
+      "background-position",
+      "background-attachment",
+      "background-size",
+      "background",
+      "flex-grow",
+      "flex-shrink",
+      "flex-basis",
+      "width",
+      "height",
+      "min-width",
+      "min-height",
+      "max-width",
+      "max-height",
+      "padding",
+      "padding-top",
+      "padding-bottom",
+      "padding-left",
+      "padding-right",
+      "margin",
+      "margin-top",
+      "margin-bottom",
+      "margin-left",
+      "margin-right"
+    ],
+    "html": "<div style=\"width:100%;min-height:50px;\">\n  <div data-module-type=\"layout-row\" style=\"min-height:50px;\">\n    <div data-module-type=\"layout-cell\" style=\"display:flex; flex-direction:column; padding:10px; min-height:100px;\"></div>\n  </div>\n</div>\n",
+    "hasModule": true,
+    "iconSvg": "<svg viewBox=\"0 0 384 384\">\n    <rect x=\"213.333\" y=\"0\" width=\"170.667\" height=\"128\"/>\n    <rect x=\"0\" y=\"0\" width=\"170.667\" height=\"213.333\"/>\n    <rect x=\"0\" y=\"256\" width=\"170.667\" height=\"128\"/>\n    <rect x=\"213.333\" y=\"170.667\" width=\"170.667\" height=\"213.333\"/>\n</svg>\n"
+  },
+  {
+    "id": "layout-row",
+    "category": "Layout",
+    "name": "Row",
+    "system": true,
+    "traits": [
+      {
+        "name": "data-grid-gap",
+        "label": "Gap",
+        "type": "number"
+      }
+    ],
+    "dynamicListBehaviour": true,
+    "draggable": "[data-module-type=\"layout-container\"],[data-module-type=\"layout-cell\"]",
+    "droppable": "[data-module-type=\"layout-cell\"]",
+    "handlers": [
+      "onBeforeMount",
+      "onMounted",
+      "onBeforeUnmount",
+      "onVisibilityChange",
+      "onClassListAssignment",
+      {
+        "output": true,
+        "name": "onDisplayAssignment",
+        "dataBinding": true,
+        "description": "Using this handler you can add logic to dynamically determine if the row should be visible. When the handler returns true, the row is displayed.",
+        "label": "Visibility Logic"
+      }
+    ],
+    "stylable": [
+      "background-color",
+      "background-image",
+      "background-repeat",
+      "background-position",
+      "background-attachment",
+      "background-size",
+      "background",
+      "height",
+      "min-height",
+      "max-height",
+      "padding",
+      "padding-top",
+      "padding-bottom",
+      "padding-left",
+      "padding-right",
+      "margin",
+      "margin-top",
+      "margin-bottom",
+      "margin-left",
+      "margin-right"
+    ],
+    "html": "<div style=\"min-height:50px;\">\n  <div data-module-type=\"layout-cell\" style=\"display:flex; flex-direction:column; padding:10px; min-height:100px;\"></div>\n</div>\n",
+    "hasModule": true,
+    "iconSvg": "<svg viewBox=\"0 0 512 512\">\n    <path d=\"M16.34,185.191c-9.024,0-16.34,7.316-16.34,16.34v108.936c0,9.024,7.316,16.34,16.34,16.34h143.433V185.191H16.34z\"/>\n    <rect x=\"192.458\" y=\"185.191\" width=\"127.096\" height=\"141.617\"/>\n    <path d=\"M495.66,185.191H352.227v141.617H495.66c9.024,0,16.34-7.316,16.34-16.34V201.532    C512,192.508,504.684,185.191,495.66,185.191z\"/>\n</svg>\n"
+  },
+  {
+    "system": true,
+    "category": "General",
+    "name": "Link",
+    "preventClickEvent": true,
+    "stylable": [
+      "color",
+      "cursor",
+      "align-self",
+      "width",
+      "height",
+      "min-width",
+      "min-height",
+      "max-width",
+      "max-height",
+      "margin",
+      "margin-top",
+      "margin-bottom",
+      "margin-left",
+      "margin-right",
+      "padding",
+      "padding-top",
+      "padding-bottom",
+      "padding-left",
+      "padding-right",
+      "font-family",
+      "font-size",
+      "font-weight",
+      "text-align",
+      "text-decoration"
+    ],
+    "traits": [
+      {
+        "name": "data-text",
+        "label": "Text",
+        "placeholder": "",
+        "type": "text"
+      },
+      {
+        "name": "data-page-name",
+        "label": "App Page",
+        "placeholder": "",
+        "type": "page-names-select"
+      },
+      {
+        "name": "data-target-path",
+        "label": "External URL",
+        "placeholder": "",
+        "type": "text"
+      },
+      {
+        "type": "property-select",
+        "label": "Open in",
+        "name": "data-target-type",
+        "options": [
+          {
+            "name": "Same Window",
+            "value": ""
+          },
+          {
+            "name": "New Window",
+            "value": "_blank"
+          },
+          {
+            "name": "Mail App",
+            "value": "email"
+          }
+        ]
+      }
+    ],
+    "handlers": [
+      "onClick",
+      "onMouseOver",
+      "onMouseOut",
+      "onVisibilityChange",
+      "onClassListAssignment",
+      {
+        "name": "onDisplayAssignment",
+        "label": "Visibility Logic",
+        "description": "Using this handler you can add logic to dynamically determine if the link should be visible. When the handler returns true, the link is displayed.",
+        "output": true,
+        "dataBinding": true
+      },
+      {
+        "name": "onTargetPathAssignment",
+        "label": "URL Logic",
+        "description": "Using this handler you can dynamically determine the URL of the link. The value returned by the handler becomes the URL used by the link.",
+        "output": true,
+        "dataBinding": true
+      },
+      {
+        "name": "onTextAssignment",
+        "label": "Text Logic",
+        "description": "Using this handler you can dynamically determine the text displayed by the link. The value returned by the handler becomes the text which the link displays.",
+        "output": true,
+        "dataBinding": true
+      }
+    ],
+    "id": "link",
+    "html": "<a href=\"\" data-text=\"link text\"></a>\n",
+    "hasModule": true,
+    "iconSvg": "<svg viewBox=\"0 0 58 58\">\n    <path d=\"m2.64 38.39c-1.69018121 1.6869992-2.63998308 3.9769718-2.63998308 6.365s.94980187 4.6780008 2.63998308 6.365l4.24 4.24c1.68699919 1.6901812 3.9769718 2.6399831 6.365 2.6399831s4.6780008-.9498019 6.365-2.6399831l18.25-18.25c1.2209319-1.2149134 2.0647794-2.7567581 2.43-4.44l.07-.38c.014-.082.021-.165.033-.247.022-.151.047-.3.061-.452.028-.281.046-.563.046-.841.0122778-1.3366193-.28552-2.6578831-.87-3.86-.0706915-.1630707-.1542905-.3202367-.25-.47l-.42-.71-.1-.15c-.2940094-.4250379-.6289416-.8202579-1-1.18l-4.24-4.24c-.2353654-.2391942-.4858833-.4629902-.75-.67l-4.59 4.58c.6854725.1785872 1.310513.5377265 1.81 1.04l2.82 2.82c1.0857159 1.0828963 1.4549753 2.69209.95 4.14-.0810275.2522493-.1918076.4939513-.33.72-.1678168.29463-.376561.5639773-.62.8l-5.28 5.29-1.61 1.6-9.95 9.95c-.7489618.7535722-1.767543 1.1773145-2.83 1.1773145s-2.0810382-.4237423-2.83-1.1773145l-2.82-2.82c-.75357224-.7489618-1.17731445-1.767543-1.17731445-2.83s.42374221-2.0810382 1.17731445-2.83l10.07-10.08c-.1271114-.2126248-.2406706-.4330633-.34-.66-.9828793-2.044599-1.2977376-4.3465628-.9-6.58z\"/>\n    <path d=\"m51.12 2.64c-1.6869992-1.69018121-3.9769718-2.63998308-6.365-2.63998308s-4.6780008.94980187-6.365 2.63998308l-16.08 16.09-1.42 1.41c-2.6993824 2.6909166-3.4014173 6.7948117-1.75 10.23.2863448.6248117.6527525 1.2097193 1.09 1.74.2035326.2640236.4239965.5145508.66.75l4.25 4.25c.2379319.2364858.4882863.4601357.75.67l4.58-4.58c-.6791204-.1868993-1.2988976-.5449928-1.8-1.04l-2.83-2.83c-.4912387-.5000508-.8488679-1.1155856-1.04-1.79-.2649458-1.0401185-.1105128-2.1426982.43-3.07.1675153-.2921675.3725945-.5611238.61-.8l5.29-5.29 1.48-1.48 9.32-9.31c.7489618-.75357224 1.767543-1.17731445 2.83-1.17731445s2.0810382.42374221 2.83 1.17731445l2.82 2.82c.7535722.7489618 1.1773145 1.767543 1.1773145 2.83s-.4237423 2.0810382-1.1773145 2.83l-9.31 9.32c.1218686.2035662.2320469.4139066.33.63.9866507 2.0577295 1.3014904 4.3735504.9 6.62l13.03-13.03c1.6901812-1.6869992 2.6399831-3.9769718 2.6399831-6.365s-.9498019-4.67800081-2.6399831-6.365z\"/>\n</svg>\n"
+  },
+  {
+    "system": true,
+    "name": "Page",
+    "type": "page",
+    "removable": false,
+    "copyable": false,
+    "draggable": false,
+    "stylable": [
+      "overflow",
+      "margin",
+      "margin-top",
+      "margin-left",
+      "margin-bottom",
+      "margin-right",
+      "padding",
+      "padding-top",
+      "padding-left",
+      "padding-bottom",
+      "padding-right",
+      "background-color",
+      "background-image",
+      "background-repeat",
+      "background-position",
+      "background-attachment",
+      "background-size",
+      "background"
+    ],
+    "traits": [
+      {
+        "name": "data-title",
+        "label": "Title",
+        "placeholder": "",
+        "type": "text"
+      }
+    ],
+    "handlers": [
+      {
+        "name": "onEnter",
+        "label": "On Page Enter",
+        "description": "This event is fired when the page is loaded or reloaded.",
+        "contextBlocks": []
+      },
+      {
+        "name": "onLeave",
+        "label": "On Page Leave",
+        "description": "This event is fired when the user navigates away from the page to another page or away from the application.",
+        "contextBlocks": []
+      },
+      {
+        "name": "onScroll",
+        "label": "On Page Scroll",
+        "description": "This event is triggered when the user scrolls the page up or down.",
+        "contextBlocks": [
+          {
+            "code": "___arguments.scrollTop",
+            "id": "scrollTop",
+            "label": "Scroll Top"
+          },
+          {
+            "code": "___arguments.scrollBottom",
+            "id": "scrollBottom",
+            "label": "Scroll Bottom"
+          }
+        ]
+      },
+      {
+        "name": "onTitleAssignment",
+        "label": "Page Title Logic",
+        "description": "Using this handler you can add logic to dynamically determine the title of the page. Value returned by the handler is the page title which will be show in the browser tab.",
+        "output": true,
+        "dataBinding": true
+      }
+    ],
+    "id": "page",
+    "hasModule": false
+  },
+  {
+    "system": true,
+    "extend": "block",
+    "name": "Panel",
+    "category": "Layout",
+    "id": "panel",
+    "html": "<div data-module-type=\"panel\" style=\"display:flex;flex-grow:1;flex-direction:column;min-height:250px;min-width:200px;\">\n  <div data-module-type=\"block\" style=\"display:flex;padding:10px;\">\n    <span data-module-type=\"text\" style=\"font-size:18px;align-self:flex-start;\">Panel Title</span>\n  </div>\n  <div data-module-type=\"block\" style=\"display:flex;flex-direction:column;padding:10px;flex-grow:1;\"></div>\n</div>\n",
+    "hasModule": true,
+    "iconSvg": "<svg viewBox=\"0 0 24 24\">\n    <path d=\"m21.25 23h-18.5c-1.517 0-2.75-1.233-2.75-2.75v-16.5c0-1.517 1.233-2.75 2.75-2.75h18.5c1.517 0 2.75 1.233 2.75 2.75v16.5c0 1.517-1.233 2.75-2.75 2.75zm-18.5-20.5c-.689 0-1.25.561-1.25 1.25v16.5c0 .689.561 1.25 1.25 1.25h18.5c.689 0 1.25-.561 1.25-1.25v-16.5c0-.689-.561-1.25-1.25-1.25z\"/>\n    <path d=\"m23.25 6h-22.5c-.414 0-.75-.336-.75-.75s.336-.75.75-.75h22.5c.414 0 .75.336.75.75s-.336.75-.75.75z\"/>\n</svg>\n",
+    "dynamicListBehaviour": true,
+    "stylable": [
+      "z-index",
+      "overflow",
+      "cursor",
+      "background-color",
+      "background-image",
+      "background-repeat",
+      "background-position",
+      "background-attachment",
+      "background-size",
+      "background",
+      "flex-direction",
+      "justify-content",
+      "align-items",
+      "align-self",
+      "flex-grow",
+      "flex-shrink",
+      "flex-basis",
+      "flex-container",
+      "flex-wrap",
+      "width",
+      "height",
+      "min-width",
+      "min-height",
+      "max-width",
+      "max-height",
+      "margin",
+      "margin-top",
+      "margin-bottom",
+      "margin-left",
+      "margin-right",
+      "padding",
+      "padding-top",
+      "padding-bottom",
+      "padding-left",
+      "padding-right",
+      "opacity",
+      "border-radius",
+      "border-top-left-radius",
+      "border-top-right-radius",
+      "border-bottom-left-radius",
+      "border-bottom-right-radius",
+      "border",
+      "border-width",
+      "border-style",
+      "border-color",
+      "box-shadow",
+      "box-shadow-h",
+      "box-shadow-v",
+      "box-shadow-blur",
+      "box-shadow-spread",
+      "box-shadow-color",
+      "box-shadow-type"
+    ],
+    "traits": [
+      {
+        "name": "data-data-container",
+        "label": "Data Container",
+        "type": "checkbox",
+        "valueTrue": "true",
+        "valueFalse": "false"
+      },
+      {
+        "name": "data-anchor",
+        "label": "Anchor",
+        "placeholder": "",
+        "type": "text"
+      },
+      {
+        "name": "data-tooltip-text",
+        "label": "Tooltip text",
+        "placeholder": "",
+        "type": "text"
+      },
+      {
+        "type": "property-select",
+        "name": "data-tooltip-placement",
+        "label": "Tooltip placement",
+        "options": [
+          {
+            "value": "top",
+            "name": "Top"
+          },
+          {
+            "value": "right",
+            "name": "Right"
+          },
+          {
+            "value": "bottom",
+            "name": "Bottom"
+          },
+          {
+            "value": "left",
+            "name": "Left"
+          }
+        ]
+      }
+    ],
+    "handlers": [
+      "onBeforeMount",
+      "onMounted",
+      "onBeforeUnmount",
+      "onMouseOver",
+      "onMouseOut",
+      "onClick",
+      "onScroll",
+      "onVisibilityChange",
+      "onClassListAssignment",
+      {
+        "output": true,
+        "name": "onContainerDataAssignment",
+        "dataBinding": true,
+        "useParentDataBinding": true,
+        "description": "Using this handler you can add logic which determines the data model object which should be used by the block. An object returned by the handler becomes the data model",
+        "label": "Data Model Logic"
+      },
+      {
+        "name": "onDisplayAssignment",
+        "label": "Visibility Logic",
+        "description": "This is a handler for the logic to determine if the block should be visible. If the handler returns true, the component will be visible.",
+        "output": true,
+        "dataBinding": true
+      }
+    ]
+  },
+  {
+    "system": true,
+    "category": "General",
+    "name": "Paragraph",
+    "rawEditor": true,
+    "editable": false,
+    "droppable": false,
+    "traits": [],
+    "stylable": [
+      "overflow",
+      "background-color",
+      "color",
+      "align-self",
+      "width",
+      "height",
+      "min-width",
+      "min-height",
+      "max-width",
+      "max-height",
+      "margin",
+      "margin-top",
+      "margin-bottom",
+      "margin-left",
+      "margin-right",
+      "padding",
+      "padding-top",
+      "padding-bottom",
+      "padding-left",
+      "padding-right",
+      "opacity",
+      "border-radius",
+      "border-top-left-radius",
+      "border-top-right-radius",
+      "border-bottom-left-radius",
+      "border-bottom-right-radius",
+      "border",
+      "border-width",
+      "border-style",
+      "border-color",
+      "box-shadow",
+      "box-shadow-h",
+      "box-shadow-v",
+      "box-shadow-blur",
+      "box-shadow-spread",
+      "box-shadow-color",
+      "box-shadow-type"
+    ],
+    "handlers": [
+      "onVisibilityChange",
+      "onClassListAssignment",
+      {
+        "name": "onDisplayAssignment",
+        "label": "Visibility Logic",
+        "description": "Using this handler you can add logic to dynamically determine if the paragraph should be visible. When the handler returns true, the paragraph is displayed.",
+        "output": true,
+        "dataBinding": true
+      },
+      {
+        "name": "onContentAssignment",
+        "label": "Content Logic",
+        "description": "Using this handler you can add logic to dynamically determine the content displayed by the component. Value returned by the handler is the content which will be rendered.",
+        "output": true,
+        "dataBinding": true
+      }
+    ],
+    "id": "paragraph",
+    "html": "<div style=\"padding:8px;margin:0 0 16px 0;\">Paragraph</div>\n",
+    "hasModule": true,
+    "iconSvg": "<svg viewBox=\"0 0 487.025 487.025\">\n    <path d=\"M469.874,29.312H17.155C7.671,29.312,0,36.987,0,46.467v69.405c0,9.48,7.671,17.157,17.155,17.157h452.719   c9.48,0,17.151-7.677,17.151-17.157V46.467C487.025,36.987,479.354,29.312,469.874,29.312z\"/>\n    <path d=\"M469.874,191.656H17.155C7.671,191.656,0,199.329,0,208.809v69.407c0,9.482,7.671,17.155,17.155,17.155h452.719   c9.48,0,17.151-7.673,17.151-17.155v-69.407C487.025,199.329,479.354,191.656,469.874,191.656z\"/>\n    <path d=\"M226.357,353.998H17.155C7.671,353.998,0,361.672,0,371.151v69.407c0,9.482,7.671,17.155,17.155,17.155h209.202   c9.484,0,17.155-7.673,17.155-17.155v-69.407C243.513,361.672,235.842,353.998,226.357,353.998z\"/>\n</svg>\n"
+  },
+  {
+    "system": true,
+    "category": "General",
+    "name": "QR Code",
+    "droppable": false,
+    "traits": [
+      {
+        "name": "data-value",
+        "label": "Value",
+        "placeholder": "",
+        "type": "text"
+      }
+    ],
+    "stylable": [
+      "align-self",
+      "width",
+      "min-width",
+      "max-width",
+      "margin",
+      "margin-top",
+      "margin-bottom",
+      "margin-left",
+      "margin-right",
+      "padding",
+      "padding-top",
+      "padding-bottom",
+      "padding-left",
+      "padding-right"
+    ],
+    "handlers": [
+      "onClick",
+      "onMouseOver",
+      "onMouseOut",
+      "onVisibilityChange",
+      "onClassListAssignment",
+      {
+        "name": "onDisplayAssignment",
+        "label": "Visibility Logic",
+        "description": "This handler can contain logic to determine if the QR Code should be visible. When the handler returns true, the QR Code becomes visible.",
+        "output": true,
+        "dataBinding": true
+      },
+      {
+        "name": "onValueAssignment",
+        "label": "Value Logic",
+        "description": "This handler can contain logic to determine the source Data for the QR Code.",
+        "output": true,
+        "dataBinding": true
+      }
+    ],
+    "id": "qr-code",
+    "html": "<div style=\"width:150px;\"></div>\n",
+    "hasModule": true,
+    "iconSvg": "<svg viewBox=\"0 0 24 24\">\n    <path d=\"M19 2c1.654 0 3 1.346 3 3v14c0 1.654-1.346 3-3 3h-14c-1.654 0-3-1.346-3-3v-14c0-1.654 1.346-3\n    3-3h14zm0-2h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-8\n    8h-1v-2h1v1h2v1h-1v1h-1v-1zm2 12v-1h-1v1h1zm-1-15v-1h-2v1h1v1h1v-1zm8-1v6h-1v-1h-4v-5h5zm-1 4v-3h-3v3h3zm-14\n    2h-1v1h2v-1h-1zm0 3h1v1h1v-3h-1v1h-2v2h1v-1zm5 1v2h1v-2h-1zm4-10h-1v3h1v-3zm0\n    5v-1h-1v1h1zm3-2h1v-1h-1v1zm-10-1h-1v1h1v-1zm2-2v5h-5v-5h5zm-1 1h-3v3h3v-3zm9\n    5v1h-1v-1h-2v1h-1v-1h-3v-1h-1v1h-1v1h1v2h1v-1h1v2h1v-2h3v1h-2v1h2v1h1v-3h1v1h1v2h1v-1h1v-1h-1v-1h-1v-1h1v-1h-2zm-11\n     8h1v-1h-1v1zm-2-3h5v5h-5v-5zm1 4h3v-3h-3v3zm12-3v-1h-1v1h1zm0\n     1h-1v1h-1v-1h-1v-1h1v-1h-2v-1h-1v2h-1v1h-1v3h1v-1h1v-1h2v2h1v-1h1v1h2v-1h1v-1h-2v-1zm-9-3h1v-1h-1v1zm10\n     2v1h1v1h1v-3h-1v1h-1zm2 4v-1h-1v1h1zm0-8v-1h-1v1h1z\"/>\n</svg>\n"
+  },
+  {
+    "system": true,
+    "category": "Form",
+    "name": "Radio Button",
+    "droppable": false,
+    "traits": [
+      {
+        "type": "text",
+        "name": "data-name",
+        "label": "Name"
+      },
+      {
+        "type": "text",
+        "name": "data-label",
+        "label": "Label"
+      },
+      {
+        "type": "text",
+        "name": "data-value",
+        "label": "Value"
+      },
+      {
+        "type": "checkbox",
+        "label": "Checked",
+        "name": "data-checked",
+        "valueTrue": "true",
+        "valueFalse": "false"
+      },
+      {
+        "type": "checkbox",
+        "label": "Disabled",
+        "name": "data-disabled",
+        "valueTrue": "true",
+        "valueFalse": "false"
+      }
+    ],
+    "stylable": [
+      "align-self",
+      "margin",
+      "margin-top",
+      "margin-bottom",
+      "margin-left",
+      "margin-right",
+      "font-size"
+    ],
+    "handlers": [
+      "onChange",
+      "onVisibilityChange",
+      "onClassListAssignment",
+      {
+        "output": true,
+        "name": "onDisplayAssignment",
+        "dataBinding": true,
+        "description": "Using this handler you can add logic to dynamically determine if the radio button should be visible. When the handler returns true, the radio button is displayed.",
+        "label": "Visibility Logic"
+      },
+      {
+        "output": true,
+        "name": "onNameAssignment",
+        "dataBinding": true,
+        "description": "With this handler you can dynamically set the radio button name.",
+        "label": "Name Logic"
+      },
+      {
+        "output": true,
+        "name": "onLabelAssignment",
+        "dataBinding": true,
+        "description": "Using this handler you can add the logic to assign a label to the radio button. The value returned by the handler will be used as the label.",
+        "label": "Label Logic"
+      },
+      {
+        "output": true,
+        "name": "onValueAssignment",
+        "dataBinding": true,
+        "description": "Using this handler you can assign a value to the radio button. The value can be used for two purposes - 1) associating a value with the radio button and 2) using the value in the 'Checked Value Logic' handler.",
+        "label": "Value Logic"
+      },
+      {
+        "output": true,
+        "name": "onCheckedValueAssignment",
+        "dataBinding": true,
+        "description": "Using this handler you can add logic to determine if the radio button (as a part of a radio group) should be checked. When the value for this property (either through the databinding or the logic) matches the value for 'Value Logic', the radio button is selected.",
+        "label": "Checked Value Logic"
+      },
+      {
+        "output": true,
+        "name": "onDisabledStateAssignment",
+        "dataBinding": true,
+        "description": "Using this handler you can add logic to determine if the radio button should be disabled. When the handler returns true, the component will be disabled.",
+        "label": "Disabled State Logic"
+      }
+    ],
+    "id": "radio-button",
+    "html": "<div data-name=\"radios\" data-value=\"\" data-checked=\"false\" data-disabled=\"false\" data-label=\"Radio\"></div>\n\n",
+    "hasModule": true,
+    "iconSvg": "<svg viewBox=\"0 0 426.667 426.667\">\n    <path d=\"M213.333,0C95.513,0,0,95.513,0,213.333s95.513,213.333,213.333,213.333s213.333-95.513,213.333-213.333    S331.154,0,213.333,0z M213.333,387.413c-96.142,0-174.08-77.938-174.08-174.08s77.938-174.08,174.08-174.08    c96.093,0.118,173.962,77.987,174.08,174.08C387.413,309.475,309.475,387.413,213.333,387.413z\"/>\n    <circle cx=\"213.333\" cy=\"213.333\" r=\"64\"/>\n    <path d=\"M213.333,128C166.205,128,128,166.205,128,213.333s38.205,85.333,85.333,85.333s85.333-38.205,85.333-85.333    S260.462,128,213.333,128z M213.333,256c-23.564,0-42.667-19.103-42.667-42.667s19.103-42.667,42.667-42.667    S256,189.769,256,213.333S236.897,256,213.333,256z\"/>\n</svg>\n"
+  },
+  {
+    "system": true,
+    "category": "Form",
+    "name": "Radio Buttons Group",
+    "droppable": "[data-module-type=\"radio-button\"]",
+    "traits": [
+      {
+        "type": "text",
+        "name": "data-name",
+        "label": "Name"
+      }
+    ],
+    "stylable": [
+      "flex-direction",
+      "justify-content",
+      "align-items",
+      "align-self",
+      "flex-grow",
+      "flex-shrink",
+      "flex-basis",
+      "flex-container",
+      "flex-wrap",
+      "width",
+      "height",
+      "min-width",
+      "min-height",
+      "max-width",
+      "max-height",
+      "margin",
+      "margin-top",
+      "margin-bottom",
+      "margin-left",
+      "margin-right",
+      "padding",
+      "padding-top",
+      "padding-bottom",
+      "padding-left",
+      "padding-right"
+    ],
+    "handlers": [
+      {
+        "name": "onChange",
+        "label": "On Change Event",
+        "description": "This event is triggered when there is a change of the selected radio button in the group. The context argument ('Checked Value') is the value assigned to the selected radio button.",
+        "contextBlocks": [
+          {
+            "code": "___arguments.checkedValue",
+            "id": "checkedValue",
+            "label": "Checked Value"
+          }
+        ]
+      },
+      "onVisibilityChange",
+      "onClassListAssignment",
+      {
+        "name": "onDisplayAssignment",
+        "label": "Visibility Logic",
+        "description": "Using this handler you can add logic to dynamically determine if the radio button group should be visible. When the handler returns true, the group is displayed.",
+        "output": true,
+        "dataBinding": true
+      },
+      {
+        "name": "onNameAssignment",
+        "label": "Name Logic",
+        "description": "TBD",
+        "output": true,
+        "dataBinding": true
+      },
+      {
+        "name": "onCheckedValueAssignment",
+        "label": "Checked Value Logic",
+        "description": "Using this handler you can dynamically determine which radio button in the group should be selected. To select a radio button in the group, the handler should return the value assigned to a radio button which should be selected.",
+        "output": true,
+        "dataBinding": true
+      }
+    ],
+    "id": "radio-buttons-group",
+    "html": "<div style=\"display:flex;flex-direction:column;margin:0 0 16px 0;\">\n    <div data-module-type=\"radio-button\"\n         data-checked=\"false\"\n         data-value=\"radio1\"\n         data-label=\"Radio 1\"\n         data-name=\"radios\"\n         class=\"mdc-form-field\"></div>\n    <div data-module-type=\"radio-button\"\n         data-checked=\"false\"\n         data-value=\"radio2\"\n         data-label=\"Radio 2\"\n         data-name=\"radios\"\n         class=\"mdc-form-field\"></div>\n    <div data-module-type=\"radio-button\"\n         data-checked=\"false\"\n         data-value=\"radio3\"\n         data-label=\"Radio 3\"\n         data-name=\"radios\"\n         class=\"mdc-form-field\"></div>\n</div>\n",
+    "hasModule": true,
+    "iconSvg": "<svg viewBox=\"0 -36 512 512\">\n    <path d=\"m100 200c-55.140625 0-100-44.859375-100-100s44.859375-100 100-100 100 44.859375 100 100-44.859375 100-100 100zm0-160c-33.085938 0-60 26.914062-60 60s26.914062 60 60 60 60-26.914062 60-60-26.914062-60-60-60zm412 40h-272v40h272zm-412 0c-11.027344 0-20 8.972656-20 20s8.972656 20 20 20 20-8.972656 20-20-8.972656-20-20-20zm0 360c-55.140625 0-100-44.859375-100-100s44.859375-100 100-100 100 44.859375 100 100-44.859375 100-100 100zm0-160c-33.085938 0-60 26.914062-60 60s26.914062 60 60 60 60-26.914062 60-60-26.914062-60-60-60zm412 40h-272v40h272zm0 0\"/>\n</svg>\n"
+  },
+  {
+    "system": true,
+    "category": "Form",
+    "name": "Select",
+    "droppable": false,
+    "traits": [
+      {
+        "name": "data-value",
+        "options": [],
+        "label": "Value",
+        "type": "default-select-value"
+      },
+      {
+        "type": "text",
+        "name": "data-label",
+        "label": "Label"
+      },
+      {
+        "type": "text",
+        "name": "data-value-key",
+        "label": "Value Key",
+        "placeholder": "value"
+      },
+      {
+        "type": "text",
+        "name": "data-label-key",
+        "label": "Label Key",
+        "placeholder": "label"
+      },
+      {
+        "type": "settings-button",
+        "label": "Options",
+        "text": "Change",
+        "command": "OPEN_SELECT_OPTIONS_EDITOR"
+      },
+      {
+        "type": "checkbox",
+        "label": "Disabled",
+        "name": "data-disabled",
+        "valueTrue": "true",
+        "valueFalse": "false"
+      },
+      {
+        "valueTrue": "true",
+        "valueFalse": "false",
+        "name": "data-required",
+        "label": "Required",
+        "type": "checkbox"
+      }
+    ],
+    "stylable": [
+      "align-self",
+      "width",
+      "min-width",
+      "max-width",
+      "margin",
+      "margin-top",
+      "margin-bottom",
+      "margin-left",
+      "margin-right"
+    ],
+    "actions": [
+      {
+        "id": "get_value",
+        "label": "Get Value of",
+        "hasReturn": true,
+        "code": "return component.value",
+        "color": "#d5794f"
+      },
+      {
+        "id": "set_value",
+        "label": "Set Value to",
+        "hasReturn": false,
+        "code": "component.value = value",
+        "color": "#d5794f",
+        "inputs": [
+          {
+            "label": "value",
+            "name": "value"
+          }
+        ]
+      },
+      {
+        "id": "get_options",
+        "label": "Get Options of",
+        "hasReturn": true,
+        "code": "return component.options",
+        "color": "#b8569a"
+      },
+      {
+        "id": "set_options",
+        "label": "Set Options to",
+        "hasReturn": false,
+        "code": "component.options = options",
+        "color": "#b8569a",
+        "inputs": [
+          {
+            "label": "options",
+            "name": "options"
+          }
+        ]
+      }
+    ],
+    "handlers": [
+      "onChange",
+      "onVisibilityChange",
+      "onClassListAssignment",
+      {
+        "output": true,
+        "name": "onDisplayAssignment",
+        "dataBinding": true,
+        "description": "Using this handler you can add logic to determine if this select component should be visible. When the handler returns true, the component is displayed.",
+        "label": "Visibility Logic"
+      },
+      {
+        "output": true,
+        "name": "onLabelAssignment",
+        "dataBinding": true,
+        "description": "Using this handler you can dynamically assign a label displayed in the selection box. When the handler returns a string, it is used as the label.",
+        "label": "Label Logic"
+      },
+      {
+        "output": true,
+        "name": "onOptionsAssignment",
+        "dataBinding": true,
+        "description": "Using this handler you can return a collection of options provided by the component.",
+        "label": "Options Logic"
+      },
+      {
+        "output": true,
+        "name": "onValueAssignment",
+        "dataBinding": true,
+        "description": "Using this handler you can add logic to make a programmatic selection of one of the options. The handler should return the value assigned to the option which the logic would like to select.",
+        "label": "Value Logic"
+      },
+      {
+        "output": true,
+        "name": "onDisabledStateAssignment",
+        "dataBinding": true,
+        "description": "Using this handler you can determine if the select component should be disabled. When the handler returns true, the select component becomes disabled.",
+        "label": "Disabled State Logic"
+      },
+      {
+        "output": true,
+        "name": "onRequiredStateAssignment",
+        "dataBinding": true,
+        "description": "Using this handler you can add logic to determine if the component should require a value. Required components prevent form submission until a value is selected. When the handler returns true, selection in the component becomes required.",
+        "label": "Required State Logic"
+      }
+    ],
+    "id": "select",
+    "html": "<div data-options=\"value-1:Option 1;value-2:Option 2;value-3:Option 3\" data-label=\"Select\" style=\"margin:0 0 16px 0;\"></div>\n",
+    "hasModule": true,
+    "iconSvg": "<svg viewBox=\"0 0 401.141 401.141\">\n    <path d=\"M101.847,160.827v64.423h299.294v-64.423H101.847z M382.435,206.544H120.553v-27.012h261.882V206.544z M101.847,300.074   h299.294V235.65H101.847V300.074z M120.553,254.356h261.882v27.012H120.553V254.356z M101.847,374.379h299.294v-64.423H101.847   V374.379z M120.553,328.662h261.882v27.012H120.553V328.662z M299.294,138.997h81.059V26.762h-81.059h-18.706H0v112.235h280.588   H299.294z M299.294,45.467h62.353v74.824h-62.353V45.467z M18.706,120.291V45.467h261.883v74.824H18.706z M311.235,73.843h40.962   l-20.484,26.04L311.235,73.843z\"/>\n</svg>\n"
+  },
+  {
+    "system": true,
+    "category": "Form",
+    "name": "Slider",
+    "droppable": false,
+    "traits": [
+      {
+        "type": "text",
+        "name": "data-name",
+        "label": "Name"
+      },
+      {
+        "type": "number",
+        "name": "data-value",
+        "label": "Value"
+      },
+      {
+        "type": "number",
+        "name": "data-min-value",
+        "label": "Min Value"
+      },
+      {
+        "type": "number",
+        "name": "data-max-value",
+        "label": "Max Value"
+      },
+      {
+        "type": "number",
+        "name": "data-step",
+        "label": "Step"
+      },
+      {
+        "type": "property-select",
+        "label": "Display value",
+        "name": "data-value-label-display",
+        "options": [
+          {
+            "value": "off",
+            "name": "Off"
+          },
+          {
+            "value": "auto",
+            "name": "Auto"
+          },
+          {
+            "value": "on",
+            "name": "On"
+          }
+        ]
+      },
+      {
+        "type": "property-select",
+        "label": "Orientation",
+        "name": "data-orientation-variant",
+        "options": [
+          {
+            "value": "horizontal",
+            "name": "Horizontal"
+          },
+          {
+            "value": "vertical",
+            "name": "Vertical"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "label": "Marks",
+        "name": "data-marks",
+        "valueTrue": "true",
+        "valueFalse": "false"
+      },
+      {
+        "type": "checkbox",
+        "label": "Disabled",
+        "name": "data-disabled",
+        "valueTrue": "true",
+        "valueFalse": "false"
+      }
+    ],
+    "stylable": [
+      "align-self",
+      "width",
+      "min-width",
+      "max-width",
+      "height",
+      "min-height",
+      "max-height",
+      "margin",
+      "margin-top",
+      "margin-bottom",
+      "margin-left",
+      "margin-right",
+      "font-size"
+    ],
+    "handlers": [
+      "onChange",
+      "onVisibilityChange",
+      "onClassListAssignment",
+      {
+        "output": true,
+        "name": "onDisplayAssignment",
+        "dataBinding": true,
+        "description": "Using this handler you can add logic to dynamically determine if the slider should be visible. When the handler returns true, the slider is displayed.",
+        "label": "Visibility Logic"
+      },
+      {
+        "output": true,
+        "name": "onNameAssignment",
+        "dataBinding": true,
+        "description": "With this handler you can dynamically set the slider name.",
+        "label": "Name Logic"
+      },
+      {
+        "output": true,
+        "name": "onValueAssignment",
+        "dataBinding": true,
+        "description": "TBD",
+        "label": "Value Logic"
+      },
+      {
+        "output": true,
+        "name": "onDisabledStateAssignment",
+        "dataBinding": true,
+        "description": "Using this handler you can add logic to determine if the slider should be disabled. When the handler returns true, the component will be disabled.",
+        "label": "Disabled State Logic"
+      }
+    ],
+    "id": "slider",
+    "html": "<span style=\"max-width:200px;max-height:200px;margin:5px;font-size:0.75rem\" data-name=\"sliders\" data-label=\"Slider\" data-value=\"\"  data-min-value=0 data-max-value=100 data-disabled=\"false\" data-value-label-display=\"off\" data-orientation-variant=\"horizontal\" data-marks=\"false\"></span>\n",
+    "hasModule": true,
+    "iconSvg": "<svg viewBox=\"0 0 122.23 122.88\" >\n\t\t<path class=\"st0\" d=\"M122.23,12.35v10.54c0,1.29-1.21,2.35-2.69,2.35H77.85c-2.84,5.92-8.89,10.01-15.9,10.01 c-7,0-13.05-4.09-15.89-10.01H2.69C1.22,25.24,0,24.18,0,22.89V12.35C0,11.06,1.21,10,2.69,10h43.37c2.84-5.92,8.89-10,15.89-10 c7,0,13.05,4.09,15.89,10h41.69C121.02,10,122.23,11.06,122.23,12.35L122.23,12.35L122.23,12.35z M49.57,112.88 c-2.84,5.92-8.89,10-15.9,10c-7,0-13.05-4.08-15.89-10l-15.09,0c-1.48,0-2.69-1.06-2.69-2.35V99.99c0-1.29,1.21-2.35,2.69-2.35 l15.09,0c2.84-5.92,8.89-10.01,15.89-10.01c7,0,13.05,4.09,15.89,10.01h69.97c1.48,0,2.69,1.06,2.69,2.35v10.54 c0,1.29-1.22,2.35-2.69,2.35L49.57,112.88L49.57,112.88z M104.12,69.73c-2.84,5.92-8.89,10.01-15.89,10.01 c-7,0-13.05-4.09-15.9-10.01H2.69C1.22,69.73,0,68.67,0,67.38V56.85c0-1.29,1.21-2.35,2.69-2.35h69.64c2.84-5.92,8.89-10,15.89-10 c7,0,13.05,4.09,15.89,10h15.42c1.48,0,2.69,1.06,2.69,2.35v10.53c0,1.29-1.21,2.35-2.69,2.35H104.12L104.12,69.73z\"></path>\n</svg>\n"
+  },
+  {
+    "system": true,
+    "category": "General",
+    "name": "Spinner",
+    "droppable": false,
+    "stylable": [
+      "color",
+      "align-self",
+      "margin",
+      "margin-top",
+      "margin-bottom",
+      "margin-left",
+      "margin-right",
+      "opacity"
+    ],
+    "traits": [],
+    "handlers": [
+      "onVisibilityChange",
+      "onClassListAssignment",
+      {
+        "name": "onDisplayAssignment",
+        "label": "Visibility Logic",
+        "description": "Using this handler you can add logic to determine if this spinner component should be visible. When the handler returns true, the component is displayed.",
+        "output": true,
+        "dataBinding": true
+      }
+    ],
+    "id": "spinner",
+    "html": "<svg class=\"base-spinner\"/>\n",
+    "hasModule": true,
+    "iconSvg": "<svg viewBox=\"0 0 26.349 26.35\">\n    <circle cx=\"13.792\" cy=\"3.082\" r=\"3.082\"/>\n    <circle cx=\"13.792\" cy=\"24.501\" r=\"1.849\"/>\n    <circle cx=\"6.219\" cy=\"6.218\" r=\"2.774\"/>\n    <circle cx=\"21.365\" cy=\"21.363\" r=\"1.541\"/>\n    <circle cx=\"3.082\" cy=\"13.792\" r=\"2.465\"/>\n    <circle cx=\"24.501\" cy=\"13.791\" r=\"1.232\"/>\n    <path d=\"M4.694,19.84c-0.843,0.843-0.843,2.207,0,3.05c0.842,0.843,2.208,0.843,3.05,0c0.843-0.843,0.843-2.207,0-3.05    C6.902,18.996,5.537,18.988,4.694,19.84z\"/>\n    <circle cx=\"21.364\" cy=\"6.218\" r=\"0.924\"/>\n</svg>\n"
+  },
+  {
+    "system": true,
+    "category": "Form",
+    "name": "Toggle",
+    "droppable": false,
+    "traits": [
+      {
+        "valueTrue": "true",
+        "valueFalse": "false",
+        "name": "data-checked",
+        "label": "Checked",
+        "type": "checkbox"
+      },
+      {
+        "valueTrue": "true",
+        "valueFalse": "false",
+        "name": "data-disabled",
+        "label": "Disabled",
+        "type": "checkbox"
+      }
+    ],
+    "stylable": [
+      "align-self",
+      "margin",
+      "margin-top",
+      "margin-bottom",
+      "margin-left",
+      "margin-right"
+    ],
+    "handlers": [
+      "onChange",
+      "onVisibilityChange",
+      "onClassListAssignment",
+      {
+        "output": true,
+        "name": "onDisplayAssignment",
+        "dataBinding": true,
+        "description": "Using this handler you can add logic to determine if this toggle component should be visible. When the handler returns true, the component is displayed.",
+        "label": "Visibility Logic"
+      },
+      {
+        "output": true,
+        "name": "onCheckedStateAssignment",
+        "dataBinding": true,
+        "description": "Using this handler you can add logic to determine if the toggle should be checked (turn on). When the handler returns true, the toggle will be in the checked state.",
+        "label": "Checked State Logic"
+      },
+      {
+        "output": true,
+        "name": "onDisabledStateAssignment",
+        "dataBinding": true,
+        "description": "Using this handler you can add logic to determine if the toggle should be disabled. When the handler returns true, the component will become disabled.",
+        "label": "Disabled State Logic"
+      }
+    ],
+    "id": "switch",
+    "html": "<div style=\"margin:5px\"></div>\n",
+    "hasModule": true,
+    "iconSvg": "<svg viewBox=\"0 0 60 60\">\n    <circle cx=\"14\" cy=\"30\" r=\"14\"/>\n    <path d=\"M53,23H30.588c0.273,0.646,0.497,1.318,0.694,2H53c2.757,0,5,2.243,5,5s-2.243,5-5,5H31.281c-0.197,0.682-0.421,1.354-0.694,2H53c3.86,0,7-3.141,7-7S56.86,23,53,23z\"/>\n</svg>\n"
+  },
+  {
+    "id": "text",
+    "category": "General",
+    "name": "Text",
+    "system": true,
+    "droppable": false,
+    "stylable": [
+      "color",
+      "cursor",
+      "align-self",
+      "width",
+      "height",
+      "min-width",
+      "min-height",
+      "max-width",
+      "max-height",
+      "margin",
+      "margin-top",
+      "margin-bottom",
+      "margin-left",
+      "margin-right",
+      "padding",
+      "padding-top",
+      "padding-bottom",
+      "padding-left",
+      "padding-right",
+      "font-family",
+      "font-size",
+      "font-weight",
+      "font-style",
+      "text-align",
+      "text-decoration"
+    ],
+    "traits": [
+      {
+        "label": "Content",
+        "type": "content",
+        "name": "content",
+        "changeProp": true
+      }
+    ],
+    "handlers": [
+      "onClick",
+      "onMouseOver",
+      "onMouseOut",
+      "onVisibilityChange",
+      "onClassListAssignment",
+      {
+        "name": "onDisplayAssignment",
+        "label": "Visibility Logic",
+        "description": "Using this handler you can add logic to determine if this text component should be visible. When the handler returns true, the component is displayed.",
+        "output": true,
+        "dataBinding": true
+      },
+      {
+        "name": "onContentAssignment",
+        "label": "Content Logic",
+        "description": "Using this handler you can add logic to dynamically set the text content for this component. When the handler returns a value, the component renders it as text.",
+        "output": true,
+        "dataBinding": true
+      }
+    ],
+    "html": "<span class=\"bl-text\">Text</span>",
+    "hasModule": true,
+    "iconSvg": "<svg viewBox=\"0 0 467.765 467.765\">\n    <path d=\"m58.471 0v87.706h58.471v-29.235h87.706v350.824h-58.471v58.471h175.412v-58.471h-58.471v-350.824h87.706v29.235h58.471v-87.706z\"/>\n</svg>\n"
+  },
+  {
+    "system": true,
+    "category": "Form",
+    "name": "Textarea",
+    "droppable": false,
+    "traits": [
+      {
+        "type": "property-select",
+        "label": "Variant",
+        "name": "data-variant",
+        "options": [
+          {
+            "value": "standard",
+            "name": "Standard"
+          },
+          {
+            "value": "filled",
+            "name": "Filled"
+          },
+          {
+            "value": "outlined",
+            "name": "Outlined"
+          }
+        ]
+      },
+      {
+        "name": "data-label",
+        "label": "Label",
+        "type": "text"
+      },
+      {
+        "name": "data-value",
+        "label": "Default Value",
+        "type": "text"
+      },
+      {
+        "min": 0,
+        "name": "data-rows",
+        "step": 1,
+        "label": "Rows",
+        "type": "number"
+      },
+      {
+        "min": 0,
+        "name": "data-rows-max",
+        "step": 1,
+        "label": "Max Rows",
+        "type": "number"
+      },
+      {
+        "min": 0,
+        "name": "data-max-length",
+        "step": 1,
+        "label": "Max Length",
+        "type": "number"
+      },
+      {
+        "valueTrue": "true",
+        "valueFalse": "false",
+        "name": "data-readonly",
+        "label": "Read Only",
+        "type": "checkbox"
+      },
+      {
+        "valueTrue": "true",
+        "valueFalse": "false",
+        "name": "data-disabled",
+        "label": "Disabled",
+        "type": "checkbox"
+      },
+      {
+        "valueTrue": "true",
+        "valueFalse": "false",
+        "name": "data-required",
+        "label": "Required",
+        "type": "checkbox"
+      }
+    ],
+    "stylable": [
+      "width",
+      "height",
+      "min-width",
+      "min-height",
+      "max-width",
+      "max-height",
+      "margin",
+      "margin-top",
+      "margin-bottom",
+      "margin-left",
+      "margin-right",
+      "align-self",
+      "margin",
+      "margin-top",
+      "margin-bottom",
+      "margin-left",
+      "margin-right"
+    ],
+    "handlers": [
+      "onChange",
+      "onVisibilityChange",
+      "onClassListAssignment",
+      {
+        "output": true,
+        "name": "onDisplayAssignment",
+        "dataBinding": true,
+        "description": "Using this handler you can add logic to determine if this text area component should be visible. When the handler returns true, the component is displayed.",
+        "label": "Visibility Logic"
+      },
+      {
+        "output": true,
+        "name": "onLabelAssignment",
+        "dataBinding": true,
+        "description": "Using this handler you can add logic to determine the label for the component. Value returned by the handler will be used as the label.",
+        "label": "Label Logic"
+      },
+      {
+        "output": true,
+        "name": "onMaxLengthAssignment",
+        "dataBinding": true,
+        "description": "Using this handler you can add logic to determine the maximum length of the text which the component should accommodate. Numeric value returned by the component will be set as the max length.",
+        "label": "Max Length Logic"
+      },
+      {
+        "output": true,
+        "name": "onValueAssignment",
+        "dataBinding": true,
+        "description": "Using this handler you can add logic to determine the content of this text area component. Value returned by the handler becomes the content rendered by the component.",
+        "label": "Value Logic"
+      },
+      {
+        "output": true,
+        "name": "onReadOnlyStateAssignment",
+        "dataBinding": true,
+        "description": "Using this handler you can add logic to determine if the component should be read-only. When the handler returns true, the component becomes read-only.",
+        "label": "Read-Only State Logic"
+      },
+      {
+        "output": true,
+        "name": "onDisabledStateAssignment",
+        "dataBinding": true,
+        "description": "Using this handler you can add logic to determine if the component should be disabled. When the handler returns true, the component becomes disabled.",
+        "label": "Disabled State Logic"
+      },
+      {
+        "output": true,
+        "name": "onRequiredStateAssignment",
+        "dataBinding": true,
+        "description": "Using this handler you can logic to determine if the component should be required. Required components prevent form submission until a value is entered. When the handler returns true, the component becomes required. ",
+        "label": "Required State Logic"
+      }
+    ],
+    "id": "textarea",
+    "html": "<div data-label=\"Label\" data-variant=\"standard\" data-rows=\"5\" data-rows-max=\"10\" style=\"margin:0 0 16px 0;\"></div>\n",
+    "hasModule": true,
+    "iconSvg": "<svg viewBox=\"0 0 24 24\">\n    <path d=\"M22,7.5 C22,6.6 21.5,6 20.75,6 L3.25,6 C2.5,6 2,6.6 2,7.5 L2,16.5 C2,17.4 2.5,18 3.25,18 L20.75,18 C21.5,18 22,17.4 22,16.5 L22,7.5 Z M21,17 L3,17 L3,7 L21,7 L21,17 Z\"/>\n    <polygon points=\"4 8 5 8 5 12 4 12\"/>\n    <polygon points=\"19 7 20 7 20 17 19 17\"/>\n    <polygon points=\"20 8 21 8 21 9 20 9\"/>\n    <polygon points=\"20 15 21 15 21 16 20 16\"/>\n</svg>\n"
+  },
+  {
+    "system": true,
+    "category": "General",
+    "name": "Video",
+    "droppable": false,
+    "stylable": [
+      "width",
+      "height",
+      "min-width",
+      "min-height",
+      "max-width",
+      "max-height",
+      "margin",
+      "margin-top",
+      "margin-bottom",
+      "margin-left",
+      "margin-right",
+      "opacity"
+    ],
+    "traits": [
+      {
+        "name": "data-source",
+        "label": "Source",
+        "placeholder": "",
+        "type": "input-with-button",
+        "command": "OPEN_FILE_URL_EDITOR"
+      },
+      {
+        "valueTrue": "true",
+        "valueFalse": "false",
+        "name": "data-autoplay",
+        "label": "Autoplay",
+        "type": "checkbox"
+      },
+      {
+        "valueTrue": "true",
+        "valueFalse": "false",
+        "name": "data-loop",
+        "label": "Loop",
+        "type": "checkbox"
+      }
+    ],
+    "handlers": [
+      "onVisibilityChange",
+      "onClassListAssignment",
+      {
+        "name": "onDisplayAssignment",
+        "label": "Visibility Logic",
+        "description": "Using this handler you can add logic to determine if this video component should be visible. When the handler returns true, the component is displayed.",
+        "output": true,
+        "dataBinding": true
+      },
+      {
+        "name": "onSourceAssignment",
+        "label": "Source URL Logic",
+        "description": "Using this handler you can add logic to determine the source URL of the video. Value returned by the handler will be used as the source URL.",
+        "output": true,
+        "dataBinding": true
+      },
+      {
+        "name": "onAutoplayAssignment",
+        "label": "Autoplay Logic",
+        "description": "Using this handler you can add logic to determine if the video should have the autoplay option enabled. When the component returns true, autoplay is enabled. ",
+        "output": true,
+        "dataBinding": true
+      },
+      {
+        "name": "onControlsAssignment",
+        "label": "Controls Logic",
+        "description": "Using this handler you can add logic to determine if the playback controls should be visible. When the handler returns true, the playback controls are displayed.",
+        "output": true,
+        "dataBinding": true
+      },
+      {
+        "name": "onLoopAssignment",
+        "label": "Loop Logic",
+        "description": "Using this handler you can add logic to determine if the video should play in a loop. To enable this behavior, the handler should return true.",
+        "output": true,
+        "dataBinding": true
+      },
+      {
+        "output": true,
+        "name": "onMuteAssignment",
+        "dataBinding": true,
+        "description": "Using this handler you can add logic to determine if the video should be muted. To mute the video, the handler should return true.",
+        "label": "Mute Logic"
+      },
+      {
+        "output": true,
+        "name": "onBackgroundAssignment",
+        "dataBinding": true,
+        "description": "TBD",
+        "label": "Background Logic"
+      },
+      {
+        "name": "onModestBrandingAssignment",
+        "label": "Modest Branding Logic",
+        "description": "[Youtube only] https://developers.google.com/youtube/player_parameters#modestbranding",
+        "output": true,
+        "dataBinding": true
+      },
+      {
+        "name": "onShowRelatedAssignment",
+        "label": "Show Related Logic",
+        "description": "[Youtube only] https://developers.google.com/youtube/player_parameters#rel",
+        "output": true,
+        "dataBinding": true
+      },
+      {
+        "name": "onNoCookieAssignment",
+        "label": "No Cookie Logic",
+        "description": "[Youtube only] https://stackoverflow.com/questions/42555450/how-to-embed-youtube-videos-without-cookies",
+        "output": true,
+        "dataBinding": true
+      },
+      {
+        "name": "onColorAssignment",
+        "label": "Color Logic",
+        "description": "[Vimeo only] https://vimeo.zendesk.com/hc/en-us/articles/360001494447-Using-Player-Parameters",
+        "output": true,
+        "dataBinding": true
+      }
+    ],
+    "id": "video",
+    "html": "<div style=\"max-height:300px;flex-grow:1;\"></div>\n",
+    "hasModule": true,
+    "iconSvg": "<svg viewBox=\"0 0 310 310\">\n    <path d=\"M297.917,64.645c-11.19-13.302-31.85-18.728-71.306-18.728H83.386c-40.359,0-61.369,5.776-72.517,19.938   C0,79.663,0,100.008,0,128.166v53.669c0,54.551,12.896,82.248,83.386,82.248h143.226c34.216,0,53.176-4.788,65.442-16.527   C304.633,235.518,310,215.863,310,181.835v-53.669C310,98.471,309.159,78.006,297.917,64.645z M199.021,162.41l-65.038,33.991   c-1.454,0.76-3.044,1.137-4.632,1.137c-1.798,0-3.592-0.484-5.181-1.446c-2.992-1.813-4.819-5.056-4.819-8.554v-67.764   c0-3.492,1.822-6.732,4.808-8.546c2.987-1.814,6.702-1.938,9.801-0.328l65.038,33.772c3.309,1.718,5.387,5.134,5.392,8.861   C204.394,157.263,202.325,160.684,199.021,162.41z\"/>\n</svg>\n"
+  }
+]

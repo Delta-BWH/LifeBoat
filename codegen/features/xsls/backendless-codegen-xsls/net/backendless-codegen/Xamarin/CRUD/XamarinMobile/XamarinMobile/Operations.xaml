@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinMobile.Operations">
+  <StackLayout x:Name="stackLayout">
+    <Label x:Name="mainLabel" Text="Operations"
+           HorizontalOptions="CenterAndExpand" />
+    <Button Text="Create"
+            Clicked="OperationCreate"/>
+    <Button Text="Retrieve"
+            Clicked="OperationRetrieve"/>
+    <Button Text="Update"
+            Clicked="OperationUpdate"/>
+    <Button Text="Delete"
+            Clicked="OperationDelete"/>
+  </StackLayout>
+</ContentPage>

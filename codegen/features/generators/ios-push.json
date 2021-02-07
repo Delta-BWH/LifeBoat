@@ -1,0 +1,18 @@
+{
+	"category": "iOS",
+	"name": "Push notifications",
+	"tooltip": "Generates the push notifications sample project.",
+	"icon": "/codegen/features/xsls/backendless-codegen-xsls/icons/ios_push.png",
+	"xsl": "/codegen/features/xsls/backendless-codegen-xsls/ios/push.xsl",
+	"options": [
+		{
+			"name": "language",
+			"type": "CHOICE",
+			"label": "Language",
+			"options": [
+				"Objective-C",
+				"Swift"
+			]
+		}
+	]
+}

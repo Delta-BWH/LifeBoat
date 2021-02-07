@@ -1,0 +1,158 @@
+{
+  "label": "Landing Page",
+  "style": {
+    "background-color": "#e5e5e5",
+    "overflow": "visible"
+  },
+  "usedComponentTypes": [
+    "panel",
+    "block",
+    "text",
+    "button",
+    "checkbox",
+    "image"
+  ],
+  "components": {
+    "page": {
+      "type": "page",
+      "handlers": {}
+    },
+    "c1a3605ba0a5aa26904ffca42c4d7e07": {
+      "id": "Button1",
+      "type": "button",
+      "handlers": {
+        "onClick": {
+          "dependencies": []
+        }
+      }
+    },
+    "25a537e4845feb5c78d4082b92ca7231": {
+      "id": "Button26",
+      "type": "button",
+      "handlers": {
+        "onClick": {
+          "dependencies": []
+        }
+      }
+    },
+    "c4747835036da08d4547993d38ab24c3": {
+      "id": "Button24",
+      "type": "button",
+      "handlers": {
+        "onClick": {
+          "dependencies": []
+        }
+      }
+    },
+    "a21b2b6d1bcdf6d6be2a2c7add5dcc23": {
+      "id": "Button23",
+      "type": "button",
+      "handlers": {
+        "onClick": {
+          "dependencies": []
+        }
+      }
+    },
+    "f222fad9dd48d3d5bc85a2ac46548c3d": {
+      "id": "Button22",
+      "type": "button",
+      "handlers": {
+        "onClick": {
+          "dependencies": []
+        }
+      }
+    },
+    "73d2b9be074bd3cd3f7f993bba0b8828": {
+      "id": "Button21",
+      "type": "button",
+      "handlers": {
+        "onClick": {
+          "dependencies": []
+        }
+      }
+    },
+    "f062f32f964e2d7e4a2d01ccccb587db": {
+      "id": "Checkbox1",
+      "type": "checkbox",
+      "handlers": {
+        "onCheckedStateAssignment": {
+          "dependencies": []
+        }
+      }
+    },
+    "8ab3cfeb08046aaea72f441f317cf22b": {
+      "id": "Checkbox5",
+      "type": "checkbox",
+      "handlers": {
+        "onCheckedStateAssignment": {
+          "dependencies": []
+        }
+      }
+    },
+    "6fa26b560f85be8954c9083b214f527c": {
+      "id": "Checkbox7",
+      "type": "checkbox",
+      "handlers": {
+        "onCheckedStateAssignment": {
+          "dependencies": []
+        }
+      }
+    },
+    "85f1ddb635ea5487484b6d21549927c3": {
+      "id": "Checkbox3",
+      "type": "checkbox",
+      "handlers": {
+        "onCheckedStateAssignment": {
+          "dependencies": []
+        }
+      }
+    },
+    "9ddd6119130122d859639a0a677f3f8e": {
+      "id": "Checkbox9",
+      "type": "checkbox",
+      "handlers": {
+        "onCheckedStateAssignment": {
+          "dependencies": []
+        }
+      }
+    },
+    "d9cf1676257aa0a4b28c0c6fd4b14564": {
+      "id": "Checkbox11",
+      "type": "checkbox",
+      "handlers": {
+        "onCheckedStateAssignment": {
+          "dependencies": []
+        }
+      }
+    },
+    "eb45e52f3814a9df2831bc6ad856f07b": {
+      "id": "Checkbox13",
+      "type": "checkbox",
+      "handlers": {
+        "onCheckedStateAssignment": {
+          "dependencies": []
+        }
+      }
+    },
+    "57fabe5a63c2b3cfd20e93941755f08c": {
+      "id": "Button30",
+      "type": "button",
+      "handlers": {
+        "onClick": {
+          "dependencies": []
+        }
+      }
+    },
+    "47823eff70fba44dfca863cab7b8bdaf": {
+      "id": "Button27",
+      "type": "button",
+      "handlers": {
+        "onClick": {
+          "dependencies": []
+        }
+      }
+    }
+  },
+  "dataBinding": {},
+  "attrs": {}
+}

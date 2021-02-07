@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ssn-a4-OOx">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Real-time chat-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyApp_Chat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RjU-4v-8C9"/>
+                        <viewControllerLayoutGuide type="bottom" id="imP-zB-7Q1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="td9-Du-nDO">
+                                <rect key="frame" x="20" y="94" width="335" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="QV7-Za-Ndi"/>
+                                    <constraint firstAttribute="height" constant="30" id="zhz-JY-P7l"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" textContentType="name"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="QV7-Za-Ndi"/>
+                                        <exclude reference="zhz-JY-P7l"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="zhz-JY-P7l"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                    <mask key="constraints">
+                                        <include reference="QV7-Za-Ndi"/>
+                                    </mask>
+                                </variation>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5K-q6-Dsj">
+                                <rect key="frame" x="149.5" y="144" width="76" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Start chat"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                </variation>
+                                <connections>
+                                    <action selector="pressedStartChat:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kEk-kM-SE2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="c5K-q6-Dsj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9t6-tQ-Z2A"/>
+                            <constraint firstItem="c5K-q6-Dsj" firstAttribute="top" secondItem="td9-Du-nDO" secondAttribute="bottom" constant="20" id="LHO-Rs-TF5"/>
+                            <constraint firstAttribute="right" secondItem="td9-Du-nDO" secondAttribute="right" constant="60" id="S42-mm-OwS"/>
+                            <constraint firstItem="td9-Du-nDO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="60" id="UPX-EH-KLL"/>
+                            <constraint firstAttribute="trailing" secondItem="td9-Du-nDO" secondAttribute="trailing" constant="20" id="W56-zu-31L"/>
+                            <constraint firstItem="c5K-q6-Dsj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bOp-tl-Ho6"/>
+                            <constraint firstItem="td9-Du-nDO" firstAttribute="top" secondItem="RjU-4v-8C9" secondAttribute="bottom" constant="60" id="dRU-iK-caa"/>
+                            <constraint firstItem="td9-Du-nDO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="jYb-EU-ESs"/>
+                            <constraint firstItem="td9-Du-nDO" firstAttribute="top" secondItem="RjU-4v-8C9" secondAttribute="bottom" constant="30" id="spE-YM-HNv"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="S42-mm-OwS"/>
+                                <exclude reference="UPX-EH-KLL"/>
+                                <exclude reference="W56-zu-31L"/>
+                                <exclude reference="dRU-iK-caa"/>
+                                <exclude reference="jYb-EU-ESs"/>
+                                <exclude reference="spE-YM-HNv"/>
+                                <exclude reference="9t6-tQ-Z2A"/>
+                                <exclude reference="bOp-tl-Ho6"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="W56-zu-31L"/>
+                                <include reference="jYb-EU-ESs"/>
+                                <include reference="spE-YM-HNv"/>
+                                <include reference="9t6-tQ-Z2A"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="S42-mm-OwS"/>
+                                <include reference="UPX-EH-KLL"/>
+                                <include reference="dRU-iK-caa"/>
+                                <include reference="bOp-tl-Ho6"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Real-time chat" id="iMd-9Q-2Tf"/>
+                    <connections>
+                        <outlet property="userNameTextField" destination="td9-Du-nDO" id="OCg-fF-iZW"/>
+                        <segue destination="R5t-mr-seW" kind="show" identifier="ShowChat" id="moc-ec-r3E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="941.25" y="-565.14084507042253"/>
+        </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="qNA-9W-YbB">
+            <objects>
+                <viewController id="R5t-mr-seW" customClass="ChatViewController" customModule="MyApp_Chat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="loa-g5-FLk"/>
+                        <viewControllerLayoutGuide type="bottom" id="7Ot-NR-P8j"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xt6-hc-5ck">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9cm-7v-A62">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="CyJ-H0-lEc"/>
+                                    <constraint firstAttribute="height" constant="50" id="zLP-er-TxC"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="send"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="CyJ-H0-lEc"/>
+                                        <exclude reference="zLP-er-TxC"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="zLP-er-TxC"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                    <mask key="constraints">
+                                        <include reference="CyJ-H0-lEc"/>
+                                    </mask>
+                                </variation>
+                            </textField>
+                            <textView clipsSubviews="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ogo-fo-vB6">
+                                <rect key="frame" x="0.0" y="64" width="375" height="553"/>
+                                <color key="backgroundColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                </variation>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="9cm-7v-A62" secondAttribute="trailing" id="2pm-ey-Rlu"/>
+                            <constraint firstItem="Ogo-fo-vB6" firstAttribute="top" secondItem="loa-g5-FLk" secondAttribute="bottom" id="EbN-WC-iJ6"/>
+                            <constraint firstItem="7Ot-NR-P8j" firstAttribute="top" secondItem="9cm-7v-A62" secondAttribute="bottom" id="Gze-n0-s30"/>
+                            <constraint firstAttribute="trailing" secondItem="Ogo-fo-vB6" secondAttribute="trailing" id="QrO-x0-8FJ"/>
+                            <constraint firstItem="Ogo-fo-vB6" firstAttribute="leading" secondItem="xt6-hc-5ck" secondAttribute="leading" id="c7P-Hd-8Pc"/>
+                            <constraint firstItem="9cm-7v-A62" firstAttribute="top" secondItem="Ogo-fo-vB6" secondAttribute="bottom" id="fcs-1S-wvH"/>
+                            <constraint firstItem="9cm-7v-A62" firstAttribute="leading" secondItem="xt6-hc-5ck" secondAttribute="leading" id="p75-Ab-IP3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="b90-Z1-cwA"/>
+                    <connections>
+                        <outlet property="chatTextView" destination="Ogo-fo-vB6" id="qpT-cN-2WB"/>
+                        <outlet property="messageTextField" destination="9cm-7v-A62" id="Mba-0k-V7f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DtO-C1-pVH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1685.5999999999999" y="-566.26686656671666"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="m6g-wV-d4q">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ssn-a4-OOx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Exi-4G-zJh">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="phn-Fj-fDh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PXn-k2-mqz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="-564.46776611694156"/>
+        </scene>
+    </scenes>
+</document>

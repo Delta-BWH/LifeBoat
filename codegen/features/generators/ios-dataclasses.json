@@ -1,0 +1,18 @@
+{
+	"category": "iOS",
+	"name": "Objective-C/Swift classes for defined data tables",
+	"tooltip": "Generates the classes for defined data tables.",
+	"icon": "/codegen/features/xsls/backendless-codegen-xsls/icons/ios_class.png",
+	"xsl": "/codegen/features/xsls/backendless-codegen-xsls/ios/dataclasses.xsl",
+	"options": [
+		{
+			"name": "language",
+			"type": "CHOICE",
+			"label": "Language",
+			"options": [
+				"Objective-C",
+				"Swift"
+			]
+		}
+	]
+}

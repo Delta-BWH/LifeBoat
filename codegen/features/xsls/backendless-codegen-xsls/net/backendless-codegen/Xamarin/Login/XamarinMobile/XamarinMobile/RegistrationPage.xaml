@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LoginAndRegistration.RegistrationPage"
+             Title="Registration">
+    <ContentPage.Content>
+        <StackLayout x:Name="regLayout" Padding="12,40,12,12">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Margin="0,15,0,0" Text="Email:" Grid.Row="0" Grid.Column="0"/>
+                <Label Margin="0,15,0,0" Text="Password:" Grid.Row="1" Grid.Column="0"/>
+                <Label Margin="0,15,0,0" Text="Name:" Grid.Row="2" Grid.Column="0"/>
+                <Entry x:Name="emailReg" Placeholder="Your email..." FontSize="14" Grid.Row="0" Grid.Column="1"/>
+                <Entry x:Name="pasReg" Placeholder="Your password..." IsPassword="True" FontSize="14" Grid.Row="1" Grid.Column="1"/>
+                <Entry x:Name="nameReg" Placeholder="Your name..." FontSize="14" Grid.Row="2" Grid.Column="1"/>
+            </Grid>
+            <Label x:Name="emptyFields" Text="Fields cannot be empty" TextColor="Red"
+                   IsVisible="false" HorizontalOptions="CenterAndExpand"/>
+            <Button Text="Register" HorizontalOptions="CenterAndExpand"
+                    Clicked="RegisterFormButtonLogic"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

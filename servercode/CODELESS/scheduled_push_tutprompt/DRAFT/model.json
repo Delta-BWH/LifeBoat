@@ -1,0 +1,1 @@
+{"handlers":[],"timers":[{"name":"Scheduled_Push_TutPrompt","provider":"timers/scheduled_push_tutprompt.js","timerJson":"{\"name\":\"Scheduled_Push_TutPrompt\",\"startDate\":1612707003637,\"frequency\":{\"schedule\":\"daily\",\"repeat\":{\"every\":1}}}"}],"services":[],"definitions":{"files":[],"types":{}},"types":{},"errors":[]}

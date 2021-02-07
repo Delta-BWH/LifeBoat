@@ -1,0 +1,124 @@
+2021-02-07 14:09:49,693 | SERVER_CODE |  INFO | [11744] [ANALYSE CODE] codePath: /opt/backendless/repo/b1a068d4-ece2-ce18-ffe0-8b7974a01500/files/servercode/CODELESS/scheduled_push_tutprompt/DRAFT
+2021-02-07 14:09:49,696 | SERVER_CODE |  INFO | [11744] Building Model..
+2021-02-07 14:09:49,706 | SERVER_CODE |  INFO | [11744] ServerCode Model built in 10ms
+2021-02-07 14:09:49,706 | SERVER_CODE |  INFO | [11744] Timers (1):
+2021-02-07 14:09:49,706 | SERVER_CODE |  INFO | [11744]   Scheduled_Push_TutPrompt (timers/scheduled_push_tutprompt.js)
+2021-02-07 14:09:49,707 | SERVER_CODE |  INFO | [11744] Processing finished in 25.146ms
+2021-02-07 15:15:20,297 | SERVER_CODE |  INFO | [20365] [ANALYSE CODE] codePath: /opt/backendless/repo/b1a068d4-ece2-ce18-ffe0-8b7974a01500/files/servercode/JS/default/DRAFT
+2021-02-07 15:15:20,304 | SERVER_CODE |  INFO | [20365] Building Model..
+2021-02-07 15:15:20,334 | SERVER_CODE |  INFO | [20365] ServerCode Model built in 30ms
+2021-02-07 15:15:20,335 | SERVER_CODE |  INFO | [20365] Errors (1):
+2021-02-07 15:15:20,336 | SERVER_CODE |  INFO | [20365]   Unexpected identifier (handlers/custom-events/RT_clientDisconnected.js:9)
+2021-02-07 15:15:20,341 | SERVER_CODE |  INFO | [20365] Processing finished in 76.023ms
+2021-02-07 15:19:32,377 | SERVER_CODE |  INFO | [22731] [ANALYSE CODE] codePath: /opt/backendless/repo/b1a068d4-ece2-ce18-ffe0-8b7974a01500/files/servercode/JS/default/DRAFT
+2021-02-07 15:19:32,384 | SERVER_CODE |  INFO | [22731] Building Model..
+2021-02-07 15:19:32,403 | SERVER_CODE |  INFO | [22731] ServerCode Model built in 19ms
+2021-02-07 15:19:32,405 | SERVER_CODE |  INFO | [22731] Event handlers (1):
+2021-02-07 15:19:32,406 | SERVER_CODE |  INFO | [22731]   custom.RT_afterClientConnected  (handlers/custom-events/RT_afterClientConnected.js)
+2021-02-07 15:19:32,411 | SERVER_CODE |  INFO | [22731] Processing finished in 61.198ms
+2021-02-07 15:19:39,440 | SERVER_CODE |  INFO | [22808] [ANALYSE CODE] codePath: /opt/backendless/repo/b1a068d4-ece2-ce18-ffe0-8b7974a01500/files/servercode/JS/default/DRAFT
+2021-02-07 15:19:39,447 | SERVER_CODE |  INFO | [22808] Building Model..
+2021-02-07 15:19:39,462 | SERVER_CODE |  INFO | [22808] ServerCode Model built in 15ms
+2021-02-07 15:19:39,463 | SERVER_CODE |  INFO | [22808] Event handlers (1):
+2021-02-07 15:19:39,463 | SERVER_CODE |  INFO | [22808]   custom.RT_afterClientConnected  (handlers/custom-events/RT_afterClientConnected.js)
+2021-02-07 15:19:39,466 | SERVER_CODE |  INFO | [22808] Processing finished in 49.575ms
+2021-02-07 15:21:14,061 | SERVER_CODE |  INFO | [21551] [ANALYSE CODE] codePath: /opt/backendless/repo/b1a068d4-ece2-ce18-ffe0-8b7974a01500/files/servercode/JS/default/DRAFT
+2021-02-07 15:21:14,068 | SERVER_CODE |  INFO | [21551] Building Model..
+2021-02-07 15:21:14,090 | SERVER_CODE |  INFO | [21551] ServerCode Model built in 22ms
+2021-02-07 15:21:14,091 | SERVER_CODE |  INFO | [21551] Event handlers (2):
+2021-02-07 15:21:14,091 | SERVER_CODE |  INFO | [21551]   custom.RT_afterClientConnected  (handlers/custom-events/RT_afterClientConnected.js)
+2021-02-07 15:21:14,091 | SERVER_CODE |  INFO | [21551]   custom.RT_clientDisconnected  (handlers/custom-events/RT_clientDisconnected.js)
+2021-02-07 15:21:14,094 | SERVER_CODE |  INFO | [21551] Processing finished in 62.673ms
+2021-02-07 15:21:22,242 | SERVER_CODE |  INFO | [21683] [ANALYSE CODE] codePath: /opt/backendless/repo/b1a068d4-ece2-ce18-ffe0-8b7974a01500/files/servercode/JS/default/DRAFT
+2021-02-07 15:21:22,245 | SERVER_CODE |  INFO | [21683] Building Model..
+2021-02-07 15:21:22,252 | SERVER_CODE |  INFO | [21683] ServerCode Model built in 7ms
+2021-02-07 15:21:22,252 | SERVER_CODE |  INFO | [21683] Event handlers (2):
+2021-02-07 15:21:22,253 | SERVER_CODE |  INFO | [21683]   custom.RT_afterClientConnected  (handlers/custom-events/RT_afterClientConnected.js)
+2021-02-07 15:21:22,253 | SERVER_CODE |  INFO | [21683]   custom.RT_clientDisconnected  (handlers/custom-events/RT_clientDisconnected.js)
+2021-02-07 15:21:22,254 | SERVER_CODE |  INFO | [21683] Processing finished in 23.406ms
+2021-02-07 15:23:00,981 | SERVER_CODE |  INFO | [6358] [ANALYSE CODE] codePath: /opt/backendless/repo/b1a068d4-ece2-ce18-ffe0-8b7974a01500/files/servercode/JS/default/DRAFT
+2021-02-07 15:23:00,984 | SERVER_CODE |  INFO | [6358] Building Model..
+2021-02-07 15:23:00,998 | SERVER_CODE |  INFO | [6358] ServerCode Model built in 14ms
+2021-02-07 15:23:00,998 | SERVER_CODE |  INFO | [6358] Event handlers (2):
+2021-02-07 15:23:00,999 | SERVER_CODE |  INFO | [6358]   custom.RT_afterClientConnected  (handlers/custom-events/RT_afterClientConnected.js)
+2021-02-07 15:23:00,999 | SERVER_CODE |  INFO | [6358]   custom.RT_clientDisconnected  (handlers/custom-events/RT_clientDisconnected.js)
+2021-02-07 15:23:00,999 | SERVER_CODE |  INFO | [6358] Timers (1):
+2021-02-07 15:23:00,999 | SERVER_CODE |  INFO | [6358]   CacheExtend (timers/cacheextend.js)
+2021-02-07 15:23:01,001 | SERVER_CODE |  INFO | [6358] Processing finished in 30.913ms
+2021-02-07 15:23:02,456 | SERVER_CODE |  INFO | [23122] [ANALYSE CODE] codePath: /opt/backendless/repo/b1a068d4-ece2-ce18-ffe0-8b7974a01500/files/servercode/JS/default/DRAFT
+2021-02-07 15:23:02,466 | SERVER_CODE |  INFO | [23122] Building Model..
+2021-02-07 15:23:02,493 | SERVER_CODE |  INFO | [23122] ServerCode Model built in 28ms
+2021-02-07 15:23:02,494 | SERVER_CODE |  INFO | [23122] Event handlers (2):
+2021-02-07 15:23:02,494 | SERVER_CODE |  INFO | [23122]   custom.RT_afterClientConnected  (handlers/custom-events/RT_afterClientConnected.js)
+2021-02-07 15:23:02,495 | SERVER_CODE |  INFO | [23122]   custom.RT_clientDisconnected  (handlers/custom-events/RT_clientDisconnected.js)
+2021-02-07 15:23:02,495 | SERVER_CODE |  INFO | [23122] Timers (1):
+2021-02-07 15:23:02,495 | SERVER_CODE |  INFO | [23122]   CacheExtend (timers/cacheextend.js)
+2021-02-07 15:23:02,499 | SERVER_CODE |  INFO | [23122] Processing finished in 74.510ms
+2021-02-07 15:23:32,398 | SERVER_CODE |  INFO | [24931] Building ServerCode Model for path (/opt/backendless/repo/b1a068d4-ece2-ce18-ffe0-8b7974a01500/files/servercode/JS/default/PRODUCTION)
+2021-02-07 15:23:32,412 | SERVER_CODE |  INFO | [24931] ServerCode Model built in 24ms
+2021-02-07 15:23:32,432 | SERVER_CODE |  INFO | [24931] [2064CBAA-5027-4D82-85C1-70EBA319693C] [INVOKE TIMER] CacheExtend
+2021-02-07 15:23:32,450 | SERVER_CODE | ERROR | [24931] ReferenceError: callback is not defined
+    at Object.execute (/opt/backendless/repo/b1a068d4-ece2-ce18-ffe0-8b7974a01500/files/servercode/JS/default/PRODUCTION/timers/cacheextend.js:23:52)
+    at Domain.<anonymous> (/usr/local/lib/node_modules/backendless-coderunner/lib/server-code/runners/tasks/invoke-handler.js:118:38)
+    at Domain.run (domain.js:370:14)
+    at /usr/local/lib/node_modules/backendless-coderunner/lib/server-code/runners/tasks/invoke-handler.js:117:7
+    at new Promise (<anonymous>)
+    at execute (/usr/local/lib/node_modules/backendless-coderunner/lib/server-code/runners/tasks/invoke-handler.js:52:10)
+    at executeTask (/usr/local/lib/node_modules/backendless-coderunner/lib/server-code/runners/tasks/executor.js:82:7)
+    at Object.executor.execute (/usr/local/lib/node_modules/backendless-coderunner/lib/server-code/runners/tasks/executor.js:191:22)
+    at executeTask (/usr/local/lib/node_modules/backendless-coderunner/lib/server-code/runners/cloud-worker.js:51:44)
+    at processTask (/usr/local/lib/node_modules/backendless-coderunner/lib/server-code/runners/cloud-worker.js:77:9)
+2021-02-07 15:23:32,454 | SERVER_CODE |  INFO | [24931] Processing finished in 100.534ms
+2021-02-07 15:23:59,537 | SERVER_CODE |  INFO | [25184] Building ServerCode Model for path (/opt/backendless/repo/b1a068d4-ece2-ce18-ffe0-8b7974a01500/files/servercode/JS/default/PRODUCTION)
+2021-02-07 15:23:59,544 | SERVER_CODE |  INFO | [25184] ServerCode Model built in 17ms
+2021-02-07 15:23:59,553 | SERVER_CODE |  INFO | [25184] [4987608C-C0D6-443B-9DF5-B25B9A8CF3D9] [INVOKE TIMER] CacheExtend
+2021-02-07 15:23:59,565 | SERVER_CODE | ERROR | [25184] ReferenceError: callback is not defined
+    at Object.execute (/opt/backendless/repo/b1a068d4-ece2-ce18-ffe0-8b7974a01500/files/servercode/JS/default/PRODUCTION/timers/cacheextend.js:23:52)
+    at Domain.<anonymous> (/usr/local/lib/node_modules/backendless-coderunner/lib/server-code/runners/tasks/invoke-handler.js:118:38)
+    at Domain.run (domain.js:370:14)
+    at /usr/local/lib/node_modules/backendless-coderunner/lib/server-code/runners/tasks/invoke-handler.js:117:7
+    at new Promise (<anonymous>)
+    at execute (/usr/local/lib/node_modules/backendless-coderunner/lib/server-code/runners/tasks/invoke-handler.js:52:10)
+    at executeTask (/usr/local/lib/node_modules/backendless-coderunner/lib/server-code/runners/tasks/executor.js:82:7)
+    at Object.executor.execute (/usr/local/lib/node_modules/backendless-coderunner/lib/server-code/runners/tasks/executor.js:191:22)
+    at executeTask (/usr/local/lib/node_modules/backendless-coderunner/lib/server-code/runners/cloud-worker.js:51:44)
+    at processTask (/usr/local/lib/node_modules/backendless-coderunner/lib/server-code/runners/cloud-worker.js:77:9)
+2021-02-07 15:23:59,567 | SERVER_CODE |  INFO | [25184] Processing finished in 58.924ms
+2021-02-07 15:25:53,214 | SERVER_CODE |  INFO | [25514] [ANALYSE CODE] codePath: /opt/backendless/repo/b1a068d4-ece2-ce18-ffe0-8b7974a01500/files/servercode/JS/default/DRAFT
+2021-02-07 15:25:53,221 | SERVER_CODE |  INFO | [25514] Building Model..
+2021-02-07 15:25:53,237 | SERVER_CODE |  INFO | [25514] ServerCode Model built in 16ms
+2021-02-07 15:25:53,238 | SERVER_CODE |  INFO | [25514] Timers (1):
+2021-02-07 15:25:53,238 | SERVER_CODE |  INFO | [25514]   CacheExtend (timers/cacheextend.js)
+2021-02-07 15:25:53,242 | SERVER_CODE |  INFO | [25514] Processing finished in 52.851ms
+2021-02-07 15:25:55,686 | SERVER_CODE |  INFO | [25558] [ANALYSE CODE] codePath: /opt/backendless/repo/b1a068d4-ece2-ce18-ffe0-8b7974a01500/files/servercode/JS/default/DRAFT
+2021-02-07 15:25:55,693 | SERVER_CODE |  INFO | [25558] Building Model..
+2021-02-07 15:25:55,704 | SERVER_CODE |  INFO | [25558] ServerCode Model built in 11ms
+2021-02-07 15:25:55,704 | SERVER_CODE |  INFO | [25558] Timers (1):
+2021-02-07 15:25:55,705 | SERVER_CODE |  INFO | [25558]   CacheExtend (timers/cacheextend.js)
+2021-02-07 15:25:55,708 | SERVER_CODE |  INFO | [25558] Processing finished in 45.185ms
+2021-02-07 15:26:43,823 | SERVER_CODE |  INFO | [11185] [ANALYSE CODE] codePath: /opt/backendless/repo/b1a068d4-ece2-ce18-ffe0-8b7974a01500/files/servercode/JS/default/DRAFT
+2021-02-07 15:26:43,827 | SERVER_CODE |  INFO | [11185] Building Model..
+2021-02-07 15:26:43,839 | SERVER_CODE |  INFO | [11185] ServerCode Model built in 12ms
+2021-02-07 15:26:43,840 | SERVER_CODE |  INFO | [11185] Timers (1):
+2021-02-07 15:26:43,840 | SERVER_CODE |  INFO | [11185]   CacheExtend (timers/cacheextend.js)
+2021-02-07 15:26:43,841 | SERVER_CODE |  INFO | [11185] Processing finished in 29.995ms
+2021-02-07 15:26:45,503 | SERVER_CODE |  INFO | [26704] [ANALYSE CODE] codePath: /opt/backendless/repo/b1a068d4-ece2-ce18-ffe0-8b7974a01500/files/servercode/JS/default/DRAFT
+2021-02-07 15:26:45,510 | SERVER_CODE |  INFO | [26704] Building Model..
+2021-02-07 15:26:45,528 | SERVER_CODE |  INFO | [26704] ServerCode Model built in 18ms
+2021-02-07 15:26:45,528 | SERVER_CODE |  INFO | [26704] Timers (1):
+2021-02-07 15:26:45,529 | SERVER_CODE |  INFO | [26704]   CacheExtend (timers/cacheextend.js)
+2021-02-07 15:26:45,532 | SERVER_CODE |  INFO | [26704] Processing finished in 59.589ms
+2021-02-07 17:20:34,897 | SERVER_CODE |  INFO | [29155] Building ServerCode Model for path (/opt/backendless/repo/b1a068d4-ece2-ce18-ffe0-8b7974a01500/files/servercode/JS/default/PRODUCTION)
+2021-02-07 17:20:34,904 | SERVER_CODE |  INFO | [29155] ServerCode Model built in 13ms
+2021-02-07 17:20:34,914 | SERVER_CODE |  INFO | [29155] [E45CFC3F-91A7-460A-A671-8A33158874D9] [INVOKE TIMER] CacheExtend
+2021-02-07 17:20:35,045 | SERVER_CODE |  INFO | [29155] Processing finished in 177.203ms
+2021-02-07 19:18:54,444 | SERVER_CODE |  INFO | [9408] Building ServerCode Model for path (/opt/backendless/repo/b1a068d4-ece2-ce18-ffe0-8b7974a01500/files/servercode/JS/default/PRODUCTION)
+2021-02-07 19:18:54,449 | SERVER_CODE |  INFO | [9408] ServerCode Model built in 8ms
+2021-02-07 19:18:54,456 | SERVER_CODE |  INFO | [9408] [8770AC59-CA0B-4748-9573-45266BC8F096] [INVOKE TIMER] CacheExtend
+2021-02-07 19:18:54,523 | SERVER_CODE |  INFO | [9408] Processing finished in 94.509ms
+2021-02-07 19:41:17,997 | SERVER_CODE |  INFO | [5985] [ANALYSE CODE] codePath: /opt/backendless/repo/b1a068d4-ece2-ce18-ffe0-8b7974a01500/files/servercode/JS/default/DRAFT
+2021-02-07 19:41:18,002 | SERVER_CODE |  INFO | [5985] Building Model..
+2021-02-07 19:41:18,021 | SERVER_CODE |  INFO | [5985] ServerCode Model built in 19ms
+2021-02-07 19:41:18,022 | SERVER_CODE |  INFO | [5985] Timers (1):
+2021-02-07 19:41:18,022 | SERVER_CODE |  INFO | [5985]   CacheExtend (timers/cacheextend.js)
+2021-02-07 19:41:18,024 | SERVER_CODE |  INFO | [5985] Processing finished in 49.073ms

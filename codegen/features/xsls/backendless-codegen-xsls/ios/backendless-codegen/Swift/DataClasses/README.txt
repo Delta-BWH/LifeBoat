@@ -1,0 +1,1 @@
+Add files from the Data folder to the necessary Xcode project to use generated classes.

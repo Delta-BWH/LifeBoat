@@ -1,0 +1,18 @@
+{
+	"category": ".NET",
+	"name": "Xamarin Forms/.NET Core - Basic create/retrieve/update/delete data demo",
+	"tooltip": "Generates the create/retrieve/update/delete data sample project.",
+	"icon": "/codegen/features/xsls/backendless-codegen-xsls/icons/net_crud.png",
+	"xsl": "/codegen/features/xsls/backendless-codegen-xsls/net/crud.xsl",
+	"options": [
+		{
+			"name": "language",
+			"type": "CHOICE",
+			"label": "Framework",
+			"options": [
+				".NET Core",
+				"Xamarin Forms"
+			]
+		}
+	]
+}

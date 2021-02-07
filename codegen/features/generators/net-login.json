@@ -1,0 +1,17 @@
+{
+	"category": ".NET",
+	"name": "Xamarin Forms - Login and Registration",
+	"tooltip": "Generates the sample login/registration project.",
+	"icon": "/codegen/features/xsls/backendless-codegen-xsls/icons/net_login.png",
+	"xsl": "/codegen/features/xsls/backendless-codegen-xsls/net/login.xsl",
+	"options": [
+		{
+			"name": "language",
+			"type": "CHOICE",
+			"label": "Framework",
+			"options": [
+				"Xamarin Forms"
+			]
+		}
+	]
+}

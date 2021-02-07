@@ -1,0 +1,165 @@
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font: 12px Arial, Helvetica, sans-serif;
+    background: rgb(50, 56, 63);
+    color: #666666;
+}
+
+*:focus {
+    outline: none;
+}
+
+.regsuccess {
+    position: relative;
+    width: 370px;
+    min-height: 110px;
+    margin: 0 auto;
+    padding: 10px;
+    top: 30%;
+    background-color: #FFFFFF;
+    text-align: center;
+    -webkit-box-shadow: 0 0 12px #E7E7E7;
+    -moz-box-shadow: 0 0 12px #E7E7E7;
+    box-shadow: 0 0 12px #E7E7E7;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.regsuccess label {
+    float: left;
+}
+
+.regsuccess input[type=text], .regsuccess input[type=password] {
+    float: right;
+    width: 60%;
+}
+
+.info {
+    bottom: 10px;
+    position: absolute;
+    font-size: 11px;
+    width: inherit;
+    color: rgb(155, 155, 155);
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 10px 0;
+}
+
+li {
+    margin: 20px;
+    height: 30px;
+    line-height: 30px;
+}
+
+input {
+    margin: 0;
+    padding: 0;
+}
+
+input[type=button] {
+    height: 35px;
+    color: #eeeeee;
+    padding: 0 20px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+    border-top: 1px solid #afafaf;
+    border-right: 1px solid #919191;
+    border-bottom: 1px solid #919191;
+    border-left: 1px solid #afafaf;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    text-shadow: 0 1px 2px #333333;
+}
+
+input[type=button].green {
+    background: #71b239;
+    background-image: -webkit-linear-gradient(top, #7cbe3a, #5a9b39);
+    background-image: -moz-linear-gradient(top, #7cbe3a, #5a9b39);
+    background-image: -ms-linear-gradient(top, #7cbe3a, #5a9b39);
+    background-image: -o-linear-gradient(top, #7cbe3a, #5a9b39);
+    background-image: linear-gradient(top, #7cbe3a, #5a9b39);
+}
+
+input[type=button].green:hover {
+    background: #66a83a;
+    background-image: -webkit-linear-gradient(top, #71b43b, #539036);
+    background-image: -moz-linear-gradient(top, #71b43b, #539036);
+    background-image: -ms-linear-gradient(top, #71b43b, #539036);
+    background-image: -o-linear-gradient(top, #71b43b, #539036);
+    background-image: linear-gradient(top, #71b43b, #539036);
+}
+
+input[type=button].green:active {
+    color: #ebebeb;
+    background: #5ea03a;
+    background-image: -webkit-linear-gradient(top, #68aa3a, #4d903b);
+    background-image: -moz-linear-gradient(top, #68aa3a, #4d903b);
+    background-image: -ms-linear-gradient(top, #68aa3a, #4d903b);
+    background-image: -o-linear-gradient(top, #68aa3a, #4d903b);
+    background-image: linear-gradient(top, #68aa3a, #4d903b);
+    border-top: 1px solid #919191;
+    border-right: 1px solid #afafaf;
+    border-bottom: 1px solid #afafaf;
+    border-left: 1px solid #919191;
+    -webkit-box-shadow: inset 0 1px 3px rgba(128, 128, 128, 0.3);
+    -moz-box-shadow: inset 0 1px 3px rgba(128, 128, 128, 0.3);
+    box-shadow: inset 0 1px 3px rgba(128, 128, 128, 0.3);
+}
+
+input[type=text], input[type=password] {
+    color: #666666;
+    padding: 8px 6px;
+    font-size: 12px;
+    border-top: 1px solid #919191;
+    border-right: 1px solid #afafaf;
+    border-bottom: 1px solid #afafaf;
+    border-left: 1px solid #919191;
+    -webkit-box-shadow: inset 1px 1px 3px rgba(128, 128, 128, 0.2);
+    -moz-box-shadow: inset 1px 1px 3px rgba(128, 128, 128, 0.2);
+    box-shadow: inset 1px 1px 3px rgba(128, 128, 128, 0.2);
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+
+input[type=text].wronginput, input[type=password].wronginput {
+    border-color: rgb(255, 0, 0);
+    -webkit-box-shadow: inset 1px 1px 3px rgba(255, 0, 0, 0.3);
+    -moz-box-shadow: inset 1px 1px 3px rgba(255, 0, 0, 0.3);
+    box-shadow: inset 1px 1px 3px rgba(255, 0, 0, 0.3);
+}
+
+.popup {
+    max-width: 300px;
+    padding: 10px 15px;
+    color: rgb(220, 220, 220);
+    opacity: 0;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    position: fixed;
+    top: 30px;
+    right: -120px;
+}
+
+.popup.error {
+    background-color: rgba(255, 27, 0, 0.5);
+}
+
+.popup.success {
+    background-color: rgba(50, 170, 0, 0.60);
+}

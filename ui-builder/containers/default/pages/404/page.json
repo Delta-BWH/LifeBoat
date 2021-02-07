@@ -1,0 +1,38 @@
+{
+  "label": "Not Found Page",
+  "style": {
+    "padding": "20px 20px 20px 20px"
+  },
+  "usedComponentTypes": [
+    "panel",
+    "block",
+    "text",
+    "button"
+  ],
+  "components": {
+    "page": {
+      "type": "page",
+      "handlers": {}
+    },
+    "902c9641de4ec9e73427e7192a118d14": {
+      "id": "Button - 1",
+      "type": "button",
+      "handlers": {
+        "onClick": {
+          "dependencies": []
+        }
+      }
+    },
+    "9ea586cd3d73a464ea46f38f4e5a5b6c": {
+      "id": "Panel1",
+      "type": "panel",
+      "handlers": {
+        "onClick": {
+          "dependencies": []
+        }
+      }
+    }
+  },
+  "dataBinding": {},
+  "attrs": {}
+}
